@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nanwulife.dao.ScoreMapper" >
+  <resultMap id="BaseResultMap" type="com.nanwulife.pojo.Score" >
+    <constructor >
+      <idArg column="stu_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <idArg column="exp_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="score" jdbcType="SMALLINT" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    stu_id, exp_id, score
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.nanwulife.pojo.ScoreKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from score
+    where stu_id = #{stuId,jdbcType=INTEGER}
+      and exp_id = #{expId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.nanwulife.pojo.ScoreKey" >
+    delete from score
+    where stu_id = #{stuId,jdbcType=INTEGER}
+      and exp_id = #{expId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nanwulife.pojo.Score" >
+    insert into score (stu_id, exp_id, score
+      )
+    values (#{stuId,jdbcType=INTEGER}, #{expId,jdbcType=INTEGER}, #{score,jdbcType=SMALLINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.nanwulife.pojo.Score" >
+    insert into score
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuId != null" >
+        stu_id,
+      </if>
+      <if test="expId != null" >
+        exp_id,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuId != null" >
+        #{stuId,jdbcType=INTEGER},
+      </if>
+      <if test="expId != null" >
+        #{expId,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nanwulife.pojo.Score" >
+    update score
+    <set >
+      <if test="score != null" >
+        score = #{score,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where stu_id = #{stuId,jdbcType=INTEGER}
+      and exp_id = #{expId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nanwulife.pojo.Score" >
+    update score
+    set score = #{score,jdbcType=SMALLINT}
+    where stu_id = #{stuId,jdbcType=INTEGER}
+      and exp_id = #{expId,jdbcType=INTEGER}
+  </update>
+</mapper>
