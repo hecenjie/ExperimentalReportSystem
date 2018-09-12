@@ -25,3 +25,4 @@ hs_err_pid*
 /ExperimentalReportSystem.iml
 /src/main/resources/server.properties
 /target/
+/src/main/resources/db.properties
