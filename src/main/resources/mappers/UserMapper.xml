@@ -24,7 +24,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.nanwulife.pojo.User">
+  <insert id="insert" parameterType="com.nanwulife.pojo.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (id, stu_num, stu_class, 
       password, role, major_id
       )
@@ -32,7 +32,7 @@
       #{password,jdbcType=CHAR}, #{role,jdbcType=SMALLINT}, #{majorId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.nanwulife.pojo.User">
+  <insert id="insertSelective" parameterType="com.nanwulife.pojo.User" useGeneratedKeys="true" keyProperty="id">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -106,7 +106,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="selectByUsername" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByUsername" parameterType="java.lang.Integer" resultType="int">
     select
     count(*)
     from user
