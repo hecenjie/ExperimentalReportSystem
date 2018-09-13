@@ -45,5 +45,18 @@ public class UserServiceImpl implements IUserService {
         }
         return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.USERNAME_REPEAT.getCode(), Const.ResponseCode.USERNAME_REPEAT.getDesc());
     }
+    
+    public ServerResponse<User> login(String username, String password) {
+        User usernameUser = userMapper.checkByUsername(username);
+        //若账号不存在 返回错误
+        if(usernameUser == null){
+            return ServerResponse.createByErrorMessage("用户名不存在");
+        }
+        if(!password.equals(DigestUtils.md5DigestAsHex(usernameUser.getPassword().getBytes()))){
+            return ServerResponse.createByErrorMessage("密码错误");
+        }
+        usernameUser.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
+        return ServerResponse.createBySuccess("登陆成功", usernameUser);
+    }
 
 }
