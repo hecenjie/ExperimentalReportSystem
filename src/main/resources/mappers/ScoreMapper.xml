@@ -11,14 +11,14 @@
   <sql id="Base_Column_List" >
     stu_id, exp_id, score
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.nanwulife.pojo.ScoreKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.nanwulife.pojo.Score" >
     select 
     <include refid="Base_Column_List" />
     from score
     where stu_id = #{stuId,jdbcType=INTEGER}
       and exp_id = #{expId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.nanwulife.pojo.ScoreKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.nanwulife.pojo.Score" >
     delete from score
     where stu_id = #{stuId,jdbcType=INTEGER}
       and exp_id = #{expId,jdbcType=INTEGER}

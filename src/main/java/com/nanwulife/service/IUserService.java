@@ -11,6 +11,6 @@ import com.nanwulife.pojo.User;
  */
 public interface IUserService {
 
-    public ServerResponse<User> register(String username, String password);
+    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass);
 
 }

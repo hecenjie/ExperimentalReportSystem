@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,11 +37,13 @@ public class UserController {
      * @param session
      * @return
      */
-    public ServerResponse<User> register(String username, String password, String passwordCheck, HttpSession session){
+    @RequestMapping(value = "register.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<User> register(Integer username, String password, String passwordCheck, Integer majorId, Integer stuClass, HttpSession session){
         if(!StringUtils.equals(password,passwordCheck)){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
         }
-        return iUserService.register(username, password);
+        return iUserService.register(username, password, majorId, stuClass);
     }
 
 }

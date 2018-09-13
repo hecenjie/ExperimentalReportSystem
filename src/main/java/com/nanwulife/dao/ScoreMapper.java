@@ -1,16 +1,15 @@
 package com.nanwulife.dao;
 
 import com.nanwulife.pojo.Score;
-import com.nanwulife.pojo.ScoreKey;
 
 public interface ScoreMapper {
-    int deleteByPrimaryKey(ScoreKey key);
+    int deleteByPrimaryKey(Score key);
 
     int insert(Score record);
 
     int insertSelective(Score record);
 
-    Score selectByPrimaryKey(ScoreKey key);
+    Score selectByPrimaryKey(Score key);
 
     int updateByPrimaryKeySelective(Score record);
 

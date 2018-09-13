@@ -7,7 +7,7 @@
       <arg column="stu_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="stu_class" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="password" javaType="java.lang.String" jdbcType="CHAR" />
-      <arg column="role" javaType="java.lang.Short" jdbcType="Integer" />
+      <arg column="role" javaType="java.lang.Short" jdbcType="INTEGER" />
       <arg column="major_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
@@ -105,4 +105,11 @@
       major_id = #{majorId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByUsername" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    count(*)
+    from user
+    where stu_num = #{username,jdbcType=INTEGER}
+  </select>
 </mapper>
