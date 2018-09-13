@@ -41,6 +41,8 @@ public class UserController {
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> register(Integer username, String password, String passwordCheck, Integer majorId, Integer stuClass, HttpSession session){
+        if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null)
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         if(!StringUtils.equals(password,passwordCheck)){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
         }
