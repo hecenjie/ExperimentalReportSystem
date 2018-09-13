@@ -1,3 +1,7 @@
+$(function () {
+    $("#major").append()
+}
+
 function register() {
     $.ajax({
         type:"post",

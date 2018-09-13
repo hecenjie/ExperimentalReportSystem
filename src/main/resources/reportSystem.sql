@@ -19,6 +19,17 @@ CREATE TABLE `major`(
     `name` varchar(20) NOT NULL COMMENT '专业名',
      PRIMARY KEY (`id`)
 );
+insert into major(name) values ('农机');
+insert into major(name) values ('车辆');
+insert into major(name) values ('机制');
+insert into major(name) values ('材控');
+insert into major(name) values ('工设');
+insert into major(name) values ('电气');
+insert into major(name) values ('自动');
+insert into major(name) values ('信息');
+insert into major(name) values ('工管');
+insert into major(name) values ('工程');
+insert into major(name) values ('物流');
 
 CREATE TABLE `experiment`(
 	`id` int(11) NOT NULL AUTO_INCREMENT,
