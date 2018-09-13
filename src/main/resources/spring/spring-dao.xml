@@ -58,7 +58,6 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
         <!-- 给出需要扫描Dao接口包 -->
         <property name="basePackage" value="com.nanwulife.dao" />
-
     </bean>
 
 </beans>
