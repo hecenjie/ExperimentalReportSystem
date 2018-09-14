@@ -35,7 +35,7 @@ function register() {
             } else{
                 if(res.status === 4){
                     alert("两次密码输入不正确")
-                } else if(res.status === 6){
+                } else if(res.status === 7){
                     alert("该用户已存在")
                 } else if(res.status === 3){
                     alert("注册信息格式有误")

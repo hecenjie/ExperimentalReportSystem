@@ -46,7 +46,12 @@ public class UserController {
         if(!StringUtils.equals(password,passwordCheck)){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
         }
-        return iUserService.register(username, password, majorId, stuClass);
+        ServerResponse response =  iUserService.register(username, password, majorId, stuClass);
+        if(response.isSuccess()){
+            session.setAttribute(Const.CURRENT_USER, response.getData());
+            session.setMaxInactiveInterval(60 * 60 * 24);   //会话时间为24小时
+        }
+        return response;
     }
 
 
@@ -70,5 +75,18 @@ public class UserController {
         }
         return response;
     }
+
+    /**
+     * 根据session判断用户是否登陆
+     * @return
+     */
+    //TODO: 待测试
+    public ServerResponse isLogin(HttpSession session){
+        if(session.getAttribute(Const.CURRENT_USER) == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NOT_LOGIN.getCode(), Const.ResponseCode.NOT_LOGIN.getDesc());
+        }
+        return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.LOGIN_ALREADY.getCode(), Const.ResponseCode.LOGIN_ALREADY.getDesc());
+    }
+
 
 }
