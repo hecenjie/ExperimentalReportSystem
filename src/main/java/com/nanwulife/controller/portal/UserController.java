@@ -1,4 +1,4 @@
-package com.nanwulife.controller;
+package com.nanwulife.controller.portal;
 
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;

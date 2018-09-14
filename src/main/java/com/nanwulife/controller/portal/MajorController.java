@@ -1,8 +1,7 @@
-package com.nanwulife.controller;
+package com.nanwulife.controller.portal;
 
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.pojo.Major;
-import com.nanwulife.pojo.User;
 import com.nanwulife.service.IMajorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
