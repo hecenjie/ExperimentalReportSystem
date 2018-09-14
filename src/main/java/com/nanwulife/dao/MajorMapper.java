@@ -17,5 +17,5 @@ public interface MajorMapper {
 
     int updateByPrimaryKey(Major record);
 
-    List<Major> selectAllMajor();
+    List<Major> selectAllMajors();
 }

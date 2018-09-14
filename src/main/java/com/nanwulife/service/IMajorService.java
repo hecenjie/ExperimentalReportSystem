@@ -3,7 +3,8 @@ package com.nanwulife.service;
 import com.nanwulife.pojo.Major;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IMajorService {
-    public ArrayList<Major> getMajors();
+    public List<Major> getAllMajors();
 }
