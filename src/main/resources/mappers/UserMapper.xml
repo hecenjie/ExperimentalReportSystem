@@ -112,4 +112,11 @@
     from user
     where stu_num = #{username,jdbcType=INTEGER}
   </select>
+
+  <select id="checkByUsername" parameterType="java.lang.Integer" resultType="com.nanwulife.pojo.User">
+    select
+    *
+    from user
+    where stu_num = #{username,jdbcType=INTEGER}
+  </select>
 </mapper>
