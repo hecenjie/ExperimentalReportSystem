@@ -1,6 +1,20 @@
 $(function () {
-    $("#major").append()
-}
+    $.ajax({
+        type:"get",
+        url:"http://127.0.0.1/major/get_all_majors.do",
+        dataType:"json",
+        success:function(res){
+            if(res.status === 0){
+                $.each(res.data, function (idx, val) {
+                    alert(val.id)
+                    alert(val.name)
+                })
+            }
+        }, error:function() {
+            alert("向服务器请求数据失败")
+        }
+    })
+})
 
 function register() {
     $.ajax({
