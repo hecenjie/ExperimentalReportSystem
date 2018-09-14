@@ -6,8 +6,8 @@ $(function () {
         success:function(res){
             if(res.status === 0){
                 $.each(res.data, function (idx, val) {
-                    alert(val.id)
-                    alert(val.name)
+                    str = "<option value='"+val.id+"'>"+val.name+"</option>"
+                    $("#major").append(str)
                 })
             }
         }, error:function() {
