@@ -62,9 +62,9 @@ public class UserController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "login_pwd.do", method = RequestMethod.POST)
+    @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> login (@RequestParam("username") String  username, @RequestParam("password") String password, HttpSession session){
+    public ServerResponse<User> login(@RequestParam("username") String  username, @RequestParam("password") String password, HttpSession session){
         if(session.getAttribute(Const.CURRENT_USER) != null){
             return ServerResponse.createByErrorMessage("用户已登陆，请勿重复登陆");
         }
@@ -73,6 +73,7 @@ public class UserController {
             session.setAttribute(Const.CURRENT_USER, response.getData());
             session.setMaxInactiveInterval(60 * 60 * 24);   //会话时间为24小时
         }
+        System.out.println(response.getStatus() + response.getMsg());
         return response;
     }
 

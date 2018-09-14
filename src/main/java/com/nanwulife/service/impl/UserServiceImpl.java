@@ -15,7 +15,7 @@ import org.springframework.util.DigestUtils;
 /**
  * @Project: ExperimentalReportSystem
  * @Description: 用户模块Service层实现
- * @Author: Cenjie
+ * @Author: Cenjie Creams
  * @Date: Created in 2018/9/13
  */
 
@@ -53,7 +53,7 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户名不存在");
         }
         if(!password.equals(DigestUtils.md5DigestAsHex(usernameUser.getPassword().getBytes()))){
-            return ServerResponse.createByErrorMessage("密码错误");
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_ERROR.getCode(), Const.ResponseCode.PASSWORD_ERROR.getDesc());
         }
         usernameUser.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
         return ServerResponse.createBySuccess("登陆成功", usernameUser);

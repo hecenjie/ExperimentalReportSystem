@@ -46,7 +46,8 @@ public class Const {
         INSUFFICIENT_PERMISSION(8, "INSUFFICIENT_PERMISSION"),       //用户权限不足
         EXP_OPEN(9, "EXP_OPEN"),                            //实验开放中
         EXP_CLOSE(10, "EXP_CLOSE"),                         //实验关闭中
-        EXP_NOT_EXITS(11, "EXP_NOT_EXITS");                 //实验不存在
+        EXP_NOT_EXITS(11, "EXP_NOT_EXITS"),                 //实验不存在
+        PASSWORD_ERROR(12, "PASSWORD_ERROR");
 
         private final int code;
         private final String desc;
