@@ -64,7 +64,7 @@ public class UserController {
      */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> login(@RequestParam("username") String  username, @RequestParam("password") String password, HttpSession session){
+    public ServerResponse<User> login(@RequestParam("username") Integer  username, @RequestParam("password") String password, HttpSession session){
         if(session.getAttribute(Const.CURRENT_USER) != null){
             return ServerResponse.createByErrorMessage("用户已登陆，请勿重复登陆");
         }

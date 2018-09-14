@@ -46,7 +46,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.USERNAME_REPEAT.getCode(), Const.ResponseCode.USERNAME_REPEAT.getDesc());
     }
     
-    public ServerResponse<User> login(String username, String password) {
+    public ServerResponse<User> login(Integer username, String password) {
         User usernameUser = userMapper.checkByUsername(username);
         //若账号不存在 返回错误
         if(usernameUser == null){

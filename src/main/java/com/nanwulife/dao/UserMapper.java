@@ -17,6 +17,6 @@ public interface UserMapper {
 
     int selectByUsername(Integer username);
 
-    User checkByUsername (String username);
+    User checkByUsername (Integer username);
 
 }
