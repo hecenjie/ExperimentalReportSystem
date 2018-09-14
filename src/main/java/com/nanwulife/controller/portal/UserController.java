@@ -82,6 +82,8 @@ public class UserController {
      * @return
      */
     //TODO: 待测试
+    @RequestMapping(value = "isLogin.do", method = RequestMethod.GET)
+    @ResponseBody
     public ServerResponse isLogin(HttpSession session){
         if(session.getAttribute(Const.CURRENT_USER) == null){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NOT_LOGIN.getCode(), Const.ResponseCode.NOT_LOGIN.getDesc());
