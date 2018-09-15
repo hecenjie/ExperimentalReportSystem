@@ -38,27 +38,27 @@ public class PhotoeletricExperiment {
     
     public int getRank(){
         if (choice_1.equals("A"))
-            rank += 1;
+            rank += 2;
         if (choice_2.equals("C"))
-            rank += 1;
+            rank += 2;
         if (choice_3.equals("A"))
-            rank += 1;
+            rank += 2;
         if (choice_4.equals("B"))
-            rank += 1;
+            rank += 3;
         if (choice_5.equals("A"))
-            rank += 1;
+            rank += 3;
         if (choice_6.equals("B"))
-            rank += 1;
+            rank += 3;
         if (choice_7.equals("B"))
-            rank += 1;
+            rank += 3;
         if (choice_8.equals("B"))
-            rank += 1;
+            rank += 3;
         if (choice_9.equals("C"))
-            rank += 1;
+            rank += 3;
         if (choice_10.equals("A"))
-            rank += 1;
+            rank += 3;
         if (choice_11.equals("C"))
-            rank += 1;
+            rank += 3;
         if (blank_1 >= 0 && blank_1 <= 0.05)
             rank += 45;
         else if (blank_1 > 0.05 && blank_1 <= 0.10)
