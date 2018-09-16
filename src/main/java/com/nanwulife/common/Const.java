@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * @Project: PortalWeb
  * @Description: 常量
- * @Author: Cenjie
+ * @Author: Cenjie Creams
  * @Date: Created in 2018/8/11
  */
 public class Const {
@@ -47,7 +47,7 @@ public class Const {
         EXP_OPEN(9, "EXP_OPEN"),                            //实验开放中
         EXP_CLOSE(10, "EXP_CLOSE"),                         //实验关闭中
         EXP_NOT_EXITS(11, "EXP_NOT_EXITS"),                 //实验不存在
-        PASSWORD_ERROR(12, "PASSWORD_ERROR");
+        PASSWORD_ERROR(12, "PASSWORD_ERROR");               //密码错误
 
         private final int code;
         private final String desc;
