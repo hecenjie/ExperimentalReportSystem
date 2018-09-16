@@ -1,5 +1,11 @@
 package com.nanwulife.experimentRank;
 
+/**
+ * @Project: ExperimentalReportSystem
+ * @Description: 光电效应实验评分模块
+ * @Author: Creams
+ * @Date: Created in 2018/9/15
+ */
 public class PhotoeletricExperiment {
     //choice_x 选择题_序号  blank_x 填空题_序号
     private String choice_1;
@@ -70,6 +76,7 @@ public class PhotoeletricExperiment {
         return rank;
     }
 
+    
     public static void main(String[] args) {
         PhotoeletricExperiment photoeletricExperiment = new PhotoeletricExperiment("A", "A", "B", "C", "A", "B", "B", "B", "A", "A", "B", 0.5);
         System.out.println(photoeletricExperiment.getRank());
