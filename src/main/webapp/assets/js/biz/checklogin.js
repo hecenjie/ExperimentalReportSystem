@@ -1,7 +1,14 @@
 function login(){
+    var username = $("#username").val();
+    var passwprd = $("#password").val()
+    if(username == "" || passwprd == ""){
+        $("#msg").text("请输入账号或密码");
+        return;
+    }
+    $("#msg").text("");
     $.ajax({
-        type:"post",
-        url:"http://127.0.0.1/user/login.do",
+        type:"POST",
+        url:"/user/login.do",
         data:{
             "username": $("#username").val(),
             "password": $("#password").val()
@@ -9,7 +16,6 @@ function login(){
         dataType:"json",
         success:function (result) {
             if(result.status === 0){
-                alert("成功");
                 $("#msg").text("");
                 location.href="index.html";
             }

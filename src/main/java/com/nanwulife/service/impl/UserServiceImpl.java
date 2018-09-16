@@ -52,7 +52,10 @@ public class UserServiceImpl implements IUserService {
         if(usernameUser == null){
             return ServerResponse.createByErrorMessage("用户名不存在");
         }
-        if(!password.equals(DigestUtils.md5DigestAsHex(usernameUser.getPassword().getBytes()))){
+        System.out.println(usernameUser.getPassword());
+        System.out.println(DigestUtils.md5DigestAsHex(password.getBytes()));
+        if(!usernameUser.getPassword().equals(DigestUtils.md5DigestAsHex(password.getBytes()))){
+            System.out.println(usernameUser.getPassword().equals(DigestUtils.md5DigestAsHex(password.getBytes())));
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_ERROR.getCode(), Const.ResponseCode.PASSWORD_ERROR.getDesc());
         }
         usernameUser.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
