@@ -92,4 +92,15 @@ public class UserController {
     }
 
 
+    /**
+     * 退出登陆
+     * @return
+     */
+    @RequestMapping(value = "logout.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse logout(HttpSession session){
+        session.setAttribute(Const.CURRENT_USER, null);
+        return ServerResponse.createBySuccess();
+    }
+
 }

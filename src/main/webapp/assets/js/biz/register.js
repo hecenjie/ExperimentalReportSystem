@@ -1,7 +1,7 @@
 $(function () {
     $.ajax({
         type:"get",
-        url:"http://0.0.0.0/major/get_all_majors.do",
+        url:"/major/get_all_majors.do",
         dataType:"json",
         success:function(res){
             if(res.status === 0){
@@ -19,7 +19,7 @@ $(function () {
 function register() {
     $.ajax({
         type:"post",
-        url:"http://0.0.0.0/user/register.do",
+        url:"/user/register.do",
         dataType:"json",
         data: {
             "username": $("#form-username").val(),
