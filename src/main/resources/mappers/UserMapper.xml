@@ -9,10 +9,11 @@
       <arg column="password" javaType="java.lang.String" jdbcType="CHAR" />
       <arg column="role" javaType="java.lang.Short" jdbcType="INTEGER" />
       <arg column="major_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="stu_name" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    id, stu_num, stu_class, password, role, major_id
+    id, stu_num, stu_class, password, role, major_id, stu_name
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -26,10 +27,10 @@
   </delete>
   <insert id="insert" parameterType="com.nanwulife.pojo.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (id, stu_num, stu_class, 
-      password, role, major_id
+      password, role, major_id, stu_name
       )
     values (#{id,jdbcType=INTEGER}, #{stuNum,jdbcType=INTEGER}, #{stuClass,jdbcType=INTEGER}, 
-      #{password,jdbcType=CHAR}, #{role,jdbcType=SMALLINT}, #{majorId,jdbcType=INTEGER}
+      #{password,jdbcType=CHAR}, #{role,jdbcType=SMALLINT}, #{majorId,jdbcType=INTEGER}, #{stuName,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.nanwulife.pojo.User" useGeneratedKeys="true" keyProperty="id">
@@ -53,6 +54,9 @@
       <if test="majorId != null">
         major_id,
       </if>
+      <if test="stuName != null">
+        stu_name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -72,6 +76,9 @@
       </if>
       <if test="majorId != null">
         #{majorId,jdbcType=INTEGER},
+      </if>
+      <if test="stuName != null">
+        #{stuName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -93,6 +100,9 @@
       <if test="majorId != null">
         major_id = #{majorId,jdbcType=INTEGER},
       </if>
+      <if test="stuName != null">
+        stu_name = #{stuName,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -102,7 +112,8 @@
       stu_class = #{stuClass,jdbcType=INTEGER},
       password = #{password,jdbcType=CHAR},
       role = #{role,jdbcType=SMALLINT},
-      major_id = #{majorId,jdbcType=INTEGER}
+      major_id = #{majorId,jdbcType=INTEGER},
+      stu_name = #{stuName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 

@@ -1,33 +1,24 @@
-package com.nanwulife.pojo;
+package com.nanwulife.vo;
 
-public class User {
+/**
+ * @Project: ExperimentalReportSystem
+ * @Description: 学生基本信息Vo
+ * @Author: Cenjie
+ * @Date: Created in 2018/9/16
+ */
+public class StuBasicInfoVo {
+
     private Integer id;
 
     private Integer stuNum;
 
     private Integer stuClass;
 
-    private String password;
-
-    private Integer role;
-
     private Integer majorId;
 
+    private String majorName;
+
     private String stuName;
-
-    public User(Integer id, Integer stuNum, Integer stuClass, String password, Integer role, Integer majorId, String stuName) {
-        this.id = id;
-        this.stuNum = stuNum;
-        this.stuClass = stuClass;
-        this.password = password;
-        this.role = role;
-        this.majorId = majorId;
-        this.stuName = stuName;
-    }
-
-    public User() {
-        super();
-    }
 
     public Integer getId() {
         return id;
@@ -53,28 +44,20 @@ public class User {
         this.stuClass = stuClass;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Integer getRole() {
-        return role;
-    }
-
-    public void setRole(Integer role) {
-        this.role = role;
-    }
-
     public Integer getMajorId() {
         return majorId;
     }
 
     public void setMajorId(Integer majorId) {
         this.majorId = majorId;
+    }
+
+    public String getMajorName() {
+        return majorName;
+    }
+
+    public void setMajorName(String majorName) {
+        this.majorName = majorName;
     }
 
     public String getStuName() {

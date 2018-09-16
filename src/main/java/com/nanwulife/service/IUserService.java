@@ -2,6 +2,7 @@ package com.nanwulife.service;
 
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.pojo.User;
+import com.nanwulife.vo.StuBasicInfoVo;
 
 /**
  * @Project: ExperimentalReportSystem
@@ -11,8 +12,10 @@ import com.nanwulife.pojo.User;
  */
 public interface IUserService {
 
-    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass);
+    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass, String StuName);
 
     public ServerResponse<User> login(Integer username, String password);
+
+    public ServerResponse<StuBasicInfoVo> getStuBasicInfo(User user);
 
 }

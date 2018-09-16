@@ -3,9 +3,12 @@ package com.nanwulife.service.impl;
 import com.google.common.cache.CacheBuilderSpec;
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
+import com.nanwulife.dao.MajorMapper;
 import com.nanwulife.dao.UserMapper;
+import com.nanwulife.pojo.Major;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IUserService;
+import com.nanwulife.vo.StuBasicInfoVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +29,10 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private MajorMapper majorMapper;
 
-    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass){
+    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass, String stuName){
         //判断用户名是否存在
         int isRepeat = userMapper.selectByUsername(username);
         if(isRepeat == 0){
@@ -37,6 +42,7 @@ public class UserServiceImpl implements IUserService {
             user.setStuNum(username);
             user.setMajorId(majorId);
             user.setStuClass(stuClass);
+            user.setStuName(stuName);
             int result = userMapper.insert(user);
             if(result == 0){
                 return ServerResponse.createByErrorMessage("注册失败");
@@ -58,6 +64,29 @@ public class UserServiceImpl implements IUserService {
         }
         usernameUser.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
         return ServerResponse.createBySuccess("登陆成功", usernameUser);
+    }
+
+    public ServerResponse<StuBasicInfoVo> getStuBasicInfo(User user){
+        StuBasicInfoVo stuBasicInfoVo = assembleStuBasicInfoVo(user);
+        if(stuBasicInfoVo == null)
+            return ServerResponse.createByError();
+        return ServerResponse.createBySuccess(stuBasicInfoVo);
+    }
+
+    private StuBasicInfoVo assembleStuBasicInfoVo(User user){
+        StuBasicInfoVo stuBasicInfoVo = new StuBasicInfoVo();
+        stuBasicInfoVo.setId(user.getId());
+        stuBasicInfoVo.setStuClass(user.getStuClass());
+        stuBasicInfoVo.setMajorId(user.getMajorId());
+        stuBasicInfoVo.setStuName(user.getStuName());
+        //如果没有该专业，返回null
+        Major major = majorMapper.selectByPrimaryKey(user.getMajorId());
+        if(major == null)
+            return null;
+        stuBasicInfoVo.setMajorName(major.getName());
+        stuBasicInfoVo.setStuNum(user.getStuNum());
+
+        return stuBasicInfoVo;
     }
 
 }

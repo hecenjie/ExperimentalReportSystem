@@ -4,6 +4,7 @@ import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IUserService;
+import com.nanwulife.vo.StuBasicInfoVo;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,13 +41,13 @@ public class UserController {
      */
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> register(Integer username, String password, String passwordCheck, Integer majorId, Integer stuClass, HttpSession session){
-        if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null)
+    public ServerResponse<User> register(Integer username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
+        if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null)
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         if(!StringUtils.equals(password,passwordCheck)){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
         }
-        ServerResponse response =  iUserService.register(username, password, majorId, stuClass);
+        ServerResponse response =  iUserService.register(username, password, majorId, stuClass, stuName);
         if(response.isSuccess()){
             session.setAttribute(Const.CURRENT_USER, response.getData());
             session.setMaxInactiveInterval(60 * 60 * 24);   //会话时间为24小时
@@ -81,7 +82,6 @@ public class UserController {
      * 根据session判断用户是否登陆
      * @return
      */
-    //TODO: 待测试
     @RequestMapping(value = "isLogin.do", method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse isLogin(HttpSession session){
@@ -101,6 +101,24 @@ public class UserController {
     public ServerResponse logout(HttpSession session){
         session.setAttribute(Const.CURRENT_USER, null);
         return ServerResponse.createBySuccess();
+    }
+
+    /**
+     * 通过Session获取学生基本信息
+     * @return
+     */
+    @RequestMapping(value = "get_stu_basic_info.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<StuBasicInfoVo> getStuBasicInfo(HttpSession session){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        //如果是管理员，将不可通过此接口得到学生基本信息，因为管理员没有班级专业等信息
+        if(user.getRole() == Const.Role.ROLE_ADMIN){
+            return ServerResponse.createByError();
+        }
+        return iUserService.getStuBasicInfo(user);
     }
 
 }

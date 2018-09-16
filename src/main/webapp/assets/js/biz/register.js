@@ -27,6 +27,7 @@ function register() {
             "passwordCheck": $("#form-passwordCheck").val(),
             "majorId": $("#major").find("option:selected").val(),
             "stuClass": $("#form-class").val(),
+            "stuName": $("#form-name").val(),
         },
         success:function(res){
             if(res.status === 0){
