@@ -18,7 +18,10 @@ function login(){
         success:function (result) {
             if(result.status === 0){
                 $("#msg").text("");
-                location.href="index.html";
+                if(result.msg === "TEACHER")
+                    location.href="indexex.html";
+                else
+                    location.href="index.html";
             }
             else{
                 $("#msg").text("账号或密码错误");

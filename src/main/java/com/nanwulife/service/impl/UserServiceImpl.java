@@ -59,11 +59,15 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户名不存在");
         }
         if(!usernameUser.getPassword().equals(DigestUtils.md5DigestAsHex(password.getBytes()))){
-            System.out.println(usernameUser.getPassword().equals(DigestUtils.md5DigestAsHex(password.getBytes())));
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_ERROR.getCode(), Const.ResponseCode.PASSWORD_ERROR.getDesc());
         }
         usernameUser.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
-        return ServerResponse.createBySuccess("登陆成功", usernameUser);
+        if (usernameUser.getRole() == 1){
+            return ServerResponse.createBySuccess(Const.ResponseCode.TEACHER.getDesc(), usernameUser);//管理员
+        }
+        else {
+            return ServerResponse.createBySuccess(Const.ResponseCode.STUDENT.getDesc(), usernameUser);//学生
+        }
     }
 
     public ServerResponse<StuBasicInfoVo> getStuBasicInfo(User user){

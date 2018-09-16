@@ -81,7 +81,7 @@ public class ServerResponse<T> implements Serializable {
     public static <T> ServerResponse<T> createBySuccess(String msg, T data){
         return new ServerResponse<T>(Const.ResponseCode.SUCCESS.getCode(), msg, data);
     }
-
+    
     //失败：返回默认失败响应码
     public static <T> ServerResponse<T> createByError(){
         return new ServerResponse<T>(Const.ResponseCode.ERROR.getCode());

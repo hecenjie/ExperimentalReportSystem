@@ -1070,3 +1070,15 @@
 
 </body>
 </html>
+<script type="text/javascript" src="../../assets/js/html2canvas.js"></script>
+<script type="text/javascript" src="../../assets/js/jspdf.debug.js"></script>
+<script type="text/javascript">
+    var pdf = new jsPDF('o', 'pt', 'a4');
+    pdf.internal.scaleFactor = 1;
+    var option = {
+        pagesplit: true
+    };
+    pdf.addHTML(document.body, option, function () {
+        pdf.save('web1111.pdf');
+    });
+</script>

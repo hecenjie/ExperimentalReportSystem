@@ -74,7 +74,6 @@ public class UserController {
             session.setAttribute(Const.CURRENT_USER, response.getData());
             session.setMaxInactiveInterval(60 * 60 * 24);   //会话时间为24小时
         }
-        System.out.println(response.getStatus() + response.getMsg());
         return response;
     }
 

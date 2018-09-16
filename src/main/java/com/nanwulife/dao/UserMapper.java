@@ -2,7 +2,10 @@ package com.nanwulife.dao;
 
 import com.nanwulife.pojo.User;
 
+import java.util.List;
+
 public interface UserMapper {
+    
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
@@ -18,5 +21,7 @@ public interface UserMapper {
     int selectByUsername(Integer username);
 
     User checkByUsername (Integer username);
+    
+    List<User> SelectByMajorAndClass(Integer major);
 
 }
