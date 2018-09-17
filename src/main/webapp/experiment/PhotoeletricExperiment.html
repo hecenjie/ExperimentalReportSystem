@@ -196,33 +196,35 @@
                     <p style="text-align:center; "><span style="font-size: 5px;">截止电压\(U_0( V)\)</span></p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index5" value="0"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index4" value="0"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index3" value="0"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index2" value="0"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index1" value="0"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
             </tr>
         </table>
         <p><span style="font-size: 5px;">绘出\(U_0-v\)关系曲线,计算斜率\(k= \)<span id=""></span></span></p>
+        <div style="width:70%"><canvas id="chart1"></canvas></div>
+        <button onclick="generateChart1()">生成曲线</button>
         <p><span style="font-size: 5px;">普朗克常数\(h=ek=\)<span id=""></span> 相对误差\(E=\frac {h-h_0}{h_0}= \)<span
                 id=""></span></span></p>
 
@@ -893,7 +895,11 @@
 
     </div>
 </div>
+
+
+<script src="../assets/js/jquery-1.11.1.min.js"></script>
+<script src="../assets/js/Chart.js" ></script>
+<script src="../assets/js/biz/photoeletric.js" ></script>
 <button>提交</button>
 </body>
 </html>
-<script src="../assets/js/jquery-1.11.1.min.js"></script>
