@@ -1,20 +1,20 @@
 function generateChart1() {
     // window.chart.update();
 
-    var pic1BeginY = parseInt($("#chart1_index1").val());
+    var pic1BeginY = parseFloat($("#chart1_index1").val());
     // var pic1BeginY = 0.47;
     console.info('pic1BeginY = '+pic1BeginY);
-    // var pic1IndexY2 = $("#chart1_index2").val();
-    var pic1IndexY2 = 0.58;
+    var pic1IndexY2 = parseFloat($("#chart1_index2").val());
+    // var pic1IndexY2 = 0.58;
     console.info('pic1IndexY2 = '+pic1IndexY2);
-    // var pic1IndexY3 = $("#chart1_index3").val();
-    var pic1IndexY3 = 1.15;
+    var pic1IndexY3 = parseFloat($("#chart1_index3").val());
+    // var pic1IndexY3 = 1.15;
     console.info('pic1IndexY3 = '+pic1IndexY3);
-    // var pic1IndexY4 = $("#chart1_index4").val();
-    var pic1IndexY4 = 1.412;
+    var pic1IndexY4 = parseFloat($("#chart1_index4").val());
+    // var pic1IndexY4 = 1.412;
     console.info('pic1IndexY4 = '+pic1IndexY4);
-    // var pic1EndY = $("#chart1_index5").val();
-    var pic1EndY = 1.723;
+    var pic1EndY = parseFloat($("#chart1_index5").val());
+    // var pic1EndY = 1.723;
     console.info('pic1EndY = '+pic1EndY);
     var res = fitting(pic1BeginY, pic1IndexY2, pic1IndexY3, pic1IndexY4, pic1EndY);
     var k = res[0];
@@ -114,4 +114,39 @@ function fitting(u1, u2, u3, u4, u5){
     var b = u1 - k * v1;
 
     return [k, b];
+}
+
+function uploadChart(chart){
+    // 获取Canvas的编码。
+    var imgData = document.getElementById(chart).toDataURL("image/jpeg");
+}
+
+
+
+
+function submit() {
+    var selectval = new Array();
+    var num;
+    for(var i = 1; i <= 11; i++){
+        if(i <= 9)
+            num = "0" + i + "";
+        else
+            num = i;
+        selectval[i - 1] = $("#choice_" + num).val();
+    }
+
+    $.ajax({
+        type:"POST",
+        url:"/exp/submit_Exp.do",
+        data:{
+            selectval:selectval
+        },
+        dataType:"json",
+        success:function (result) {
+            alert("提交成功");
+        },
+        error:function (result) {
+            alert("向服务器请求数据失败" + result);
+        }
+    });
 }

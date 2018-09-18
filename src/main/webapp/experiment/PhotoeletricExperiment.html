@@ -226,6 +226,8 @@
         <div style="width:70%"><canvas id="chart1"></canvas></div>
         <button onclick="generateChart1()">生成曲线</button>
         <p><span style="font-size: 5px;">普朗克常数\(h=ek=\)</span> 相对误差\(E=\frac {h-h_0}{h_0}= \)<span
+        <button onclick="uploadChart(chart1)">导出图片</button>
+        <p><span style="font-size: 5px;">普朗克常数\(h=ek=\)<span id=""></span> 相对误差\(E=\frac {h-h_0}{h_0}= \)<span
                 id=""></span></span></p>
 
         <p><span style="font-size: 5px;">2、(25分)测量不同光强下光电管的伏安特性（滤光片波长为546.0nm）</span></p>
@@ -895,11 +897,11 @@
 
     </div>
 </div>
-
+<button>提交</button>
 
 <script src="../assets/js/jquery-1.11.1.min.js"></script>
 <script src="../assets/js/Chart.js" ></script>
 <script src="../assets/js/biz/photoeletric.js" ></script>
-<button>提交</button>
+
 </body>
 </html>
