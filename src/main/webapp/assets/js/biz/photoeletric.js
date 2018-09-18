@@ -119,6 +119,21 @@ function fitting(u1, u2, u3, u4, u5){
 function uploadChart(chart){
     // 获取Canvas的编码。
     var imgData = document.getElementById(chart).toDataURL("image/jpeg");
+
+    // 上传到后台。
+    $.ajax({
+        type: "post",
+        url:"/uploadImg",
+        data: {image : imgData},
+        async: true,
+        success: function (res) {
+            alert("另存图片成功！");
+        },
+        error: function() {
+            alert("向服务器请求数据失败")
+        }
+
+    })
 }
 
 
