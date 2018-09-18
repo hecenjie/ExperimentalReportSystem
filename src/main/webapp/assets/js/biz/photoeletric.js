@@ -141,6 +141,10 @@ function uploadChart(chart){
 
 function submit() {
     var selectval = new Array();
+    var chart1 = new Array();
+    var table2 = new Array();
+    var table3 = new Array();
+    var table4 = new Array();
     var num;
     for(var i = 1; i <= 11; i++){
         if(i <= 9)
@@ -150,11 +154,45 @@ function submit() {
         selectval[i - 1] = $("#choice_" + num).val();
     }
 
+    for(var i = 1; i <= 5; i++){
+        chart1[i - 1] = $("#chart1_index" + i).val();
+        alert(chart1[i-1])
+    }
+
+    for(var i = 1; i <= 22; i++){
+        if(i <= 9)
+            num = "0" + i + "";
+        else
+            num = i;
+        table2[i - 1] = $("#table2_" + num).val();
+    }
+
+    for(var i = 1; i <= 22; i++){
+        if(i <= 9)
+            num = "0" + i + "";
+        else
+            num = i;
+        table3[i - 1] = $("#table3_" + num).val();
+    }
+
+    for(var i = 1; i <= 22; i++){
+        if(i <= 9)
+            num = "0" + i + "";
+        else
+            num = i;
+        table4[i - 1] = $("#table4_" + num).val();
+    }
+    
+    
     $.ajax({
         type:"POST",
-        url:"/exp/submit_Exp.do",
+        url:"/sub/Exp_01.do",
         data:{
-            selectval:selectval
+            selectval:selectval,
+            chart1:chart1,
+            table2:table2,
+            table3:table3,
+            table4:table4
         },
         dataType:"json",
         success:function (result) {

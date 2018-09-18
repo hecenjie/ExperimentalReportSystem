@@ -14,4 +14,5 @@ public interface ScoreMapper {
     int updateByPrimaryKeySelective(Score record);
 
     int updateByPrimaryKey(Score record);
+    
 }

@@ -41,7 +41,7 @@ public class PhotoeletricExperiment {
         this.choice_11 = choice_11;
         this.blank_1 = blank_1;
     }
-    
+
     public int getRank(){
         if (choice_1.equals("A"))
             rank += 2;

@@ -26,7 +26,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import com.deepoove.poi.XWPFTemplate;
 
 /**
- * @Project PhotoeletricExperiment
+ * @Project ExperimentalReportSystem
  * @Description 报告word生成模块
  * @author Creams
  * createtime 2018年09月17日
@@ -246,11 +246,11 @@ public class WordToNewWordUtil {
         params.put("choice_11", "B");//
         
         
-        params.put("blank_01_01", "1.326");//
-        params.put("blank_01_02", "2.534");//
-        params.put("blank_01_03", "2524");//
-        params.put("blank_01_04", "252");//
-        params.put("blank_01_05", "2545");//
+        params.put("blank_01_01", "5");//
+        params.put("blank_01_02", "4");//
+        params.put("blank_01_03", "3");//
+        params.put("blank_01_04", "2");//
+        params.put("blank_01_05", "1");//
         
         
         params.put("blank_02_01", "1.326");//

@@ -3,22 +3,27 @@ package com.nanwulife.controller.portal;
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.controller.backend.ExperimentManageController;
+import com.nanwulife.experimentRank.PhotoeletricExperiment;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
+import com.nanwulife.util.WordToNewWordUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Project: ExperimentalReportSystem
  * @Description: 实验前台模块
- * @Author: Cenjie
+ * @Author: Cenjie Creams
  * @Date: Created in 2018/9/14
  */
 @Controller
@@ -48,5 +53,5 @@ public class ExperimentController {
         }
         return iExperimentService.getExpStatus(expId);
     }
-
+    
 }

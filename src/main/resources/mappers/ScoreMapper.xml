@@ -70,4 +70,5 @@
     where stu_id = #{stuId,jdbcType=INTEGER}
       and exp_id = #{expId,jdbcType=INTEGER}
   </update>
+  
 </mapper>

@@ -9,7 +9,7 @@
 </head>
 <body id="pdf_container" style="background-color: #FFFFFF">
 <!-- -->
-<div class="pdf_container">
+<div>
     <div style="text-align:center">
         <span style="font-size:20pt">光电效应和普朗克常数的测定</span>
     </div>
@@ -196,37 +196,35 @@
                     <p style="text-align:center; "><span style="font-size: 5px;">截止电压\(U_0( V)\)</span></p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index5" value="0"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index4" value="0"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index3" value="0"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index2" value="0"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:117.85pt">
-                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text" id="chart1_index1" value="0"
+                    <p style="text-align:center; "><span style="font-size: 5px;"> <input type="text"
                                                                                          style="border:0px;background:none;text-align:center;width: 100px;"></span>
                     </p>
                 </td>
             </tr>
         </table>
         <p><span style="font-size: 5px;">绘出\(U_0-v\)关系曲线,计算斜率\(k= \)</span></p>
-        <div style="width:70%"><canvas id="chart1"></canvas></div>
-        <button onclick="generateChart1()">生成曲线</button>
-        <button onclick="uploadChart(chart)">导出图片</button>
-        <p><span style="font-size: 5px;">普朗克常数\(h=ek=\) 相对误差\(E=\frac {h-h_0}{h_0}= \)</span></p>
+        <p><span style="font-size: 5px;">普朗克常数\(h=ek=\)</span> 相对误差\(E=\frac {h-h_0}{h_0}= \)<span
+                id=""></span></span></p>
 
         <p><span style="font-size: 5px;">2、(25分)测量不同光强下光电管的伏安特性（滤光片波长为546.0nm）</span></p>
         <p><span style="font-size: 5px;">1、距离\(r=40cm\)，光阑\(\Phi=4mm\)（红色曲线）</span></p>
@@ -282,58 +280,58 @@
                             style=" font-size:12pt">I</span></p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.75pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_01" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_02" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_03" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:32.3pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_04" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.98pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_05" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_06" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_07" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_08" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_09" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_10" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:33.15pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table2_11" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
             </tr>
             <tr style="height:25.7pt">
@@ -380,58 +378,58 @@
                         <span style=" font-size:12pt">I</span></p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.75pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_12" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_13" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_14" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:32.3pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_15" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.98pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_16" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_17" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_18" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_19" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_20" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_21" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:33.15pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table2_22" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
             </tr>
             <tr style="height:0pt">
@@ -503,58 +501,58 @@
                             style=" font-size:12pt">I</span></p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.75pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_01" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_02" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_03" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:32.3pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_04" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.98pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_05" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_06" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_07" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_08" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_09" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_10" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:33.15pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table3_11" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
             </tr>
             <tr style="height:25.7pt">
@@ -601,58 +599,58 @@
                         <span style=" font-size:12pt">I</span></p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.75pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_12" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_13" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_14" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:32.3pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_15" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.98pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_16" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_17" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_18" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_19" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_20" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_21" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:33.15pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table3_22" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
             </tr>
             <tr style="height:0pt">
@@ -724,58 +722,58 @@
                             style=" font-size:12pt">I</span></p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.75pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_01" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_02" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_03" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:32.3pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_04" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.98pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_05" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_06" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_07" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_08" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_09" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_10" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:33.15pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0"><span
-                            style=" font-size:12pt">
-                        <input id="table4_11" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                            style=" font-size:12pt"><input type="text"
+                                                           style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
             </tr>
             <tr style="height:25.7pt">
@@ -822,58 +820,58 @@
                         <span style=" font-size:12pt">I</span></p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.75pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_12" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_13" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_14" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:32.3pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_15" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.98pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_16" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_17" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_18" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_19" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.6pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_20" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:31.7pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_21" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
                 <td style="border-bottom-color:#00000a; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#00000a; border-left-style:solid; border-left-width:0.75pt; border-right-color:#00000a; border-right-style:solid; border-right-width:0.75pt; border-top-color:#00000a; border-top-style:solid; border-top-width:0.75pt; vertical-align:top; width:33.15pt">
                     <p style="font-size:12pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
-                        <span style=" font-size:12pt">
-                            <input id="table4_22" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
+                        <span style=" font-size:12pt"><input type="text"
+                                                             style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span>
                     </p></td>
             </tr>
             <tr style="height:0pt">
@@ -896,10 +894,6 @@
     </div>
 </div>
 <button onclick="submit()">提交</button>
-
-<script src="../assets/js/jquery-1.11.1.min.js"></script>
-<script src="../assets/js/Chart.js" ></script>
-<script src="../assets/js/biz/photoeletric.js" ></script>
-
 </body>
 </html>
+<script src="../assets/js/jquery-1.11.1.min.js"></script>

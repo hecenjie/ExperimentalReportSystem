@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * @Project: ExperimentalReportSystem
  * @Description: 实验成绩管理模块
- * @Author: Cenjie
+ * @Author: Cenjie Creams
  * @Date: Created in 2018/9/14
  */
 @Controller
@@ -25,4 +25,9 @@ public class ScoreController {
     IExperimentService iExperimentService;
 
 //    public ServerResponse<Score>
+    
+    
+    
 }
+
+
