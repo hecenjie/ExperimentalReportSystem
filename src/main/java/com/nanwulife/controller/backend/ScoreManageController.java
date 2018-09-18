@@ -1,7 +1,5 @@
 package com.nanwulife.controller.backend;
 
-import com.nanwulife.common.ServerResponse;
-import com.nanwulife.pojo.Score;
 import com.nanwulife.service.IExperimentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/manage/score")
-public class ScoreController {
+public class ScoreManageController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ScoreController.class);
+    private static final Logger logger = LoggerFactory.getLogger(ScoreManageController.class);
 
     @Autowired
     IExperimentService iExperimentService;

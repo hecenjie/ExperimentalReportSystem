@@ -1,7 +1,7 @@
 package com.nanwulife.service.impl;
 
+import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
-import com.nanwulife.controller.backend.ScoreController;
 import com.nanwulife.dao.ScoreMapper;
 import com.nanwulife.pojo.Score;
 import com.nanwulife.service.IScoreService;
@@ -24,7 +24,18 @@ public class ScoreServiceImpl implements IScoreService {
     @Autowired
     ScoreMapper scoreMapper;
 
-    
+    public ServerResponse isStuHaveScore(Integer expId, Integer userId){
+        Score score = new Score();
+        score.setStuId(userId);
+        score.setExpId(expId);
+        Score response = scoreMapper.selectByPrimaryKey(score);
+        if(response == null){
+            //分数表中无记录，用户没提交过
+            return ServerResponse.createBySuccess();
+        }
+        return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.SCORE_ALREADY_EXITS.getCode(), Const.ResponseCode.SCORE_ALREADY_EXITS.getDesc());
+    }
+
     public ServerResponse submit(Score record) {
         scoreMapper.insert(record);
         return ServerResponse.createBySuccess();

@@ -7,6 +7,7 @@ import com.nanwulife.experimentRank.PhotoeletricExperiment;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
 import com.nanwulife.util.WordToNewWordUtil;
+import com.nanwulife.service.IScoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ public class ExperimentController {
 
     @Autowired
     IExperimentService iExperimentService;
+    @Autowired
+    IScoreService iScoreService;
 
     /**
      * 获取实验开放状态
@@ -49,9 +52,40 @@ public class ExperimentController {
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
         }
         if(expId == null){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.INSUFFICIENT_PERMISSION.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
         return iExperimentService.getExpStatus(expId);
     }
-    
+
+    /**
+     * 上传图表接口
+     * @param expId
+     * @param image
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "upload_chart.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse uploadChart(Integer expId, String image, HttpSession session){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        if(expId == null || image == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        }
+        Integer expStatus = getExpStatus(expId, session).getStatus();   //实验开放状态
+        if(expStatus == Const.ResponseCode.EXP_OPEN.getCode()){
+            //如果当前实验处在开放状态，判断用户没提交后进行上传
+            if(iScoreService.isStuHaveScore(expId, user.getId()).isSuccess()){
+                return iExperimentService.uploadChart(expId, user.getId(), image);
+            }
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.SCORE_ALREADY_EXITS.getCode(), Const.ResponseCode.SCORE_ALREADY_EXITS.getDesc());
+        } else if (expStatus == Const.ResponseCode.EXP_CLOSE.getCode()){
+            //如果当前实验已关闭，则返回错误
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.EXP_CLOSE.getCode(), Const.ResponseCode.EXP_CLOSE.getDesc());
+        }
+        //上传图表失败
+        return ServerResponse.createByError();
+    }
 }
