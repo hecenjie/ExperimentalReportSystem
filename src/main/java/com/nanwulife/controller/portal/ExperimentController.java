@@ -44,7 +44,6 @@ public class ExperimentController {
      * @param session
      * @return
      */
-    //todo: 待测试
     @RequestMapping(value = "get_exp_status.do", method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse getExpStatus(Integer expId, HttpSession session){
@@ -59,14 +58,15 @@ public class ExperimentController {
 
     /**
      * 上传图表接口
-     * @param expId
-     * @param image
+     * @param expId 实验编号
+     * @param image 图片的base64码
+     * @param index 第几副图
      * @param session
      * @return
      */
     @RequestMapping(value = "upload_chart.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse uploadChart(Integer expId, String image, HttpSession session){
+    public ServerResponse uploadChart(Integer expId, String image, Integer index,  HttpSession session){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
@@ -78,7 +78,7 @@ public class ExperimentController {
         if(expStatus == Const.ResponseCode.EXP_OPEN.getCode()){
             //如果当前实验处在开放状态，判断用户没提交后进行上传
             if(iScoreService.isStuHaveScore(expId, user.getId()).isSuccess()){
-                return iExperimentService.uploadChart(expId, user.getId(), image);
+                return iExperimentService.uploadChart(expId, user.getId(), image, index);
             }
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.SCORE_ALREADY_EXITS.getCode(), Const.ResponseCode.SCORE_ALREADY_EXITS.getDesc());
         } else if (expStatus == Const.ResponseCode.EXP_CLOSE.getCode()){

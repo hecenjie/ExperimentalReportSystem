@@ -88,7 +88,7 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @return
      */
     //todo：根据图片数量存名字，根据学号保存而非id
-    public ServerResponse uploadChart(Integer expId, Integer userId, String image) {
+    public ServerResponse uploadChart(Integer expId, Integer userId, String image, Integer index) {
         String basePath;
         String chartPath;
         String path;
@@ -131,7 +131,7 @@ public class ExperimentServiceImpl implements IExperimentService {
                 }
             }
             //生成jpeg图片
-            String imgFilePath = path + "/" + expId.toString() + ".png";//新生成的图片
+            String imgFilePath = path + "/" + expId.toString() + "-" + index +  ".png";//新生成的图片
             OutputStream out = new FileOutputStream(imgFilePath);
             out.write(b);
             out.flush();

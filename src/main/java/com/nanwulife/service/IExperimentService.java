@@ -10,6 +10,6 @@ public interface IExperimentService {
 
     public ServerResponse getExpStatus(Integer expId);
 
-    public ServerResponse uploadChart(Integer expId, Integer userId, String image);
+    public ServerResponse uploadChart(Integer expId, Integer userId, String image, Integer index);
 
 }
