@@ -20,7 +20,7 @@ public class PhotoeletricExperiment {
     private String choice_10;
     private String choice_11;
     private double blank_1;
-    private int rank = 0;
+    private int rank = 25;
 
     public PhotoeletricExperiment(String choice_1, String choice_2, 
                                   String choice_3, String choice_4, 

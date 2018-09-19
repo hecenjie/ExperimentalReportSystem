@@ -14,7 +14,7 @@ $(function () {
             } else if(res.status === 2){
                 location.href = "login.html";
             } else{
-                alert("获取个人信息时错误");
+                alert("获取个人信息时错误" + res.status);
             }
         }, error:function() {
             alert("向服务器请求数据失败");
