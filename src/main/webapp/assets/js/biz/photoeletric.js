@@ -323,6 +323,7 @@ function uploadChart(chart, index){
 function submit() {
     var selectval = new Array();
     var chart1 = new Array();
+    var result = new Array();
     var table2 = new Array();
     var table3 = new Array();
     var table4 = new Array();
@@ -334,10 +335,13 @@ function submit() {
             num = i;
         selectval[i - 1] = $("#choice_" + num).val();
     }
+    
+    for(var i = 1; i <= 3; i++){
+        result[i - 1] = $("#blank_02_0" + i).val();
+    }
 
     for(var i = 1; i <= 5; i++){
         chart1[i - 1] = $("#chart1_index" + i).val();
-        alert(chart1[i-1])
     }
 
     for(var i = 1; i <= 22; i++){
@@ -371,6 +375,7 @@ function submit() {
         data:{
             selectval:selectval,
             chart1:chart1,
+            result:result,
             table2:table2,
             table3:table3,
             table4:table4
@@ -391,5 +396,5 @@ function submitAll() {
         uploadChart("chart1", 1);
         uploadChart("chart2", 2);
     }
-    // submit();
+    submit();
 }

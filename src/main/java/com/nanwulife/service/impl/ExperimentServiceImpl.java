@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Base64;
+import java.util.Map;
 
 /**
  * @Project: ExperimentalReportSystem
@@ -144,5 +145,8 @@ public class ExperimentServiceImpl implements IExperimentService {
             return ServerResponse.createByErrorMessage(ex.toString());
         }
     }
-
+    
+    public ServerResponse pushModel(Map<String, Object> params, String a){
+        return null;
+    }
 }
