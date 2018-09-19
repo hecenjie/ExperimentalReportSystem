@@ -19,7 +19,7 @@ function login(){
             if(result.status === 0){
                 $("#msg").text("");
                 if(result.msg === "TEACHER")
-                    location.href="indexex.html";
+                    location.href="manage.html";
                 else
                     location.href="index.html";
             }

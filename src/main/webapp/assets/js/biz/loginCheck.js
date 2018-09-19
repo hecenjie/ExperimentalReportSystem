@@ -1,22 +1,27 @@
 $(function () {
     $.ajax({
         type:"get",
-        url:"/user/isLogin.do",
+        url:"/user/get_user_role.do",
         dataType:"json",
         success:function(res){
-            var strUrl=location.href;
-            var arrUrl=strUrl.split("/");
-            var strPage=arrUrl[arrUrl.length-1];
-            //如果已登陆，则在登陆或注册页面将跳转到主页
-            if(res.status === 5){
-                if(strPage === "login.html" || strPage === "register.html") {
-                    location.href="index.html"
+            var strUrl = location.href;
+            var arrUrl = strUrl.split("/");
+            var strPage = arrUrl[arrUrl.length - 1];
+
+            //用户未登陆
+            if(res.status === 2) {
+                if (strPage !== "login.html" && strPage !== "register.html") {
+                    location.href = "login.html"
                 }
-            }
-            //如果未登陆，且不在登陆和注册页面，则跳转到登陆页面
-            if(res.status === 6){
-                if(strPage !== "login.html" && strPage !== "register.html") {
-                    location.href="login.html"
+            } else if(res.status === 14) {
+                //如果登陆用户为老师
+                if (strPage === "login.html" || strPage === "register.html") {
+                    location.href = "manage.html"
+                }
+            } else if(res.status === 13) {
+                //如果登陆用户为学生
+                if (strPage === "login.html" || strPage === "register.html") {
+                    location.href = "index.html"
                 }
             }
         }, error:function() {

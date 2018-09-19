@@ -76,11 +76,11 @@ public class ExperimentController {
         }
         Integer expStatus = getExpStatus(expId, session).getStatus();   //实验开放状态
         if(expStatus == Const.ResponseCode.EXP_OPEN.getCode()){
-            //如果当前实验处在开放状态，判断用户没提交后进行上传
-            if(iScoreService.isStuHaveScore(expId, user.getId()).isSuccess()){
+            //如果当前实验处在开放状态
+//            if(iScoreService.isStuHaveScore(expId, user.getId()).isSuccess()){
                 return iExperimentService.uploadChart(expId, user.getId(), image, index);
-            }
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.SCORE_ALREADY_EXITS.getCode(), Const.ResponseCode.SCORE_ALREADY_EXITS.getDesc());
+//            }
+//            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.SCORE_ALREADY_EXITS.getCode(), Const.ResponseCode.SCORE_ALREADY_EXITS.getDesc());
         } else if (expStatus == Const.ResponseCode.EXP_CLOSE.getCode()){
             //如果当前实验已关闭，则返回错误
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.EXP_CLOSE.getCode(), Const.ResponseCode.EXP_CLOSE.getDesc());

@@ -335,7 +335,7 @@ function submit() {
             num = i;
         selectval[i - 1] = $("#choice_" + num).val();
     }
-    
+
     for(var i = 1; i <= 3; i++){
         result[i - 1] = $("#blank_02_0" + i).val();
     }
@@ -382,7 +382,7 @@ function submit() {
         },
         async: false,
         dataType:"json",
-        success:function (result) { 
+        success:function (result) {
             alert("提交成功");
         },
         error:function (result) {
@@ -395,6 +395,6 @@ function submitAll() {
     if(confirm("确认上传吗")) {
         uploadChart("chart1", 1);
         uploadChart("chart2", 2);
+        submit();
     }
-    submit();
 }

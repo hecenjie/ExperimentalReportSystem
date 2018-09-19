@@ -103,21 +103,35 @@ public class UserController {
     }
 
     /**
-     * 通过Session获取学生基本信息
+     * 通过Session获取用户基本信息
      * @return
      */
-    @RequestMapping(value = "get_stu_basic_info.do", method = RequestMethod.GET)
+    @RequestMapping(value = "get_basic_info.do", method = RequestMethod.GET)
     @ResponseBody
-    public ServerResponse<StuBasicInfoVo> getStuBasicInfo(HttpSession session){
+    public ServerResponse<StuBasicInfoVo> getBasicInfo(HttpSession session){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
         }
-        //如果是管理员，将不可通过此接口得到学生基本信息，因为管理员没有班级专业等信息
-        if(user.getRole() == Const.Role.ROLE_ADMIN){
-            return ServerResponse.createByError();
-        }
         return iUserService.getStuBasicInfo(user);
+    }
+
+    /**
+     * 获取用户权限
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "get_user_role.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse getUserRole(HttpSession session){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        if(user.getRole() == Const.Role.ROLE_ADMIN){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.TEACHER.getCode(), Const.ResponseCode.TEACHER.getDesc());
+        }
+        return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.STUDENT.getCode(), Const.ResponseCode.STUDENT.getDesc());
     }
 
 }
