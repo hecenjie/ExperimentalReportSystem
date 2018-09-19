@@ -388,7 +388,7 @@ function submit() {
     });
 }
 
-$(function checkAvaliable() {
+function checkAvaliable() {
         $.ajax({
             type: "GET",
             url: "/exp/get_exp_status.do",
@@ -408,7 +408,7 @@ $(function checkAvaliable() {
             }
         });
     }
-)
+
 
 
 function checkIsFinish() {
@@ -430,14 +430,39 @@ function checkIsFinish() {
         }
     });
 }
+
+
 function submitAll() {
     if(!checkAvaliable())
         return;
     if(!checkIsFinish())
         return;
+    
     if (confirm("确认上传吗")) {
         uploadChart("chart1", 1);
         uploadChart("chart2", 2);
         submit();
     }
 }
+
+$(function () {
+        $.ajax({
+            type: "GET",
+            url: "/exp/get_exp_status.do",
+            data: {
+                expId: 1
+            },
+            dataType: "json",
+            success: function (result) {
+                if (result.status === 10) {
+                    alert("实验已关闭，请联系实验老师");
+                    location.href = "../login.html";
+                    return false;
+                }
+            },
+            error: function (result) {
+                alert("向服务器请求数据失败" + result);
+            }
+        });
+    }
+)
