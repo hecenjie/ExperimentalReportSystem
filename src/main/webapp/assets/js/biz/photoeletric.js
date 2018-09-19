@@ -41,8 +41,8 @@ function generateChart1() {
                 fill: false,
             }, {
                 label: "原始数据",
-                backgroundColor: 'rgb(0, 0, 0)',
-                borderColor: 'rgb(255, 255, 255)',
+                backgroundColor: 'rgb(246, 175, 47)',
+                borderColor: 'rgba(255, 255, 255, 0)',
                 data: [
                     pic1BeginY, pic1IndexY2, pic1IndexY3, pic1IndexY4, pic1EndY
                 ],
@@ -119,7 +119,7 @@ function fitting(u1, u2, u3, u4, u5){
 function uploadChart(chart){
     chart = "chart1"
     // 获取Canvas的编码。
-    var imgData = document.getElementById(chart).toDataURL("image/jpeg");
+    var imgData = document.getElementById(chart).toDataURL("image/png");
 
     // 上传到后台。
     $.ajax({

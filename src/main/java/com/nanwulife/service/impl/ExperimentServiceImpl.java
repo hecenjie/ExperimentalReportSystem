@@ -14,9 +14,7 @@ import sun.misc.BASE64Decoder;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Base64;
 
 /**
@@ -89,6 +87,7 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @param image
      * @return
      */
+    //todo：根据图片数量存名字，根据学号保存而非id
     public ServerResponse uploadChart(Integer expId, Integer userId, String image) {
         String basePath;
         String chartPath;
@@ -100,7 +99,7 @@ public class ExperimentServiceImpl implements IExperimentService {
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
         }
         chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
-        path = basePath + userId + "/" + chartPath;
+        path = basePath + chartPath + userId;
         logger.info(path);
 
         File fileDir = new File(path);
@@ -110,17 +109,34 @@ public class ExperimentServiceImpl implements IExperimentService {
         }
 
         try {
+//            logger.info(image);
+//            BASE64Decoder decoder = new BASE64Decoder();
+//            byte[] b = decoder.decodeBuffer(image);
+//            ByteArrayInputStream bais = new ByteArrayInputStream(b);
+//            BufferedImage bi = ImageIO.read(bais);
+//            File w2 = new File(path, expId.toString()+".png");
+//            logger.info(w2.getPath());
+//            ImageIO.write(bi, "png", w2);
+//            logger.info("上传文件成功");
+//            bais.close();
+
+            //Base64解码
             BASE64Decoder decoder = new BASE64Decoder();
             byte[] b = decoder.decodeBuffer(image);
-            ByteArrayInputStream bais = new ByteArrayInputStream(b);
-            BufferedImage bi = ImageIO.read(bais);
-            File w2 = new File(path, expId.toString()+".png");
-            logger.info(w2.getPath());
-            ImageIO.write(bi, "png", w2);
-            logger.info("上传文件成功");
-            bais.close();
-//            Base64 base64 = new Base64();
-//            byte[] k = base64.decode(image.substring("data:image/jpeg;base64,".length()));
+            for(int i=0;i<b.length;++i)
+            {
+                if(b[i]<0)
+                {//调整异常数据
+                    b[i]+=256;
+                }
+            }
+            //生成jpeg图片
+            String imgFilePath = path + "/" + expId.toString() + ".png";//新生成的图片
+            OutputStream out = new FileOutputStream(imgFilePath);
+            out.write(b);
+            out.flush();
+            out.close();
+
             return ServerResponse.createBySuccess();
         } catch (IOException ex){
             System.out.println(ex.toString());
