@@ -377,7 +377,7 @@ function submit() {
         },
         async: false,
         dataType:"json",
-        success:function (result) {
+        success:function (result) { 
             alert("提交成功");
         },
         error:function (result) {

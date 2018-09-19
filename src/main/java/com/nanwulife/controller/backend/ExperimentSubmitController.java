@@ -21,6 +21,13 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @Project: ExperimentalReportSystem
+ * @Description: 实验提交并导出word模块
+ * @Author: Creams
+ * @Date: Created in 2018/9/13
+ */
+
 @Controller
 @RequestMapping("/sub")
 public class ExperimentSubmitController {
