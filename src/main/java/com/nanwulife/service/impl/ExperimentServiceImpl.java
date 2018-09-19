@@ -84,12 +84,12 @@ public class ExperimentServiceImpl implements IExperimentService {
     /**
      * 上传图表
      * @param expId
-     * @param userId
+     * @param stuNum
      * @param image
      * @return
      */
     //todo：根据图片数量存名字，根据学号保存而非id
-    public ServerResponse uploadChart(Integer expId, Integer userId, String image, Integer index) {
+    public ServerResponse uploadChart(Integer expId, Integer stuNum, String image, Integer index) {
         String basePath;
         String chartPath;
         String path;
@@ -100,7 +100,7 @@ public class ExperimentServiceImpl implements IExperimentService {
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
         }
         chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
-        path = basePath + chartPath + userId;
+        path = basePath + chartPath + stuNum;
         logger.info(path);
 
         File fileDir = new File(path);

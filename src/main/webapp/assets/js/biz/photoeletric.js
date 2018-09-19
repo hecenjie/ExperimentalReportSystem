@@ -433,10 +433,10 @@ function checkIsFinish() {
 
 
 function submitAll() {
-    if(!checkAvaliable())
-        return;
-    if(!checkIsFinish())
-        return;
+    // if(!checkAvaliable())
+    //     return;
+    // if(!checkIsFinish())
+    //     return;
     
     if (confirm("确认上传吗")) {
         uploadChart("chart1", 1);

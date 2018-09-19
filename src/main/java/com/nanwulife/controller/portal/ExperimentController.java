@@ -78,7 +78,7 @@ public class ExperimentController {
         if(expStatus == Const.ResponseCode.EXP_OPEN.getCode()){
             //如果当前实验处在开放状态
 //            if(iScoreService.isStuHaveScore(expId, user.getId()).isSuccess()){
-                return iExperimentService.uploadChart(expId, user.getId(), image, index);
+                return iExperimentService.uploadChart(expId, user.getStuNum(), image, index);
 //            }
 //            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.SCORE_ALREADY_EXITS.getCode(), Const.ResponseCode.SCORE_ALREADY_EXITS.getDesc());
         } else if (expStatus == Const.ResponseCode.EXP_CLOSE.getCode()){
