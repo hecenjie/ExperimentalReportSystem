@@ -335,7 +335,7 @@ function submit() {
     }
 
     for (var i = 1; i <= 3; i++) {
-        result[i - 1] = $("#blank_02_0" + i).val();
+        result[i - 1] = $("#blank_02_0" + i).text();
     }
 
     for (var i = 1; i <= 5; i++) {
@@ -380,7 +380,10 @@ function submit() {
         async: false,
         dataType: "json",
         success: function (result) {
-            alert("提交成功");
+            if (result.status === 14)
+                alert("请勿多次提交试验");
+            else
+                alert("提交成功");
         },
         error: function (result) {
             alert("向服务器请求数据失败" + result);
@@ -408,35 +411,10 @@ function checkAvaliable() {
             }
         });
     }
-
-
-
-function checkIsFinish() {
-    $.ajax({
-        type: "GET",
-        url: "/score/is_stu_have_score.do",
-        data: {
-            expId: 1
-        },
-        dataType: "json",
-        success: function (result) {
-            if (result.status === 14) {
-                alert("请勿重复提交报告");
-                return false;
-            }
-        },
-        error: function (result) {
-            alert("向服务器请求数据失败" + result);
-        }
-    });
-}
-
-
+    
 function submitAll() {
-    // if(!checkAvaliable())
-    //     return;
-    // if(!checkIsFinish())
-    //     return;
+    if(checkAvaliable() == false)
+        return;
     
     if (confirm("确认上传吗")) {
         uploadChart("chart1", 1);
@@ -456,7 +434,6 @@ $(function () {
             success: function (result) {
                 if (result.status === 10) {
                     alert("实验已关闭，请联系实验老师");
-                    location.href = "../login.html";
                     return false;
                 }
             },

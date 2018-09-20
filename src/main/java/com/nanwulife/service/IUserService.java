@@ -18,4 +18,6 @@ public interface IUserService {
 
     public ServerResponse<StuBasicInfoVo> getStuBasicInfo(User user);
 
+    StuBasicInfoVo queryMajornameAndClassById(Integer stu_id);
+
 }

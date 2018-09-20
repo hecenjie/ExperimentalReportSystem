@@ -130,4 +130,11 @@
     from user
     where stu_num = #{username,jdbcType=INTEGER}
   </select>
+  
+  <select id="queryMajornameAndClassById" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.StuBasicInfoVo">
+    SELECT major.id, major.name as majorName, stu_class
+    FROM major, user 
+    WHERE user.major_id=major.id 
+    AND user.stu_num=#{stu_num, jdbcType=INTEGER}  
+  </select>
 </mapper>

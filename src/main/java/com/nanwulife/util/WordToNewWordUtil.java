@@ -233,6 +233,9 @@ public class WordToNewWordUtil {
     
     public static void main(String[] args) throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
+        params.put("stunum", "123456");//
+        params.put("stuname", "A");//
+        params.put("score", "A");//
         params.put("choice_01", "A");//
         params.put("choice_02", "B");//
         params.put("choice_03", "C");//

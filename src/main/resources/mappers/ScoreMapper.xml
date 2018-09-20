@@ -71,4 +71,36 @@
       and exp_id = #{expId,jdbcType=INTEGER}
   </update>
   
+  <select id="getScoreListByStunum" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.ScoreStuInfoVo">
+    SELECT stu_id, stu_name, name, score
+    <if test="isExport == 1">
+      into outfile #{path,jdbcType=String}
+    </if>
+    FROM user u, experiment e, score s 
+    WHERE u.stu_num = s.stu_id 
+    AND s.exp_id = e.id
+    AND u.stu_id = #{userID,jdbcType=INTEGER}
+    <if test="expId != 0">
+      AND e.exp_id = #{expId,jdbcType=INTEGER}
+    </if>
+  </select>
+  
+  
+  <select id="getScoreListByMajor" parameterType="map" resultType="com.nanwulife.vo.ScoreStuInfoVo">
+    SELECT stu_num, stu_name, major.name, stu_class, exp.name, score
+    <if test="isExport == 1">
+      into outfile #{path,jdbcType=String}
+    </if>
+    FROM user u, major, experiment exp, score s
+    WHERE u.major_id = major.id
+    AND s.exp_id = exp.id
+    AND u.major_id = #{majorId,jdbcType=INTEGER}
+    <if test="expId != 0">
+      AND exp.exp_id = #{expId,jdbcType=INTEGER}
+    </if>
+    <if test="stuClass != null">
+      AND stu_class = #{stuClass, jdbcType=INTEGER}
+    </if>
+    ORDER BY #{orderBy,jdbcType=String}
+  </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.nanwulife.dao;
 
 import com.nanwulife.pojo.User;
+import com.nanwulife.vo.StuBasicInfoVo;
 
 import java.util.List;
 
@@ -22,6 +23,5 @@ public interface UserMapper {
 
     User checkByUsername (Integer username);
     
-    List<User> SelectByMajorAndClass(Integer major);
-
+    StuBasicInfoVo queryMajornameAndClassById(Integer stu_id);
 }

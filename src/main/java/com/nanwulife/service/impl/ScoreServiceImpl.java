@@ -5,10 +5,14 @@ import com.nanwulife.common.ServerResponse;
 import com.nanwulife.dao.ScoreMapper;
 import com.nanwulife.pojo.Score;
 import com.nanwulife.service.IScoreService;
+import com.nanwulife.util.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @Project: ExperimentalReportSystem
@@ -39,5 +43,35 @@ public class ScoreServiceImpl implements IScoreService {
     public ServerResponse submit(Score record) {
         scoreMapper.insert(record);
         return ServerResponse.createBySuccess();
+    }
+    
+    public ServerResponse getScoreListByStunum(Integer userId, Integer expId, Integer isExport){
+        String basePath = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");
+        Date date = new Date();
+        String filename = sdf.format(date) + ".xls";
+        if(isExport == 1){
+            if(System.getProperty("os.name").toLowerCase().contains("linux")){
+                basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
+            } else {
+                basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
+            }
+        }
+        return ServerResponse.createBySuccess(scoreMapper.getScoreListByStunum(userId, expId, isExport, basePath + filename));
+    }
+    
+    public ServerResponse getScoreListByMajor(Integer majorId, Integer stuClass, Integer expId, Integer isExport, String orderBy){
+        String basePath = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");
+        Date date = new Date();
+        String filename = sdf.format(date) + ".xls";
+        if(isExport == 1){
+            if(System.getProperty("os.name").toLowerCase().contains("linux")){
+                basePath = "/var/lib/mysql-files/";
+            } else {
+                basePath = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/xxx.xls";
+            }
+        }
+        return ServerResponse.createBySuccess(scoreMapper.getScoreListByMajor(majorId, stuClass, expId, isExport, orderBy, basePath + filename));
     }
 }

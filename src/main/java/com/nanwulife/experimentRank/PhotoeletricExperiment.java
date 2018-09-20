@@ -53,7 +53,7 @@ public class PhotoeletricExperiment {
             rank += 3;
         if (choice_5.equals("A"))
             rank += 3;
-        if (choice_6.equals("B"))
+        if (choice_6.equals("C"))
             rank += 3;
         if (choice_7.equals("B"))
             rank += 3;

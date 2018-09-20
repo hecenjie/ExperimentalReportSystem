@@ -89,8 +89,11 @@ public class UserServiceImpl implements IUserService {
             return null;
         stuBasicInfoVo.setMajorName(major.getName());
         stuBasicInfoVo.setStuNum(user.getStuNum());
-
         return stuBasicInfoVo;
+    }
+    
+    public StuBasicInfoVo queryMajornameAndClassById(Integer stu_id){
+        return userMapper.queryMajornameAndClassById(stu_id);
     }
 
 }
