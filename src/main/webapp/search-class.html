@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">南京农业大学</a>
+        </div>
+    </nav>
+    <!-- /. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <div class="user-img-div">
+                        <div>
+                            <h4><span id="user_name"></span></h4>
+                            ID：<span id="user_id"></span>
+                            <br />
+                            <br/>
+                            <span id="date">2018年9月16日</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="active-menu" href="index.html">首页</a>
+                </li>
+                <li>
+                    <a href="#">实验管理</a>
+                </li>
+                <li>
+                    <a href="#">学生管理</a>
+                </li>
+                <li>
+                    <a href="#">成绩管理<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#"><small>学生成绩查询</small></a>
+                        </li>
+                        <li>
+                            <a href="#"><small>班级成绩查询</small></a>
+                        </li>
+                        <li>
+                            <a href="#"><small>专业成绩查询</small></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">成绩管理模块</h1><br>
+                    <!--<h1 class="page-subhead-line">学号：</h1>-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-6 col-xs-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            班级查询
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>专业</label>
+                                <select class="form-control" id="major">
+                                </select>
+                                <p class="help-block">选择要查询的专业（必填）</p>
+                            </div>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>班级</label>
+                                    <input class="form-control" type="text">
+                                    <p class="help-block">请输入要查询的班级（必填）</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>实验</label>
+                                    <select class="form-control" id="exp">
+                                    </select>
+                                    <p class="help-block">请选择要查询的实验，默认查询所有已提交的实验</p>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-info">查询</button>
+                                    <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">按成绩降序</a></li>
+                                        <li><a href="#">按成绩升序</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!--    Hover Rows  -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            查询结果
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>学号</th>
+                                        <th>姓名</th>
+                                        <th>实验</th>
+                                        <th>分数</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td><a href="#">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                        <td><a href="#">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                        <td><a href="#">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>twitter</td>
+                                        <td><a href="#">删除</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End  Hover Rows  -->
+                </div>
+            </div>
+            <!-- /. ROW  -->
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+
+<div id="footer-sec">
+    Copyright &copy; <a href="#">2018 Creams & Canjie</a>
+</div>
+<!-- /. FOOTER  -->
+<!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+<!-- JQUERY SCRIPTS -->
+<script src="assets/js/jquery-1.10.2.js"></script>
+<!-- BOOTSTRAP SCRIPTS -->
+<script src="assets/js/bootstrap.js"></script>
+<!-- METISMENU SCRIPTS -->
+<script src="assets/js/jquery.metisMenu.js"></script>
+<!-- CUSTOM SCRIPTS -->
+<script src="assets/js/custom.js"></script>
+<!--  用户登陆状态校验 -->
+<script src="assets/js/biz/loginCheck.js"></script>
+<script src="assets/js/biz/manage.js"></script>
+
+
+
+</body>
+</html>
