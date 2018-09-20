@@ -3,6 +3,7 @@ package com.nanwulife.service.impl;
 import com.nanwulife.dao.MajorMapper;
 import com.nanwulife.pojo.Major;
 import com.nanwulife.service.IMajorService;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

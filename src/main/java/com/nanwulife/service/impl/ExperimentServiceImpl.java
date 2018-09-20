@@ -4,6 +4,7 @@ import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.dao.ExperimentMapper;
 import com.nanwulife.pojo.Experiment;
+import com.nanwulife.pojo.Major;
 import com.nanwulife.service.IExperimentService;
 import com.nanwulife.util.PropertiesUtil;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Base64;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -88,7 +90,6 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @param image
      * @return
      */
-    //todo：根据图片数量存名字，根据学号保存而非id
     public ServerResponse uploadChart(Integer expId, Integer stuNum, String image, Integer index) {
         String basePath;
         String chartPath;
@@ -148,5 +149,14 @@ public class ExperimentServiceImpl implements IExperimentService {
     
     public ServerResponse pushModel(Map<String, Object> params, String a){
         return null;
+    }
+
+    /**
+     * 获取所有实验列表
+     * @return
+     */
+    public List<Experiment> getAllExps(){
+        List<Experiment> exps = experimentMapper.selectAllExps();
+        return exps;
     }
 }

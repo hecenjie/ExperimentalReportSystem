@@ -2,6 +2,8 @@ package com.nanwulife.dao;
 
 import com.nanwulife.pojo.Experiment;
 
+import java.util.List;
+
 public interface ExperimentMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface ExperimentMapper {
     int updateByPrimaryKeySelective(Experiment record);
 
     int updateByPrimaryKey(Experiment record);
+
+    List<Experiment> selectAllExps();
 }

@@ -4,6 +4,7 @@ import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.controller.backend.ExperimentManageController;
 import com.nanwulife.experimentRank.PhotoeletricExperiment;
+import com.nanwulife.pojo.Experiment;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
 import com.nanwulife.util.WordToNewWordUtil;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -87,5 +89,16 @@ public class ExperimentController {
         }
         //上传图表失败
         return ServerResponse.createByError();
+    }
+
+    /**
+     * 获取所有实验列表
+     * @return
+     */
+    @RequestMapping(value = "get_all_exps.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<List<Experiment>> getAllExps(){
+        List<Experiment> exps = iExperimentService.getAllExps();
+        return ServerResponse.createBySuccess(exps);
     }
 }

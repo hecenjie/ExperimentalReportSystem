@@ -1,6 +1,9 @@
 package com.nanwulife.service;
 
 import com.nanwulife.common.ServerResponse;
+import com.nanwulife.pojo.Experiment;
+
+import java.util.List;
 
 public interface IExperimentService {
 
@@ -11,5 +14,7 @@ public interface IExperimentService {
     public ServerResponse getExpStatus(Integer expId);
 
     public ServerResponse uploadChart(Integer expId, Integer stuNum, String image, Integer index);
+
+    public List<Experiment> getAllExps();
 
 }

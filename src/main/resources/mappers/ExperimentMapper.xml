@@ -70,4 +70,10 @@
       open = #{open,jdbcType=SMALLINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAllExps" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from experiment
+  </select>
 </mapper>
