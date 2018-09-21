@@ -79,9 +79,9 @@
     FROM user u, experiment e, score s 
     WHERE u.stu_num = s.stu_id 
     AND s.exp_id = e.id
-    AND u.stu_id = #{userID,jdbcType=INTEGER}
+    AND u.stu_num = #{userId,jdbcType=INTEGER}
     <if test="expId != 0">
-      AND e.exp_id = #{expId,jdbcType=INTEGER}
+      AND e.id = #{expId,jdbcType=INTEGER}
     </if>
   </select>
   

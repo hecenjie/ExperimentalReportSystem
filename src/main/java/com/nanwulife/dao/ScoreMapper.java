@@ -19,7 +19,7 @@ public interface ScoreMapper {
 
     int updateByPrimaryKey(Score record);
     
-    List<ScoreStuInfoVo> getScoreListByStunum(Integer userId, Integer expId, Integer isExport, String path);
+    List<ScoreStuInfoVo> getScoreListByStunum(@Param("userId") Integer userId, @Param("expId") Integer expId, @Param("isExport") Integer isExport, @Param("path") String path);
     
     List<ScoreStuInfoVo> getScoreListByMajor(@Param("majorId") Integer majorId, @Param("stuClass") Integer stuClass, @Param("expId") Integer expId, @Param("isExport") Integer isExport, @Param("orderBy") String orderBy, @Param("path") String path);
     

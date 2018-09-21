@@ -76,6 +76,11 @@ public class ScoreServiceImpl implements IScoreService {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");
         Date date = new Date();
         String filename = sdf.format(date) + ".xls";
+        if(orderBy.equals("stu_num_asc"))
+            orderBy = "stu_num asc";
+        else 
+            orderBy.replace("_", " ");
+        System.out.println(orderBy);
         if(isExport == 1){
             if(System.getProperty("os.name").toLowerCase().contains("linux")){
                 basePath = "/var/lib/mysql-files/";

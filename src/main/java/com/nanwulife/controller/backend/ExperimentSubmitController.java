@@ -58,7 +58,7 @@ public class ExperimentSubmitController {
     @RequestMapping(value = "Exp_01.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse submitExp(@RequestParam(value = "selectval[]") String[] selectval, HttpSession session, @RequestParam(value = "result[]") String[] result,
-                                    @RequestParam(value = "chart1[]") Integer[] chart1, @RequestParam(value = "table2[]") Integer[] table2,
+                                    @RequestParam(value = "chart1[]") String[] chart1, @RequestParam(value = "table2[]") Integer[] table2,
                                     @RequestParam(value = "table3[]") Integer[] table3, @RequestParam(value = "table4[]") Integer[] table4){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -149,7 +149,7 @@ public class ExperimentSubmitController {
         }
 
         Score score = new Score();
-        score.setStuId(user.getStuNum());
+        score.setStuId(user.getId());
         score.setExpId(1);
         score.setScore(rank);
         user = null;
