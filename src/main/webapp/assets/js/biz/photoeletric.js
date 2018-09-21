@@ -19,10 +19,10 @@ function generateChart1() {
     var res = fitting(pic1BeginY, pic1IndexY2, pic1IndexY3, pic1IndexY4, pic1EndY);
     var k = res[0];
     var b = res[1];
-    var newk = k.toFixed(3) * 1E-14;
-    var h = 1.60E-19 * newk;
+    var h = (1.60 * k).toFixed(3) * 1E-19 * 1E-14;
     var h0 = 6.626E-34;
     var E = Math.abs((h - h0) / h0).toFixed(3);
+    $("#blank_02_01").text(k.toFixed(3) * 1E-14);
     $("#blank_02_02").text(h);
     $("#blank_02_03").text(E);
     // console.info("k = " + k);
