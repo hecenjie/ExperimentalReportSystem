@@ -74,7 +74,7 @@ public class ScoreManageController {
         if(user.getRole() == Const.Role.ROLE_CUSTOMER){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.INSUFFICIENT_PERMISSION.getCode(), Const.ResponseCode.INSUFFICIENT_PERMISSION.getDesc());
         }
-        if(stuClass == null)
+        if(majorId == null)
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         return iScoreService.getScoreListByMajor(majorId, stuClass, expId, isExport, orderBy);
     }

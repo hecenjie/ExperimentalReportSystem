@@ -7,29 +7,30 @@ function generateChart1() {
     // }
 
     var pic1BeginY = parseFloat($("#chart1_index1").val());
-    // var pic1BeginY = 0.47;
-    console.info('pic1BeginY = ' + pic1BeginY);
+    // console.info('pic1BeginY = ' + pic1BeginY);
     var pic1IndexY2 = parseFloat($("#chart1_index2").val());
-    // var pic1IndexY2 = 0.58;
-    console.info('pic1IndexY2 = ' + pic1IndexY2);
+    // console.info('pic1IndexY2 = ' + pic1IndexY2);
     var pic1IndexY3 = parseFloat($("#chart1_index3").val());
-    // var pic1IndexY3 = 1.15;
-    console.info('pic1IndexY3 = ' + pic1IndexY3);
+    // console.info('pic1IndexY3 = ' + pic1IndexY3);
     var pic1IndexY4 = parseFloat($("#chart1_index4").val());
-    // var pic1IndexY4 = 1.412;
-    console.info('pic1IndexY4 = ' + pic1IndexY4);
+    // console.info('pic1IndexY4 = ' + pic1IndexY4);
     var pic1EndY = parseFloat($("#chart1_index5").val());
-    // var pic1EndY = 1.723;
-    console.info('pic1EndY = ' + pic1EndY);
+    // console.info('pic1EndY = ' + pic1EndY);
     var res = fitting(pic1BeginY, pic1IndexY2, pic1IndexY3, pic1IndexY4, pic1EndY);
     var k = res[0];
     var b = res[1];
-    console.info("k = " + k);
-    console.info("b = " + b);
+    var newk = k.toFixed(3) * 1E-14;
+    var h = 1.60E-19 * newk;
+    var h0 = 6.626E-34;
+    var E = Math.abs((h - h0) / h0).toFixed(3);
+    $("#blank_02_02").text(h);
+    $("#blank_02_03").text(E);
+    // console.info("k = " + k);
+    // console.info("b = " + b);
     var fitBeginY = k * pic1BeginX + b;
     var fitEndY = k * pic1EndX + b;
-    console.info("fitBeginY = " + fitBeginY);
-    console.info("fitEndY = " + fitEndY);
+    // console.info("fitBeginY = " + fitBeginY);
+    // console.info("fitEndY = " + fitEndY);
     var ctx = document.getElementById('chart1').getContext('2d');
 
     chart1 = new Chart(ctx, {
@@ -274,17 +275,17 @@ function fitting(u1, u2, u3, u4, u5) {
     var v5 = pic1EndX;
 
     var sumV = v1 + v2 + v3 + v4 + v5;
-    console.info("sumV = " + sumV)
+    // console.info("sumV = " + sumV)
     var sumU = u1 + u2 + u3 + u4 + u5;
-    console.info("sumU = " + sumU)
+    // console.info("sumU = " + sumU)
     var avgV = sumV / 5;
-    console.info("avgV = " + avgV)
+    // console.info("avgV = " + avgV)
     var avgU = sumU / 5;
-    console.info("avgU = " + avgU)
+    // console.info("avgU = " + avgU)
     var avgMulUV = (v1 * u1 + v2 * u2 + v3 * u3 + v4 * u4 + v5 * u5) / 5;
-    console.info("avgMulUV = " + avgMulUV)
+    // console.info("avgMulUV = " + avgMulUV)
     var avgMulVV = (v1 * v1 + v2 * v2 + v3 * v3 + v4 * v4 + v5 * v5) / 5;
-    console.info("avgMulVV = " + avgMulVV)
+    // console.info("avgMulVV = " + avgMulVV)
 
     var k = (avgV * avgU - avgMulUV) / (avgV * avgV - avgMulVV);
 
