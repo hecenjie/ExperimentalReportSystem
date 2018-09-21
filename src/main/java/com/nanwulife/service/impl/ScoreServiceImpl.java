@@ -63,9 +63,9 @@ public class ScoreServiceImpl implements IScoreService {
         String filename = sdf.format(date) + ".xls";
         if(isExport == 1){
             if(System.getProperty("os.name").toLowerCase().contains("linux")){
-                basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
+                basePath = "/var/lib/mysql-files/";
             } else {
-                basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
+                basePath = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/";
             }
         }
         return ServerResponse.createBySuccess(scoreMapper.getScoreListByStunum(userId, expId, isExport, basePath + filename));
