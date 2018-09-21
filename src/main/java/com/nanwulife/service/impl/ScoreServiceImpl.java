@@ -80,7 +80,7 @@ public class ScoreServiceImpl implements IScoreService {
             if(System.getProperty("os.name").toLowerCase().contains("linux")){
                 basePath = "/var/lib/mysql-files/";
             } else {
-                basePath = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/xxx.xls";
+                basePath = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/";
             }
         }
         return ServerResponse.createBySuccess(scoreMapper.getScoreListByMajor(majorId, stuClass, expId, isExport, orderBy, basePath + filename));
