@@ -88,6 +88,7 @@ public class ScoreServiceImpl implements IScoreService {
                 basePath = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/";
             }
         }
+        System.out.println(basePath + filename);
         return ServerResponse.createBySuccess(scoreMapper.getScoreListByMajor(majorId, stuClass, expId, isExport, orderBy, basePath + filename));
     }
 }
