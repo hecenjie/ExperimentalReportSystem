@@ -435,7 +435,7 @@ $(function () {
             success: function (result) {
                 if (result.status === 10) {
                     alert("实验已关闭，请联系实验老师");
-                    return false;
+                    location.href = "../index.html";
                 }
             },
             error: function (result) {
@@ -450,19 +450,20 @@ $(function () {
                 expId: 1
             },
             dataType: "json",
-            success: function (result) {
+            success: function (res) {
                 if(res.status === 0){
                     //用户未提交过此实验
-                } else if (result.status === 2) {
-                    location.href = "login.html";
+                } else if (res.status === 2) {
+                    location.href = "../login.html";
                 } else if(res.status === 15){
                     alert("您已提交过此实验，如有疑问请联系实验老师");
+                    location.href = "../index.html";
                 } else{
                     alert("服务器发生错误");
                 }
             },
-            error: function (result) {
-                alert("向服务器请求数据失败" + result);
+            error: function (res) {
+                alert("向服务器请求数据失败" + res);
             }
         });
     }

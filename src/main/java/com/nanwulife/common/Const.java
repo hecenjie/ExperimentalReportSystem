@@ -50,7 +50,7 @@ public class Const {
         PASSWORD_ERROR(12, "PASSWORD_ERROR"),               //密码错误
         STUDENT(13, "STUDENT"),                             //学生端口
         TEACHER(14, "TEACHER"),                             //老师端口
-        SCORE_ALREADY_EXITS(14, "SCORE_ALREADY_EXITS");       //用户提交过该实验，分数已存在
+        SCORE_ALREADY_EXITS(15, "SCORE_ALREADY_EXITS");       //用户提交过该实验，分数已存在
 
         private final int code;
         private final String desc;
