@@ -72,22 +72,23 @@
   </update>
   
   <select id="getScoreListByStunum" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.ScoreStuInfoVo">
-    SELECT stu_num, stu_name, name, score
+    SELECT stu_num, stu_name, e.name as expName, score, stu_class as stuClass, m.name as majorName
     <if test="isExport == 1">
       into outfile #{path,jdbcType=String}
     </if>
-    FROM user u, experiment e, score s 
+    FROM user u, experiment e, score s, major m
     WHERE u.id = s.stu_id 
     AND s.exp_id = e.id
     AND u.stu_num = #{userId,jdbcType=INTEGER}
+    AND u.major_id=m.id
     <if test="expId != 0">
       AND e.id = #{expId,jdbcType=INTEGER}
     </if>
   </select>
   
   
-  <select id="getScoreListByMajor" parameterType="map" resultType="com.nanwulife.vo.ScoreStuInfoVo">
-    SELECT stu_num, stu_name, major.name, stu_class, exp.name, score
+  <select id="getScoreListByMajor" parameterType="Map" resultType="com.nanwulife.vo.ScoreStuInfoVo">
+    SELECT stu_num, stu_name, major.name as majorName, stu_class, exp.name as expName, score
     <if test="isExport == 1">
       into outfile #{path,jdbcType=String}
     </if>
@@ -97,11 +98,11 @@
     AND exp.id = s.exp_id
     AND u.major_id = #{majorId,jdbcType=INTEGER}
     <if test="expId != 0">
-      AND exp.exp_id = #{expId,jdbcType=INTEGER}
+      AND exp.id = #{expId,jdbcType=INTEGER}
     </if>
     <if test="stuClass != null">
       AND stu_class = #{stuClass, jdbcType=INTEGER}
     </if>
-    ORDER BY #{orderBy,jdbcType=String}
+    ORDER BY #{orderBy}
   </select>
 </mapper>
