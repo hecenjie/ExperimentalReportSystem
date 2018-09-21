@@ -20,10 +20,9 @@ function searchStu(isExport){
     $("#stu_score").empty();
     var stuNum = $("#stu_num").val();
     var expId = $("#exp").find("option:selected").val();
-    alert(isExport)
     $.ajax({
         type:"get",
-        url:"/exp/search_stu.do",
+        url:"/manage/score/get_scorelist_stunum.do",
         dataType:"json",
         data:{
             stuNum: stuNum,
@@ -32,10 +31,27 @@ function searchStu(isExport){
         },
         success:function(res){
             if(res.status === 0){
-                alert("成功");
+                $.each(res.data, function (idx, val) {
+                    var str = "                                    <tr>\n" +
+                        "                                        <td>"+val.stuNum+"</td>\n" +
+                        "                                        <td>"+val.stuName+"</td>\n" +
+                        "                                        <td>"+val.expName+"</td>\n" +
+                        "                                        <td>"+val.score+"</td>\n" +
+                        "                                        <td><a href=\"#\">删除</a></td>\n" +
+                        "                                    </tr>"
+                    $("#stu_score").append(str)
+                })
             }
         }, error:function() {
             alert("向服务器请求数据失败")
         }
     })
 }
+
+$("#search").click(function () {
+    searchStu(0)
+})
+
+$("#export").click(function () {
+    searchStu(1)
+})
