@@ -32,7 +32,7 @@ $(function () {
     })
 })
 
-function search(orderBy){
+function search(orderBy, isExport){
     $("#stu_score").empty();
     var stuClass = $("#stu_class").val();
     var majorId = $("#major").find("option:selected").val();
@@ -42,6 +42,7 @@ function search(orderBy){
     alert(majorId)
     alert(expId)
     alert(orderBy)
+    alert(isExport)
 
     // $.ajax({
     //     type:"get",
@@ -62,9 +63,9 @@ function search(orderBy){
 }
 
 $("#score_desc").click(function () {
-    search("score_desc")
+    search("score_desc", 0)
 })
 
 $("#score_asc").click(function () {
-    search("score_asc")
+    search("score_asc", 0)
 })

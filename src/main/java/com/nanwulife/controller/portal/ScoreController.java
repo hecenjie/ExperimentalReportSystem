@@ -50,34 +50,4 @@ public class ScoreController {
         return iScoreService.isStuHaveScore(expId, user.getId());
     }
 
-
-    @RequestMapping(value = "get_scorelist_stunum.do", method = RequestMethod.GET)
-    @ResponseBody
-    public ServerResponse getScoreListByStunum(HttpSession session,  @RequestParam("stuId") Integer stuID,  @RequestParam("expId") Integer expId, @RequestParam("isExport") Integer isExport){
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
-        if(user == null){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
-        }
-        if(user.getRole() == Const.Role.ROLE_CUSTOMER){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.INSUFFICIENT_PERMISSION.getCode(), Const.ResponseCode.INSUFFICIENT_PERMISSION.getDesc());
-        }
-        if(stuID == null)
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
-        return iScoreService.getScoreListByStunum(stuID, expId, isExport);
-    }
-
-    @RequestMapping(value = "get_scorelist_major.do", method = RequestMethod.GET)
-    @ResponseBody
-    public ServerResponse getScoreList(HttpSession session,  @RequestParam("majorId") Integer majorId, @RequestParam("stuClass") Integer stuClass, @RequestParam("expId") Integer expId, @RequestParam("isExport") Integer isExport, @RequestParam("orderBy") String orderBy){
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
-        if(user == null){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
-        }
-        if(user.getRole() == Const.Role.ROLE_CUSTOMER){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.INSUFFICIENT_PERMISSION.getCode(), Const.ResponseCode.INSUFFICIENT_PERMISSION.getDesc());
-        }
-        if(stuClass == null)
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
-        return iScoreService.getScoreListByMajor(majorId, stuClass, expId, isExport, orderBy);
-    }
 }

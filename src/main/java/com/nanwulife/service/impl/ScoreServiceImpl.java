@@ -44,7 +44,18 @@ public class ScoreServiceImpl implements IScoreService {
         scoreMapper.insert(record);
         return ServerResponse.createBySuccess();
     }
-    
+
+    public ServerResponse deleteScore(Integer stuId, Integer expId){
+        Score score = new Score();
+        score.setExpId(expId);
+        score.setStuId(stuId);
+        int count = scoreMapper.deleteByPrimaryKey(score);
+        if(count == 0){
+            return ServerResponse.createByError();
+        }
+        return ServerResponse.createBySuccess();
+    }
+
     public ServerResponse getScoreListByStunum(Integer userId, Integer expId, Integer isExport){
         String basePath = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");
@@ -59,7 +70,7 @@ public class ScoreServiceImpl implements IScoreService {
         }
         return ServerResponse.createBySuccess(scoreMapper.getScoreListByStunum(userId, expId, isExport, basePath + filename));
     }
-    
+
     public ServerResponse getScoreListByMajor(Integer majorId, Integer stuClass, Integer expId, Integer isExport, String orderBy){
         String basePath = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");

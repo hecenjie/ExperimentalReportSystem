@@ -10,8 +10,10 @@ public interface IScoreService {
 
     ServerResponse submit(Score record);
 
+    ServerResponse deleteScore(Integer stuId, Integer expId);
+
     ServerResponse getScoreListByStunum(Integer userId, Integer expId, Integer isExport);
 
     ServerResponse getScoreListByMajor(Integer majorId, Integer stuClass, Integer expId, Integer isExport, String orderBy);
-    
+
 }

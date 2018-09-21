@@ -16,17 +16,19 @@ $(function () {
     })
 })
 
-function searchStu(){
+function searchStu(isExport){
     $("#stu_score").empty();
     var stuNum = $("#stu_num").val();
     var expId = $("#exp").find("option:selected").val();
+    alert(isExport)
     $.ajax({
         type:"get",
         url:"/exp/search_stu.do",
         dataType:"json",
         data:{
             stuNum: stuNum,
-            expId: expId
+            expId: expId,
+            isExport: isExport
         },
         success:function(res){
             if(res.status === 0){

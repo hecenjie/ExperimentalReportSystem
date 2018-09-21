@@ -27,6 +27,9 @@
             </button>
             <a class="navbar-brand" href="index.html">南京农业大学</a>
         </div>
+        <div class="header-right">
+            <a href="javascript:void(0)" onclick="logout()" class="btn btn-danger" title="Logout"><b>安全退出  </b><i class="fa fa-exclamation-circle fa-2x"></i></a>
+        </div>
     </nav>
     <!-- /. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
@@ -104,14 +107,14 @@
                                     <p class="help-block">请选择要查询的实验，默认查询所有已提交的实验</p>
                                 </div>
                                 <div class="btn-group">
-                                    <input type="button" class="btn btn-info" onclick="search('stu_num_asc')" value="查询"/>
+                                    <input type="button" class="btn btn-info" onclick="search('stu_num_asc', 0)" value="查询"/>
                                     <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0);" id="score_desc">按成绩降序查询</a></li>
                                         <li><a href="javascript:void(0);" id="score_asc">按成绩升序查询</a></li>
                                     </ul>
                                 </div>
-                                <input type="button" class="btn btn-info" onclick="searchStu()" value="导出Excel"/>
+                                <input type="button" class="btn btn-info" onclick="search('stu_num_asc', 1)" value="导出Excel"/>
                             </form>
                         </div>
                     </div>
@@ -198,7 +201,7 @@
 <script src="assets/js/biz/loginCheck.js"></script>
 <script src="assets/js/biz/manage.js"></script>
 <script src="assets/js/biz/search-class.js"></script>
-
+<script src="assets/js/biz/logout.js"></script>
 
 </body>
 </html>
