@@ -23,7 +23,7 @@ function searchStu(isExport){
     alert(isExport)
     $.ajax({
         type:"get",
-        url:"/manage/score/get_scorelist_stunum.do",
+        url:"/exp/search_stu.do",
         dataType:"json",
         data:{
             stuNum: stuNum,
