@@ -72,7 +72,7 @@
   </update>
   
   <select id="getScoreListByStunum" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.ScoreStuInfoVo">
-    SELECT stu_num, stu_name, e.name as expName, score, stu_class as stuClass, m.name as majorName
+    SELECT u.id as stuId, stu_num, stu_name, e.name as expName, score, stu_class as stuClass, m.name as majorName, e.id as expId
     <if test="isExport == 1">
       into outfile #{path}
     </if>
@@ -88,7 +88,7 @@
   
   
   <select id="getScoreListByMajor" parameterType="Map" resultType="com.nanwulife.vo.ScoreStuInfoVo">
-    SELECT stu_num, stu_name, major.name as majorName, stu_class, exp.name as expName, score
+    SELECT u.id as stuId, stu_num, stu_name, major.name as majorName, stu_class, exp.name as expName, score, exp.id as expId
     <if test="isExport == 1">
       into outfile #{path}
     </if>

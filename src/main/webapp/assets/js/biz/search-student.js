@@ -35,9 +35,10 @@ function searchStu(isExport){
                     var str = "                                    <tr>\n" +
                         "                                        <td>"+val.stuNum+"</td>\n" +
                         "                                        <td>"+val.stuName+"</td>\n" +
+                        "                                        <td>"+val.majorName+val.stuClass+"</td>\n" +
                         "                                        <td>"+val.expName+"</td>\n" +
                         "                                        <td>"+val.score+"</td>\n" +
-                        "                                        <td><a href=\"#\">删除</a></td>\n" +
+                        "                                        <td><a href=\"javascript:void(0)\" onclick='deleteScore("+val.stuId+","+val.expId+")'>删除</a></td>\n" +
                         "                                    </tr>"
                     $("#stu_score").append(str)
                 })
@@ -48,6 +49,31 @@ function searchStu(isExport){
     })
 }
 
+function deleteScore(stuId, expId){
+    if(confirm("确认删除吗？")) {
+        $.ajax({
+            type: "post",
+            url: "/manage/score/delete_score.do",
+            dataType: "json",
+            data: {
+                stuId: stuId,
+                expId: expId,
+            },
+            success: function (res) {
+                if (res.status === 0) {
+                    alert("删除成功");
+                    searchStu(0);
+                } else{
+                    alert("删除失败");
+                    searchStu(0);
+                }
+            }, error: function () {
+                alert("向服务器请求数据失败")
+            }
+        })
+    }
+}
+
 $("#search").click(function () {
     searchStu(0)
 })
@@ -55,3 +81,4 @@ $("#search").click(function () {
 $("#export").click(function () {
     searchStu(1)
 })
+

@@ -1,6 +1,9 @@
 package com.nanwulife.vo;
 
 public class ScoreStuInfoVo {
+
+    private Integer stuId;
+
     private Integer stuNum;
     
     private String stuName;
@@ -79,5 +82,13 @@ public class ScoreStuInfoVo {
 
     public void setStuClass(Integer stuClass) {
         this.stuClass = stuClass;
+    }
+
+    public Integer getStuId() {
+        return stuId;
+    }
+
+    public void setStuId(Integer stuId) {
+        this.stuId = stuId;
     }
 }
