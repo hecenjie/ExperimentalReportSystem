@@ -74,7 +74,7 @@
   <select id="getScoreListByStunum" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.ScoreStuInfoVo">
     SELECT stu_num, stu_name, e.name as expName, score, stu_class as stuClass, m.name as majorName
     <if test="isExport == 1">
-      into outfile #{path,jdbcType=String}
+      into outfile #{path}
     </if>
     FROM user u, experiment e, score s, major m
     WHERE u.id = s.stu_id 
@@ -90,7 +90,7 @@
   <select id="getScoreListByMajor" parameterType="Map" resultType="com.nanwulife.vo.ScoreStuInfoVo">
     SELECT stu_num, stu_name, major.name as majorName, stu_class, exp.name as expName, score
     <if test="isExport == 1">
-      into outfile #{path,jdbcType=String}
+      into outfile #{path}
     </if>
     FROM user u, major, experiment exp, score s
     WHERE u.major_id = major.id
