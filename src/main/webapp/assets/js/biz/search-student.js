@@ -17,7 +17,9 @@ $(function () {
 })
 
 function searchStu(isExport){
-    $("#stu_score").empty();
+    if(isExport === 0) {
+        $("#stu_score").empty();
+    }
     var stuNum = $("#stu_num").val();
     var expId = $("#exp").find("option:selected").val();
     $.ajax({
@@ -32,7 +34,8 @@ function searchStu(isExport){
         success:function(res){
             if(res.status === 0){
                 $.each(res.data, function (idx, val) {
-                    var str = "                                    <tr>\n" +
+                    var id = val.stuId+"_"+val.expId;
+                    var str = "                                    <tr id="+id+">\n" +
                         "                                        <td>"+val.stuNum+"</td>\n" +
                         "                                        <td>"+val.stuName+"</td>\n" +
                         "                                        <td>"+val.majorName+val.stuClass+"</td>\n" +
@@ -61,11 +64,11 @@ function deleteScore(stuId, expId){
             },
             success: function (res) {
                 if (res.status === 0) {
+                    var id = stuId+"_"+expId;
                     alert("删除成功");
-                    searchStu(0);
+                    $("#"+id).remove();
                 } else{
                     alert("删除失败");
-                    searchStu(0);
                 }
             }, error: function () {
                 alert("向服务器请求数据失败")

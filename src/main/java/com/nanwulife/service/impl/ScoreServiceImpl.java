@@ -58,7 +58,7 @@ public class ScoreServiceImpl implements IScoreService {
 
     public ServerResponse getScoreListByStunum(Integer userId, Integer expId, Integer isExport){
         String basePath = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
         Date date = new Date();
         String filename = sdf.format(date) + ".xls";
         if(isExport == 1){
@@ -73,7 +73,7 @@ public class ScoreServiceImpl implements IScoreService {
 
     public ServerResponse getScoreListByMajor(Integer majorId, Integer stuClass, Integer expId, Integer isExport, String orderBy){
         String basePath = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
         Date date = new Date();
         String filename = sdf.format(date) + ".xls";
         if(orderBy.equals("stu_num_asc"))
