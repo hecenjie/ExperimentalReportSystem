@@ -58,8 +58,8 @@ public class ExperimentSubmitController {
     @RequestMapping(value = "Exp_01.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse submitExp(@RequestParam(value = "selectval[]") String[] selectval, HttpSession session, @RequestParam(value = "result[]") String[] result,
-                                    @RequestParam(value = "chart1[]") String[] chart1, @RequestParam(value = "table2[]") Integer[] table2,
-                                    @RequestParam(value = "table3[]") Integer[] table3, @RequestParam(value = "table4[]") Integer[] table4){
+                                    @RequestParam(value = "chart1[]") String[] chart1, @RequestParam(value = "table2[]") String[] table2,
+                                    @RequestParam(value = "table3[]") String[] table3, @RequestParam(value = "table4[]") String[] table4){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());

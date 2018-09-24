@@ -79,7 +79,7 @@ public class ScoreServiceImpl implements IScoreService {
         if(orderBy.equals("stu_num_asc"))
             orderBy = "stu_num asc";
         else 
-            orderBy.replace("_", " ");
+            orderBy = orderBy.replace("_", " ");
         System.out.println(orderBy);
         if(isExport == 1){
             if(System.getProperty("os.name").toLowerCase().contains("linux")){
