@@ -33,6 +33,9 @@ function searchStu(isExport){
         },
         success:function(res){
             if(res.status === 0){
+                if(isExport === 1) {
+                    alert("导出成功！");
+                }
                 $.each(res.data, function (idx, val) {
                     var id = val.stuId+"_"+val.expId;
                     var str = "                                    <tr id="+id+">\n" +

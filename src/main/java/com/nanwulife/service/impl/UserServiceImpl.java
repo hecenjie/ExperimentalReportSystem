@@ -85,9 +85,8 @@ public class UserServiceImpl implements IUserService {
         stuBasicInfoVo.setStuName(user.getStuName());
         //如果没有该专业，返回null
         Major major = majorMapper.selectByPrimaryKey(user.getMajorId());
-        if(major == null)
-            return null;
-        stuBasicInfoVo.setMajorName(major.getName());
+        if(major != null)
+            stuBasicInfoVo.setMajorName(major.getName());
         stuBasicInfoVo.setStuNum(user.getStuNum());
         return stuBasicInfoVo;
     }

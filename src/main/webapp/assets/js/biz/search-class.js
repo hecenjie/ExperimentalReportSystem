@@ -33,7 +33,6 @@ $(function () {
 })
 
 function search(orderBy, isExport){
-    $("#stu_score").empty();
     var stuClass = $("#stu_class").val();
     var majorId = $("#major").find("option:selected").val();
     var expId = $("#exp").find("option:selected").val();
@@ -55,6 +54,9 @@ function search(orderBy, isExport){
         },
         success:function(res){
             if(res.status === 0){
+                if(isExport === 1) {
+                    alert("导出成功！");
+                }
                 $.each(res.data, function (idx, val) {
                     var id = val.stuId+"_"+val.expId;
                     var str = "                                    <tr id="+id+">\n" +
