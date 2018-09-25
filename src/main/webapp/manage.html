@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+    <title>教师主页</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
     <!--CUSTOM MAIN STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 </head>
 <body>
 <div id="wrapper">
@@ -25,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">南京农业大学</a>
+            <a class="navbar-brand" href="manage.html">南京农业大学</a>
         </div>
 
         <div class="header-right">
@@ -81,6 +81,44 @@
                     <h1 class="page-subhead-line">欢迎使用南京农业大学实验报告提交及管理系统</h1>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info">
+                        本系统是针对南京农业大学学生及教师使用的物理实验报告提交及管理系统，旨在推进实验报告的自动化计分与存档，
+                        并便利学生们填写实验报告
+                        <br>
+                        由于本系统目前是初步完成的阶段，以下须知请教师们注意：
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <!--<div class="panel-heading">-->
+                        <!--注意事项-->
+                        <!--</div>-->
+                        <div class="panel-body">
+                            <div class="alert alert-success">
+                                请妥善保管好管理员密码，如有泄露的可能请联系开发者重置密码。
+                            </div>
+                            <div class="alert alert-info">
+                                为了防止操作有误，删除学生成绩时，不会删除word存档。删除学生成绩后，学生可重新进入实验进行提交，提交后原文档将被新文档覆盖。
+                            </div>
+                            <div class="alert alert-warning">
+                                word导出路径在/reportSystem/student/，excel导出路径在/var/lib/mysql-files/
+                            </div>
+                            <div class="alert alert-danger">
+                                暂未开发修改学生信息及成绩功能，如有学生学号被他人注册，请联系开发者进行账号的正确协调。
+                            </div>
+                            <div class="alert alert-success">
+                                若实验室网速不佳，请提醒学生们不要同时提交实验，并且在提交前进行截图以免提交失败同时数据丢失，建议在此情况下让学生们回到宿舍后根据截图重新填写实验报告并提交。所有班级做完实验后，请及时关闭实验，以免他人进入提交。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->
@@ -105,7 +143,6 @@
 <!--  用户登陆状态校验 -->
 <script src="assets/js/biz/loginCheck.js"></script>
 <script src="assets/js/biz/manage.js"></script>
-<script src="assets/js/biz/logout.js"></script>
 <script src="assets/js/biz/logout.js"></script>
 
 

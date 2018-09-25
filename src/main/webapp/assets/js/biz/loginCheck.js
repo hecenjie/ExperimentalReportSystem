@@ -18,9 +18,16 @@ $(function () {
                 if (strPage === "login.html" || strPage === "register.html") {
                     location.href = "manage.html"
                 }
+                else if(strPage === "index.html" || strPage === "PhotoeletricExperiment.html"){
+                    location.href = "manage.html"
+                }
             } else if(res.status === 13) {
                 //如果登陆用户为学生
                 if (strPage === "login.html" || strPage === "register.html") {
+                    location.href = "index.html"
+                }
+                else if(strPage === "manage.html" || strPage === "search-class.html" || strPage === "search-student.html"
+                    || strPage === "manage-exp.html"){
                     location.href = "index.html"
                 }
             }

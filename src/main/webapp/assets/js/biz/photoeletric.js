@@ -309,7 +309,7 @@ function uploadChart(chart, index) {
         },
         async: false,
         success: function (res) {
-            alert(res.status);
+            // alert(res.status);
         },
         error: function (res) {
             alert("向服务器请求数据失败")
@@ -383,8 +383,10 @@ function submit() {
         success: function (result) {
             if (result.status === 14)
                 alert("请勿多次提交试验");
-            else
+            else {
                 alert("提交成功");
+                location.href="index.html"
+            }
         },
         error: function (result) {
             alert("向服务器请求数据失败" + result);

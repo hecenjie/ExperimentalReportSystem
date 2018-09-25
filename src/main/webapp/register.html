@@ -6,10 +6,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>系统登录</title>
+        <title>系统注册</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">-->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
@@ -18,8 +18,8 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <script src="assets/js/html5shiv.js"></script>
+            <script src="assets/js/respond.min.js"></script>
         <![endif]-->
 
         <!-- Favicon and touch icons -->
@@ -48,7 +48,7 @@
                         	<div class="form-top">
                         		<div class="form-top-left">
                         			<h3>用户注册</h3>
-                            		<p>Enter your username and password to log on:</p>
+                            		<p>请输入您的学生信息进行注册，为防止遗忘，密码请与教务处保持相同：</p>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-key"></i>
@@ -73,12 +73,12 @@
                                         <input type="password" name="passwordCheck" placeholder="确认密码" class="form-password form-control" id="form-passwordCheck">
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-class">Class</label>
-                                        <input type="text" name="password" placeholder="班级" class="form-class form-control" id="form-class">
-                                    </div>
-                                    <div class="form-group">
                                         <select class="form-control" id="major">
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-class">Class</label>
+                                        <input type="text" name="password" placeholder="班级" class="form-class form-control" id="form-class">
                                     </div>
                                     <p><a href="login.html">账号登陆</a></p>
 			                        <button type="submit" class="btn" onclick="register()">提交</button>

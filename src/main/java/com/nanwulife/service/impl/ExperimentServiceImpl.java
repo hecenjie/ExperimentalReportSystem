@@ -110,6 +110,14 @@ public class ExperimentServiceImpl implements IExperimentService {
             fileDir.mkdirs();
         }
 
+        if(System.getProperty("os.name").toLowerCase().contains("linux")){
+            try {
+                Runtime.getRuntime().exec("chmod 777 " + path);
+            } catch(Exception ex){
+                logger.info("文件权限变更出现异常!");
+            }
+        }
+
         try {
 //            logger.info(image);
 //            BASE64Decoder decoder = new BASE64Decoder();
