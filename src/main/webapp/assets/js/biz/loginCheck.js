@@ -10,25 +10,25 @@ $(function () {
 
             //用户未登陆
             if(res.status === 2) {
-                if (strPage !== "login.html" && strPage !== "register.html") {
+                if (strPage !== "login.html" && strPage !== "register.html" && strPage !== "") {
                     location.href = "login.html"
                 }
             } else if(res.status === 14) {
                 //如果登陆用户为老师
-                if (strPage === "login.html" || strPage === "register.html") {
-                    location.href = "manage.html"
+                if (strPage === "login.html" || strPage === "register.html" || strPage === "") {
+                    window.location.replace("manage.html")
                 }
                 else if(strPage === "index.html" || strPage === "PhotoeletricExperiment.html"){
-                    location.href = "manage.html"
+                    window.location.replace("manage.html")
                 }
             } else if(res.status === 13) {
                 //如果登陆用户为学生
-                if (strPage === "login.html" || strPage === "register.html") {
-                    location.href = "index.html"
+                if (strPage === "login.html" || strPage === "register.html" || strPage === "") {
+                    window.location.replace("index.html")
                 }
                 else if(strPage === "manage.html" || strPage === "search-class.html" || strPage === "search-student.html"
                     || strPage === "manage-exp.html"){
-                    location.href = "index.html"
+                    window.location.replace("index.html")
                 }
             }
         }, error:function() {

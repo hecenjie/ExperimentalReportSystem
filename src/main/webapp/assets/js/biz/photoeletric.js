@@ -419,7 +419,7 @@ function submitAll() {
     if (checkAvaliable() == false)
         return;
 
-    if (confirm("确认上传吗")) {
+    if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
         uploadChart("chart1", 1);
         uploadChart("chart2", 2);
         submit();
