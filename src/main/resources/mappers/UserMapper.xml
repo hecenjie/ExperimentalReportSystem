@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.nanwulife.pojo.User">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="stu_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="stu_num" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="stu_class" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="password" javaType="java.lang.String" jdbcType="CHAR" />
       <arg column="role" javaType="java.lang.Short" jdbcType="INTEGER" />
@@ -29,7 +29,7 @@
     insert into user (id, stu_num, stu_class, 
       password, role, major_id, stu_name
       )
-    values (#{id,jdbcType=INTEGER}, #{stuNum,jdbcType=INTEGER}, #{stuClass,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{stuNum,jdbcType=BIGINT}, #{stuClass,jdbcType=INTEGER},
       #{password,jdbcType=CHAR}, #{role,jdbcType=SMALLINT}, #{majorId,jdbcType=INTEGER}, #{stuName,jdbcType=VARCHAR}
       )
   </insert>
@@ -63,7 +63,7 @@
         #{id,jdbcType=INTEGER},
       </if>
       <if test="stuNum != null">
-        #{stuNum,jdbcType=INTEGER},
+        #{stuNum,jdbcType=BIGINT},
       </if>
       <if test="stuClass != null">
         #{stuClass,jdbcType=INTEGER},
@@ -86,7 +86,7 @@
     update user
     <set>
       <if test="stuNum != null">
-        stu_num = #{stuNum,jdbcType=INTEGER},
+        stu_num = #{stuNum,jdbcType=BIGINT},
       </if>
       <if test="stuClass != null">
         stu_class = #{stuClass,jdbcType=INTEGER},
@@ -108,7 +108,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.nanwulife.pojo.User">
     update user
-    set stu_num = #{stuNum,jdbcType=INTEGER},
+    set stu_num = #{stuNum,jdbcType=BIGINT},
       stu_class = #{stuClass,jdbcType=INTEGER},
       password = #{password,jdbcType=CHAR},
       role = #{role,jdbcType=SMALLINT},
@@ -117,24 +117,24 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="selectByUsername" parameterType="java.lang.Integer" resultType="int">
+  <select id="selectByUsername" parameterType="java.lang.Long" resultType="int">
     select
     count(*)
     from user
-    where stu_num = #{username,jdbcType=INTEGER}
+    where stu_num = #{username,jdbcType=BIGINT}
   </select>
 
-  <select id="checkByUsername" parameterType="java.lang.Integer" resultType="com.nanwulife.pojo.User">
+  <select id="checkByUsername" parameterType="java.lang.Long" resultType="com.nanwulife.pojo.User">
     select
     *
     from user
-    where stu_num = #{username,jdbcType=INTEGER}
+    where stu_num = #{username,jdbcType=BIGINT}
   </select>
   
   <select id="queryMajornameAndClassById" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.StuBasicInfoVo">
     SELECT major.id, major.name as majorName, stu_class
     FROM major, user 
     WHERE user.major_id=major.id 
-    AND user.stu_num=#{stu_num, jdbcType=INTEGER}  
+    AND user.stu_num=#{stu_num, jdbcType=BIGINT}
   </select>
 </mapper>

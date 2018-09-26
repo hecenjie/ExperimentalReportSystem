@@ -90,7 +90,7 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @param image
      * @return
      */
-    public ServerResponse uploadChart(Integer expId, Integer stuNum, String image, Integer index) {
+    public ServerResponse uploadChart(Integer expId, Long stuNum, String image, Integer index) {
         String basePath;
         String chartPath;
         String path;

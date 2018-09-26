@@ -312,7 +312,7 @@ function uploadChart(chart, index) {
             // alert(res.status);
         },
         error: function (res) {
-            alert("向服务器请求数据失败")
+            alert("向服务器请求数据失败" + res.msg)
         }
 
     })
@@ -385,7 +385,7 @@ function submit() {
                 alert("请勿多次提交试验");
             else {
                 alert("提交成功");
-                location.href="index.html"
+                location.href="../index.html"
             }
         },
         error: function (result) {

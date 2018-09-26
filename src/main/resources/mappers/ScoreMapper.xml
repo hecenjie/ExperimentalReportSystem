@@ -71,7 +71,7 @@
       and exp_id = #{expId,jdbcType=INTEGER}
   </update>
   
-  <select id="getScoreListByStunum" parameterType="java.lang.Integer" resultType="com.nanwulife.vo.ScoreStuInfoVo">
+  <select id="getScoreListByStunum" parameterType="Map" resultType="com.nanwulife.vo.ScoreStuInfoVo">
     SELECT stu_num, stu_name, e.name as expName, m.name as majorName, stu_class as stuClass, score
     <if test="isExport != 1">
       , e.id as expId, u.id as stuId
@@ -82,7 +82,7 @@
     FROM user u, experiment e, score s, major m
     WHERE u.id = s.stu_id 
     AND s.exp_id = e.id
-    AND u.stu_num = #{userId,jdbcType=INTEGER}
+    AND u.stu_num = #{userId,jdbcType=BIGINT}
     AND u.major_id=m.id
     <if test="expId != 0">
       AND e.id = #{expId,jdbcType=INTEGER}

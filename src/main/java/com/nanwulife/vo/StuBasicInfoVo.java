@@ -10,7 +10,7 @@ public class StuBasicInfoVo {
 
     private Integer id;
 
-    private Integer stuNum;
+    private Long stuNum;
 
     private Integer stuClass;
 
@@ -28,11 +28,11 @@ public class StuBasicInfoVo {
         this.id = id;
     }
 
-    public Integer getStuNum() {
+    public Long getStuNum() {
         return stuNum;
     }
 
-    public void setStuNum(Integer stuNum) {
+    public void setStuNum(Long stuNum) {
         this.stuNum = stuNum;
     }
 

@@ -32,7 +32,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private MajorMapper majorMapper;
 
-    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass, String stuName){
+    public ServerResponse<User> register(Long username, String password, Integer majorId, Integer stuClass, String stuName){
         //判断用户名是否存在
         int isRepeat = userMapper.selectByUsername(username);
         if(isRepeat == 0){
@@ -52,7 +52,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.USERNAME_REPEAT.getCode(), Const.ResponseCode.USERNAME_REPEAT.getDesc());
     }
     
-    public ServerResponse<User> login(Integer username, String password) {
+    public ServerResponse<User> login(Long username, String password) {
         User usernameUser = userMapper.checkByUsername(username);
         //若账号不存在 返回错误
         if(usernameUser == null){
@@ -91,7 +91,7 @@ public class UserServiceImpl implements IUserService {
         return stuBasicInfoVo;
     }
     
-    public StuBasicInfoVo queryMajornameAndClassById(Integer stu_id){
+    public StuBasicInfoVo queryMajornameAndClassById(Long stu_id){
         return userMapper.queryMajornameAndClassById(stu_id);
     }
 

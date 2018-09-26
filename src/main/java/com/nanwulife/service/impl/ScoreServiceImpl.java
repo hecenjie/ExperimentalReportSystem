@@ -56,7 +56,7 @@ public class ScoreServiceImpl implements IScoreService {
         return ServerResponse.createBySuccess();
     }
 
-    public ServerResponse getScoreListByStunum(Integer userId, Integer expId, Integer isExport){
+    public ServerResponse getScoreListByStunum(Long userId, Integer expId, Integer isExport){
         String basePath = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
         Date date = new Date();

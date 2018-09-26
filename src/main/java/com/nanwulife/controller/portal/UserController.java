@@ -41,7 +41,7 @@ public class UserController {
      */
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> register(Integer username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
+    public ServerResponse<User> register(Long username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
         if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null)
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         if(!StringUtils.equals(password,passwordCheck)){
@@ -65,7 +65,7 @@ public class UserController {
      */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> login(@RequestParam("username") Integer  username, @RequestParam("password") String password, HttpSession session){
+    public ServerResponse<User> login(@RequestParam("username") Long  username, @RequestParam("password") String password, HttpSession session){
         if(session.getAttribute(Const.CURRENT_USER) != null){
             return ServerResponse.createByErrorMessage("用户已登陆，请勿重复登陆");
         }

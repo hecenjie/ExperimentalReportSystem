@@ -13,7 +13,7 @@ public interface IExperimentService {
 
     public ServerResponse getExpStatus(Integer expId);
 
-    public ServerResponse uploadChart(Integer expId, Integer stuNum, String image, Integer index);
+    public ServerResponse uploadChart(Integer expId, Long stuNum, String image, Integer index);
 
     public List<Experiment> getAllExps();
 

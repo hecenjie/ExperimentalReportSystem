@@ -4,7 +4,7 @@ public class ScoreStuInfoVo {
 
     private Integer stuId;
 
-    private Integer stuNum;
+    private Long stuNum;
     
     private String stuName;
     
@@ -20,11 +20,11 @@ public class ScoreStuInfoVo {
     
     private Integer stuClass;
 
-    public Integer getStuNum() {
+    public Long getStuNum() {
         return stuNum;
     }
 
-    public void setStuNum(Integer stuNum) {
+    public void setStuNum(Long stuNum) {
         this.stuNum = stuNum;
     }
 

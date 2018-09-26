@@ -19,9 +19,9 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    int selectByUsername(Integer username);
+    int selectByUsername(Long username);
 
-    User checkByUsername (Integer username);
+    User checkByUsername (Long username);
     
-    StuBasicInfoVo queryMajornameAndClassById(Integer stu_id);
+    StuBasicInfoVo queryMajornameAndClassById(Long stu_id);
 }

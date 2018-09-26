@@ -51,7 +51,7 @@ public class ScoreManageController {
 
     @RequestMapping(value = "get_scorelist_stunum.do", method = RequestMethod.GET)
     @ResponseBody
-    public ServerResponse getScoreListByStunum(HttpSession session, @RequestParam("stuNum") Integer stuID, @RequestParam(value="expId", defaultValue="0") Integer expId, @RequestParam(value="isExport", defaultValue="0") Integer isExport){
+    public ServerResponse getScoreListByStunum(HttpSession session, @RequestParam("stuNum") Long stuID, @RequestParam(value="expId", defaultValue="0") Integer expId, @RequestParam(value="isExport", defaultValue="0") Integer isExport){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());

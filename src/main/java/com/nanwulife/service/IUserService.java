@@ -12,12 +12,12 @@ import com.nanwulife.vo.StuBasicInfoVo;
  */
 public interface IUserService {
 
-    public ServerResponse<User> register(Integer username, String password, Integer majorId, Integer stuClass, String StuName);
+    public ServerResponse<User> register(Long username, String password, Integer majorId, Integer stuClass, String StuName);
 
-    public ServerResponse<User> login(Integer username, String password);
+    public ServerResponse<User> login(Long username, String password);
 
     public ServerResponse<StuBasicInfoVo> getStuBasicInfo(User user);
 
-    StuBasicInfoVo queryMajornameAndClassById(Integer stu_id);
+    StuBasicInfoVo queryMajornameAndClassById(Long stu_id);
 
 }

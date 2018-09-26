@@ -3,7 +3,7 @@ package com.nanwulife.pojo;
 public class User {
     private Integer id;
 
-    private Integer stuNum;
+    private Long stuNum;
 
     private Integer stuClass;
 
@@ -15,7 +15,7 @@ public class User {
 
     private String stuName;
 
-    public User(Integer id, Integer stuNum, Integer stuClass, String password, Integer role, Integer majorId, String stuName) {
+    public User(Integer id, Long stuNum, Integer stuClass, String password, Integer role, Integer majorId, String stuName) {
         this.id = id;
         this.stuNum = stuNum;
         this.stuClass = stuClass;
@@ -37,11 +37,11 @@ public class User {
         this.id = id;
     }
 
-    public Integer getStuNum() {
+    public Long getStuNum() {
         return stuNum;
     }
 
-    public void setStuNum(Integer stuNum) {
+    public void setStuNum(Long stuNum) {
         this.stuNum = stuNum;
     }
 
