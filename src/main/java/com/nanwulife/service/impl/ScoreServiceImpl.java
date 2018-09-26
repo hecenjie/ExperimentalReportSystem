@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 /**
  * @Project: ExperimentalReportSystem
  * @Description: 分数Service层
@@ -24,7 +25,6 @@ import java.util.Date;
 public class ScoreServiceImpl implements IScoreService {
 
     private static final Logger logger = LoggerFactory.getLogger(ScoreServiceImpl.class);
-
     @Autowired
     ScoreMapper scoreMapper;
 
@@ -90,5 +90,6 @@ public class ScoreServiceImpl implements IScoreService {
         }
         System.out.println(basePath + filename);
         return ServerResponse.createBySuccess(scoreMapper.getScoreListByMajor(majorId, stuClass, expId, isExport, orderBy, basePath + filename));
+        
     }
 }
