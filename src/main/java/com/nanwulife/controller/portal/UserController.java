@@ -67,7 +67,7 @@ public class UserController {
     @ResponseBody
     public ServerResponse<User> login(@RequestParam("username") Long  username, @RequestParam("password") String password, HttpSession session){
         if(session.getAttribute(Const.CURRENT_USER) != null){
-            return ServerResponse.createByErrorMessage("用户已登陆，请勿重复登陆");
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.LOGIN_ALREADY.getCode(), Const.ResponseCode.LOGIN_ALREADY.getDesc());
         }
         ServerResponse<User> response = iUserService.login(username, password);
         if(response.isSuccess()){
