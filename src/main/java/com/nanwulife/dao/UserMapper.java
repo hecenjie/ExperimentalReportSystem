@@ -23,5 +23,5 @@ public interface UserMapper {
 
     User checkByUsername (Long username);
     
-    StuBasicInfoVo queryMajornameAndClassById(Long stu_id);
+    StuBasicInfoVo queryMajornameAndClassByNum(Long stu_num);
 }

@@ -91,8 +91,8 @@ public class UserServiceImpl implements IUserService {
         return stuBasicInfoVo;
     }
     
-    public StuBasicInfoVo queryMajornameAndClassById(Long stu_id){
-        return userMapper.queryMajornameAndClassById(stu_id);
+    public StuBasicInfoVo queryMajornameAndClassByNum(Long stu_num){
+        return userMapper.queryMajornameAndClassByNum(stu_num);
     }
 
 }

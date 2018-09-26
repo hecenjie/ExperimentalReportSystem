@@ -65,8 +65,8 @@ public class ExperimentSubmitController {
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
         }
         int rank = 0;
-        int stu_class = iUserService.queryMajornameAndClassById(user.getStuNum()).getStuClass();
-        String major_name = iUserService.queryMajornameAndClassById(user.getStuNum()).getMajorName();
+        int stu_class = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getStuClass();
+        String major_name = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getMajorName();
         String chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
         String wordPath = new PropertiesUtil("server.properties").readProperty("report.word.server.path");
         String basePath;
