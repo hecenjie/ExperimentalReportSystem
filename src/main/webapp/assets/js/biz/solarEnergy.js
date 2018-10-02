@@ -3,6 +3,56 @@ var chart2;
 var chart3;
 var chart4;
 
+var table1_x1=50;
+var table1_x2=50;
+var table1_x3=50;
+var table1_x4=50;
+var table1_x5=50;
+var table1_x6=50;
+var table1_x7=50;
+var table1_x8=50;
+var table1_x9=50;
+var table1_x10=50;
+var table1_x11=50;
+var table1_x12=50;
+var table1_x13=50;
+var table1_x14=50;
+var table1_x15=50;
+var table1_x16=50;
+var table1_x17=50;
+var table1_x18=50;
+var table1_x19=50;
+var table1_x20=50;
+var table1_x21=50;
+
+var table2_x1=0.5;
+var table2_x2=1.0;
+var table2_x3=1.5;
+var table2_x4=2.0;
+var table2_x5=2.5;
+var table2_x6=3.0;
+var table2_x7=3.5;
+var table2_x8=4.0;
+var table2_x9=4.5;
+var table2_x10=5.0;
+var table2_x11=50;
+var table2_x12=50;
+var table2_x13=50;
+var table2_x14=50;
+var table2_x15=50;
+var table2_x16=50;
+var table2_x17=50;
+var table2_x18=50;
+var table2_x19=50;
+var table2_x20=50;
+var table2_x21=50;
+var table2_x22=50;
+var table2_x23=50;
+var table2_x24=50;
+var table2_x25=50;
+var table2_x26=50;
+var table2_x27=50;
+
 function generateChart1() {
 }
 
