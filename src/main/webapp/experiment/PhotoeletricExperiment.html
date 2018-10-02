@@ -10,7 +10,7 @@
     </script>
     <title>光电效应和普朗克常数的测定实验报告</title>
 </head>
-<body id="pdf_container" style="background-color: #FFFFFF">
+<body id="pdf_container" onbeforeunload="return leave()" style="background-color: #FFFFFF">
 <!-- -->
 <div class="pdf_container">
     <div style="text-align:center">
@@ -900,6 +900,12 @@
     </div>
 </div>
 <button onclick="submitAll()">提交</button>
+
+<script type="text/javascript">
+    function leave(){
+        return "您确认退出此页面吗？";
+    }
+</script>
 
 <script src="../assets/js/jquery-1.11.1.min.js"></script>
 <script src="../assets/js/Chart.js" ></script>

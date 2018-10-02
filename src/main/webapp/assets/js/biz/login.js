@@ -27,7 +27,10 @@ function login(){
                 $("#msg").text("账号或密码错误");
             }
             else if(result.status === 5){
-                alert("检测到已有账号登录，若无法进入页面，请使用chrome浏览器");
+                alert("检测到已有账号登录，若无法进入页面，请安装最新版chrome浏览器后尝试");
+            }
+            else{
+                alert("服务器发生错误，请重试")
             }
         },
         error:function (result) {
