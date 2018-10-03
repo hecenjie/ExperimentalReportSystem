@@ -233,7 +233,27 @@ public class WordToNewWordUtil {
     
     public static void main(String[] args) throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("stunum", "123456");//
+        params.put("choice_1", "A");
+        params.put("choice_2", "B");//
+        params.put("choice_3", "C");//
+        params.put("choice_4", "A");//
+        params.put("choice_5", "B");//
+        params.put("choice_6", "C");//
+        params.put("choice_7", "C");//
+        params.put("choice_8", "A");//
+        params.put("choice_9", "A");//
+        params.put("choice_10", "B");//
+        params.put("table1_1", "B");//
+        params.put("table1_3", "B");//
+        params.put("table1_5", "B");//
+        params.put("table1_7", "B");//
+        params.put("table1_9", "B");//
+        params.put("table1_11", "B");//
+        params.put("table1_12", "B");//
+        params.put("table1_14", "B");//
+        params.put("table1_16", "B");//
+        params.put("table1_18", "B");//
+/*        params.put("stunum", "123456");//
         params.put("stuname", "A");//
         params.put("score", "A");//
         params.put("choice_01", "A");//
@@ -334,7 +354,9 @@ public class WordToNewWordUtil {
         params.put("localPicture1", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
         params.put("localPicture2", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
         params.put("localPicture3", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
-        params.put("localPicture4", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
-        templateWrite2("/home/creams/桌面/光电效应实验模板.docx", params, "/home/creams/桌面/test1.docx");
+        params.put("localPicture4", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));*/
+
+        
+        templateWrite2("/home/creams/桌面/太阳能微信模板.docx", params, "/home/creams/桌面/test1.docx");
     }
 }

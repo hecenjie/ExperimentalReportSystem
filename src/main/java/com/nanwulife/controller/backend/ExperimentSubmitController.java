@@ -54,7 +54,7 @@ public class ExperimentSubmitController {
      * @param selectval
      * @return
      */
-    //TODO:未完成
+    //TODO:完成
     @RequestMapping(value = "Exp_01.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse submitExp(@RequestParam(value = "selectval[]") String[] selectval, HttpSession session, @RequestParam(value = "result[]") String[] result,
@@ -154,5 +154,11 @@ public class ExperimentSubmitController {
         score.setScore(rank);
         user = null;
         return iScoreService.submit(score);
+    }
+
+    @RequestMapping(value = "Exp_02.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse submitExp(){
+        return null;
     }
 }
