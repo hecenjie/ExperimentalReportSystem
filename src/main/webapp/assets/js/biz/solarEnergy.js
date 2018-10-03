@@ -643,6 +643,14 @@ function uploadChart(chart, index) {
     })
 }
 
+function submitAll() {
+    if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
+        uploadChart("chart1", 1);
+        uploadChart("chart2", 2);
+        uploadChart("chart3", 3);
+        uploadChart("chart4", 4);
+    }
+}
 
 $(function () {
         $.ajax({
