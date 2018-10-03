@@ -629,7 +629,7 @@ function uploadChart(chart, index) {
         url: "/exp/upload_chart.do",
         data: {
             image: imgData.substring(22),
-            expId: 1,
+            expId: 2,
             index: index
         },
         async: false,
@@ -643,12 +643,123 @@ function uploadChart(chart, index) {
     })
 }
 
+function submit() {
+    var selectval = new Array();
+    var table1 = new Array();
+    var table2 = new Array();
+    var table3 = new Array();
+    var table4 = new Array();
+    var result = new Array();
+
+    
+    for (var i = 1; i <= 10; i++) {
+        selectval[i - 1] = $("#choice_" + i).val();
+    }
+    
+    for (var i = 1; i <= 42; i++) {
+        if (i <= 9)
+            table1[i - 1] = $("#table1_0" + i + "" ).val();
+        else
+            table1[i - 1] = $("#table1_"  + i + "" ).val();
+        
+    }
+    
+    for (var i = 1; i <= 54; i++) {
+        if (i <= 9)
+            table2[i - 1] = $("#table2_0" + i + "" ).val();
+        else
+            table2[i - 1] = $("#table2_"  + i + "" ).val();
+    }
+    
+    for (var i = 1; i <= 42; i++) {
+        if (i <= 9)
+            table3[i - 1] = $("#table3_0" + i + "" ).val();
+        else
+            table3[i - 1] = $("#table3_"  + i + "" ).val();
+    }
+    
+    for (var i = 1; i <= 54; i++) {
+        if (i <= 9)
+            table4[i - 1] = $("#table4_0" + i + "" ).val();
+        else
+            table4[i - 1] = $("#table4_"  + i + "" ).val();
+    }
+    
+    result[0] = $("#table1_p").val();
+    result[1] = $("#table2_i").val();
+    result[2] = $("#table2_u").val();
+    result[3] = $("#table2_ff").val();
+    result[4] = $("#table3_p").val();
+    result[5] = $("#table4_i").val();
+    result[6] = $("#table4_u").val();
+    result[7] = $("#table4_ff").val();
+
+    $.ajax({
+        type: "POST",
+        url: "/sub/Exp_02.do",
+        data: {
+            selectval: selectval,
+            table1:table1,
+            table2:table2,
+            table3:table3,
+            table4:table4,
+            result:result
+        },
+        async: false,
+        dataType: "json",
+        success: function (result) {
+            if (result.status === 14)
+                alert("请勿多次提交试验");
+            else {
+                alert("提交成功");
+                location.href="../index.html"
+            }
+        },
+        error: function (result) {
+            alert("向服务器请求数据失败" + result);
+        }
+    });
+}
+
+
+/*
+function submit() {
+    var selectval = new Array();
+    for (var i = 0; i < 10; i++){
+            selectval[0] = $("#choice_0" + i + 1 + "");
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/sub/Exp_02.do",
+        data: {
+            selectval: selectval
+        },
+        async: false,
+        dataType: "json",
+        success: function (result) {
+            alert(result.status)
+            if (result.status === 14)
+                alert("请勿多次提交试验");
+            else {
+                alert("提交成功");
+                location.href="../index.html"
+            }
+        },
+        error: function (result) {
+            alert("向服务器请求数据失败" + result);
+        }
+    });
+}
+*/
+
 function submitAll() {
     if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
         uploadChart("chart1", 1);
         uploadChart("chart2", 2);
         uploadChart("chart3", 3);
         uploadChart("chart4", 4);
+        submit();
     }
 }
 
@@ -657,7 +768,7 @@ $(function () {
             type: "GET",
             url: "/exp/get_exp_status.do",
             data: {
-                expId: 1
+                expId: 2
             },
             dataType: "json",
             success: function (result) {
@@ -675,7 +786,7 @@ $(function () {
             type: "GET",
             url: "/score/is_stu_have_score.do",
             data: {
-                expId: 1
+                expId: 2
             },
             dataType: "json",
             success: function (res) {

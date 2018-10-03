@@ -357,6 +357,6 @@ public class WordToNewWordUtil {
         params.put("localPicture4", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));*/
 
         
-        templateWrite2("/home/creams/桌面/太阳能微信模板.docx", params, "/home/creams/桌面/test1.docx");
+        templateWrite2("/home/creams/桌面/太阳能实验模板.docx", params, "/home/creams/桌面/test1.docx");
     }
 }
