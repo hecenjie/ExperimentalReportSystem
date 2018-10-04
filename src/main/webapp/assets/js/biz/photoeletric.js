@@ -21,10 +21,10 @@ function generateChart1() {
     var b = res[1];
     var h = (1.60 * k).toFixed(3) * 1E-19 * 1E-14;
     var h0 = 6.626E-34;
-    var E = Math.abs((h - h0) / h0).toFixed(3);
+    var E = Math.abs((h - h0) / h0) * 100;
     $("#blank_02_01").text(k.toFixed(3) * 1E-14);
     $("#blank_02_02").text(h);
-    $("#blank_02_03").text(E);
+    $("#blank_02_03").text(E.toFixed(2));
     // console.info("k = " + k);
     // console.info("b = " + b);
     var fitBeginY = k * pic1BeginX + b;
@@ -184,8 +184,8 @@ function generateChart2() {
                 fill: false,
             }, {
                 label: "r=40cm, 2mm",
-                backgroundColor: 'rgb(126, 202, 256)',
-                borderColor: 'rgb(126, 202, 256)',
+                backgroundColor: 'rgb(105,105,105)',
+                borderColor: 'rgb(105,105,105)',
                 data: [
                     table3_01, table3_02, table3_03, table3_04, table3_05, table3_06, table3_07, table3_08, table3_09,
                     table3_10, table3_11, table3_12, table3_13, table3_14, table3_15, table3_16, table3_17, table3_18,
@@ -194,8 +194,8 @@ function generateChart2() {
                 fill: false,
             }, {
                 label: "r=30cm, 2mm",
-                backgroundColor: 'rgb(105,105,105)',
-                borderColor: 'rgb(105,105,105)',
+                backgroundColor: 'rgb(126, 202, 256)',
+                borderColor: 'rgb(126, 202, 256)',
                 data: [
                     table4_01, table4_02, table4_03, table4_04, table4_05, table4_06, table4_07, table4_08, table4_09,
                     table4_10, table4_11, table4_12, table4_13, table4_14, table4_15, table4_16, table4_17, table4_18,
