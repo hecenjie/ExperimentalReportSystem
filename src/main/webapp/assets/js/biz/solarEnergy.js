@@ -541,7 +541,7 @@ function generateChart4() {
 
     $("#table4_i").val(table4_y1);
     $("#table4_u").val(6.1);
-    $("#table4_ff").val(ff($("#table4_p").val(), table4_y1, 6.1));
+    $("#table4_ff").val(ff($("#table3_p").val(), table4_y1, 6.1));
 
     var ctx = document.getElementById('chart4').getContext('2d');
     chart4 = new Chart(ctx, {
