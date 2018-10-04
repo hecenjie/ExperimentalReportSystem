@@ -175,7 +175,7 @@ public class ExperimentSubmitController {
         String basePath;
         String path;
         Map<String, Object> params = new HashMap<String, Object>();
-        ServerResponse serverResponse = iScoreService.isStuHaveScore(1, user.getId());
+        ServerResponse serverResponse = iScoreService.isStuHaveScore(2, user.getId());
         if (serverResponse.getStatus() == 14){
             //报告重复提交
             return serverResponse;
@@ -246,7 +246,7 @@ public class ExperimentSubmitController {
         score.setExpId(2);
         score.setScore(rank);
         user = null;
-//        return iScoreService.submit(score);
-        return ServerResponse.createBySuccess();
+        return iScoreService.submit(score);
+
     }
 }
