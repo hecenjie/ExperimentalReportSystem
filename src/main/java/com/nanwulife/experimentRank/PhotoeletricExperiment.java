@@ -20,14 +20,13 @@ public class PhotoeletricExperiment {
     private String choice_10;
     private String choice_11;
     private double blank_1;
-    private int rank = 25;
+    private double redI;
+    private double blackI;
+    private double blueI;
+    
+    private int rank = 0;
 
-    public PhotoeletricExperiment(String choice_1, String choice_2, 
-                                  String choice_3, String choice_4, 
-                                  String choice_5, String choice_6, 
-                                  String choice_7, String choice_8, 
-                                  String choice_9, String choice_10, 
-                                  String choice_11, double blank_1) {
+    public PhotoeletricExperiment(String choice_1, String choice_2, String choice_3, String choice_4, String choice_5, String choice_6, String choice_7, String choice_8, String choice_9, String choice_10, String choice_11, double blank_1, double redI, double blackI, double blueI) {
         this.choice_1 = choice_1;
         this.choice_2 = choice_2;
         this.choice_3 = choice_3;
@@ -40,6 +39,9 @@ public class PhotoeletricExperiment {
         this.choice_10 = choice_10;
         this.choice_11 = choice_11;
         this.blank_1 = blank_1;
+        this.redI = redI;
+        this.blackI = blackI;
+        this.blueI = blueI;
     }
 
     public int getRank(){
@@ -65,20 +67,23 @@ public class PhotoeletricExperiment {
             rank += 3;
         if (choice_11.equals("C"))
             rank += 3;
-        if (blank_1 >= 0 && blank_1 <= 0.05)
+        if (blank_1 >= 0 && blank_1 <= 3)
             rank += 45;
-        else if (blank_1 > 0.05 && blank_1 <= 0.10)
+        else if (blank_1 > 3 && blank_1 <= 6)
             rank += 40;
-        else if (blank_1 > 0.10 && blank_1 <= 0.15)
+        else if (blank_1 > 6 && blank_1 <= 10)
             rank += 35;
-        else if (blank_1 > 0.15)
+        else if (blank_1 > 10 && blank_1 <= 15)
+            rank += 30;
+        else if (blank_1 > 15 && blank_1 <= 20)
             rank += 25;
+        else if (blank_1 > 20)
+            rank += 20;
+        if (redI > blueI && blueI > blackI)
+            rank += 25;
+        else 
+            rank += 20;
         return rank;
     }
-
     
-    public static void main(String[] args) {
-        PhotoeletricExperiment photoeletricExperiment = new PhotoeletricExperiment("A", "A", "B", "C", "A", "B", "B", "B", "A", "A", "B", 0.5);
-        System.out.println(photoeletricExperiment.getRank());
-    }
 }

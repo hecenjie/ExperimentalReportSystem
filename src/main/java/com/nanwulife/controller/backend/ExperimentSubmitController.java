@@ -129,7 +129,7 @@ public class ExperimentSubmitController {
 
 
         rank = new PhotoeletricExperiment(selectval[0], selectval[1], selectval[2], selectval[3], selectval[4], selectval[5],
-                selectval[6], selectval[7], selectval[8], selectval[9], selectval[10], Double.parseDouble(result[2])).getRank();
+                selectval[6], selectval[7], selectval[8], selectval[9], selectval[10], Double.parseDouble(result[2]), Double.parseDouble(table2[22]), Double.parseDouble(table3[22]), Double.parseDouble(table4[22])).getRank();
         
         
         params.put("stunum", user.getStuNum());
