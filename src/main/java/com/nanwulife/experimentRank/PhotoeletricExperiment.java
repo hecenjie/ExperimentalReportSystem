@@ -79,10 +79,12 @@ public class PhotoeletricExperiment {
             rank += 25;
         else if (blank_1 > 20)
             rank += 20;
-        if (redI > blueI && blueI > blackI)
+        if ( (blackI * 1.5 < blueI && blueI < blackI * 2.5) || (blueI * 1.5 < redI && redI < blueI * 2.5) )
             rank += 25;
-        else 
+        else if (redI > blueI && blueI > blackI)
             rank += 20;
+        else 
+            rank += 15;
         return rank;
     }
     
