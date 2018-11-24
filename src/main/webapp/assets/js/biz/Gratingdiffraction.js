@@ -42,8 +42,6 @@ function submit() {
 
 
 function submitAll() {
-    if (checkAvaliable() == false)
-        return;
     if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
         submit();
     }
