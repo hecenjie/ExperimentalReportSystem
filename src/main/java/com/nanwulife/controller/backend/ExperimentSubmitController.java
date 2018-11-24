@@ -3,6 +3,7 @@ package com.nanwulife.controller.backend;
 import com.deepoove.poi.data.PictureRenderData;
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
+import com.nanwulife.experimentRank.GratingdiffractionExperiment;
 import com.nanwulife.experimentRank.PhotoeletricExperiment;
 import com.nanwulife.experimentRank.SolarEnergyExperiment;
 import com.nanwulife.pojo.Score;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.awt.*;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -248,5 +250,79 @@ public class ExperimentSubmitController {
         user = null;
         return iScoreService.submit(score);
 
+    }
+
+    @RequestMapping(value = "Exp_03.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "selectval[]") String[] selectval,
+                                    @RequestParam(value = "table[]") String[] table, @RequestParam(value = "blank[]") String[] blank){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        int rank = 0;
+        int stu_class = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getStuClass();
+        String major_name = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getMajorName();
+        String wordPath = new PropertiesUtil("server.properties").readProperty("report.word.server.path");
+        String basePath;
+        String path;
+        Map<String, Object> params = new HashMap<String, Object>();
+        ServerResponse serverResponse = iScoreService.isStuHaveScore(2, user.getId());
+        if (serverResponse.getStatus() == 14){
+            //报告重复提交
+            return serverResponse;
+        }
+        else{
+            serverResponse = null;
+        }
+
+        if(System.getProperty("os.name").toLowerCase().contains("linux")){
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
+        } else {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
+        }
+
+        //=============================模板标记==============================
+
+        for (int i = 0; i < 13; i++) {
+            params.put("choice_" + (i+1) + "", selectval[i]);
+        }
+        for (int i = 0; i < 16; i++) {
+            params.put("table_" + (i+1) + "", table[i]);
+        }
+
+        for (int i = 0; i < 12; i++) {
+            params.put("blank_" + (i+1) + "", blank[i]);
+        }
+        
+        
+        rank = (new GratingdiffractionExperiment(selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0],
+                Double.parseDouble(blank[0]), Double.parseDouble(blank[1]), Double.parseDouble(blank[2]), Double.parseDouble(blank[3]))).getRank();
+
+        params.put("name", user.getStuName());
+        params.put("num", user.getStuNum());
+        params.put("classno", major_name + user.getStuClass());
+        params.put("score", rank);
+        //=============================模板标记==============================
+
+        path = basePath + wordPath + 3 +  "/" +  major_name + stu_class + "/" + user.getStuNum() + "/";
+        File filedir = new File(path);
+        if(!filedir.exists()){
+            filedir.setWritable(true);
+            filedir.mkdirs();
+        }
+        try {
+            WordToNewWordUtil.templateWrite2(basePath + "光栅衍射及光波波长的测定模板.docx", params,  path + "3.docx");
+        } catch (Exception e) {
+            System.out.println("写入模板异常");
+            e.printStackTrace();
+        }
+
+        Score score = new Score();
+        score.setStuId(user.getId());
+        score.setExpId(3);
+        score.setScore(rank);
+        user = null;
+        return iScoreService.submit(score);
     }
 }
