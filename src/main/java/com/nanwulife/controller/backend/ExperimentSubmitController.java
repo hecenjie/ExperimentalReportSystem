@@ -137,15 +137,15 @@ public class ExperimentSubmitController {
         params.put("stunum", user.getStuNum());
         params.put("score", String.valueOf(rank));
         //=====================================================================
-        
-        path = basePath + wordPath + major_name + stu_class + "/" + user.getStuNum() + "/";
+
+        path = basePath + wordPath + "光电效应实验" +  "/" +  major_name + stu_class + "/";
         File filedir = new File(path);
         if(!filedir.exists()){
             filedir.setWritable(true);
             filedir.mkdirs();
         }
         try {
-            WordToNewWordUtil.templateWrite2(basePath + "光电效应实验模板.docx", params,  path + "1.docx");
+            WordToNewWordUtil.templateWrite2(basePath + "光电效应实验模板.docx", params,  path + user.getStuNum() + user.getStuName() +  ".docx");
         } catch (Exception e) {
             System.out.println("写入模板异常");
             e.printStackTrace();
@@ -228,15 +228,15 @@ public class ExperimentSubmitController {
         params.put("num", user.getStuNum());
         params.put("classno", major_name + user.getStuClass());
         params.put("score", rank);
-        
-        path = basePath + wordPath + major_name + stu_class + "/" + user.getStuNum() + "/";
+
+        path = basePath + wordPath + "太阳能实验" +  "/" +  major_name + stu_class + "/";
         File filedir = new File(path);
         if(!filedir.exists()){
             filedir.setWritable(true);
             filedir.mkdirs();
         }
         try {
-            WordToNewWordUtil.templateWrite2(basePath + "太阳能实验模板.docx", params,  path + "2.docx");
+            WordToNewWordUtil.templateWrite2(basePath + "太阳能实验模板.docx", params,  path + user.getStuNum() + user.getStuName() +  ".docx");
         } catch (Exception e) {
             System.out.println("写入模板异常");
             e.printStackTrace();
@@ -305,14 +305,14 @@ public class ExperimentSubmitController {
         params.put("score", rank);
         //=============================模板标记==============================
 
-        path = basePath + wordPath + 3 +  "/" +  major_name + stu_class + "/" + user.getStuNum() + "/";
+        path = basePath + wordPath + "光栅衍射及光波波长的测定" +  "/" +  major_name + stu_class + "/";
         File filedir = new File(path);
         if(!filedir.exists()){
             filedir.setWritable(true);
             filedir.mkdirs();
         }
         try {
-            WordToNewWordUtil.templateWrite2(basePath + "光栅衍射及光波波长的测定模板.docx", params,  path + "3.docx");
+            WordToNewWordUtil.templateWrite2(basePath + "光栅衍射及光波波长的测定模板.docx", params,  path + user.getStuNum() + user.getStuName() +  ".docx");
         } catch (Exception e) {
             System.out.println("写入模板异常");
             e.printStackTrace();
