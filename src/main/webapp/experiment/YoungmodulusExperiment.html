@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+    </script>
+    <title>用拉伸法测金属杨氏模量实验</title>
+</head>
+<body>
+    <div style="text-align:center">
+        <span style="font-size:20pt">用拉伸法测金属杨氏模量实验</span>
+    </div>
+
+    <div>
+        <p><span style="font-size: 20px;">一、实验仪器：</span></p>
+        <p><span style="font-size: 20px;">1、(3分)下面那个长度测量工具本实验<b>没有</b>采用：
+        <select id="choice_1"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select></span>
+        </p>
+        <p><span style="font-size: 20px;">A、米尺 B、螺旋测微计 C、游标卡尺</span></p>
+
+        <p><span style="font-size: 20px;">2、(3分)下面哪个组合用于本实验中微小长度变化的测量：
+        <select id="choice_2"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select></span>
+        </p>
+        <p><span style="font-size: 20px;">A、望远镜,米尺,螺旋测微计</span></p>
+        <p><span style="font-size: 20px;">B、光杠杆,望远镜,标尺</span></p>
+        <p><span style="font-size: 20px;">C、螺旋测微计,游标卡尺</span></p>
+    </div>
+    
+    <div>
+        <p><span style="font-size: 20px;">二、实验目的：</span></p>
+        <p><span style="font-size: 20px;">1、(2分)学会用
+        <select id="choice_3"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select> 测量金属丝的杨氏模量</span>
+        </p>
+        <p><span style="font-size: 20px;">A、动态法  B、共振法  C、拉伸法 </span></p>
+
+        <p><span style="font-size: 20px;">2、(3分)下面哪个组合用于本实验中微小长度变化的测量：
+        <select id="choice_4"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select></span>
+        </p>
+        <p><span style="font-size: 20px;">A、逐差法  B、平均法  C、高斯法</span></p>
+    </div>
+    
+    <div>
+        <p><span style="font-size: 20px;">三、原理简述</span></p>
+        <p><span style="font-size: 20px;">1、(8分)根据胡克定律，在弹性限度内，线应变与应力成正比，即：\(E=\frac {\frac F S} {\frac {\Delta L} L}\)，其中F为
+            <select id="choice_5"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>，S为<select id="choice_6"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>，L为<select id="choice_7"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>,△L为<select id="choice_8"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+        </select> </span></p>
+        <p><span style="font-size: 20px;">A、金属丝原长    B、沿金属丝长度方向外力</span></p>
+        <p><span style="font-size: 20px;">C、金属丝伸长量  D、金属丝截面积</span></p>
+
+        <p><span style="font-size: 20px;">2、(4分)如下图所示，标尺为
+            <select id="choice_9"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>，光杠杆为
+        <select id="choice_10"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+        </select></span></p>
+        <img src="assets/images/4-1.png">
+
+        <p><span style="font-size: 20px;">3、(6分)见上图，本实验利用光杠杆将金属丝长度变化量\(\Delta\)L放大，公式，公式中\(\Delta\)s为
+            <select id="choice_11"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>，D为
+            <select id="choice_12"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>，b为
+        <select id="choice_13"  style="width: 60px;height: 25px">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+            </select></span></p>
+        <p><span style="font-size: 20px;">A、金属丝长度变化量；</span></p>
+        <p><span style="font-size: 20px;">B、望远镜中标尺读数的变化量；</span></p>
+        <p><span style="font-size: 20px;">C、金属丝的原始长度；</span></p>
+        <p><span style="font-size: 20px;">D、光杠杆后足尖到两前足尖连线的垂直距离；</span></p>
+        <p><span style="font-size: 20px;">E、平面镜到标尺的垂直距离；</span></p>
+
+        <p><span style="font-size: 20px;">4、(3分)如图，螺旋测微计的读数为
+        <select id="choice_14"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select></span></p>
+        <img src="assets/images/4-2.png">
+        <p><span style="font-size: 20px;">A、0.65mm B、0.515mm C、0.650mm </span></p>
+
+
+        <p><span style="font-size: 20px;">5、(3分)如图，螺旋测微计正在校正零点，则读数为
+        <select id="choice_15"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select></span></p>
+        <img src="assets/images/4-3.png">
+        <p><span style="font-size: 20px;">A、-0.040mm  B、0.460mm C、-0.004mm</span></p>
+
+        <p><span style="font-size: 20px;">6、(2分)如图，钢直尺在望远镜中的读数为
+        <select id="choice_16"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select></span></p>
+        <img src="assets/images/4-4.png">
+        <p><span style="font-size: 20px;">A、8.7cm  B、8.8cm  C、8.75cm</span></p>
+        <p><span style="font-size: 20px;">7、(6分)本实验采用逐差法处理标尺读数变化，假设数据表格如下</span></p>
+        <p><span style="font-size: 20px;">（其中m为一个砝码质量，\(g=9.8m/s^2\)），则<b>依据</b>\(\overline {\Delta S_i}=(\overline S_{i+4}-\overline S_i)\)</span></p>
+        <p><span style="font-size: 20px;"><b>计算法则</b>（<b>其中</b>i=0,1,2,3），则标尺读数变化的平均值\(\overline S\)和与之</span></p>
+        <p><span style="font-size: 20px;">对应的钢丝受力F分别为</span>
+        <select id="choice_17"  style="width: 60px;height: 25px">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select></p>
+        <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin:0 auto; width:298.2pt">
+            <tr style="height:7.9pt">
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">次</span></p>
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">数</span></p></td>
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">负 </span></p>
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">荷</span></p></td>
+                <td colspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:83.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">标尺读数/cm</span></p></td>
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span
+                            style="font-family:宋体; font-size:10.5pt">\(\overline S_i=\frac 1 2(S_i+S_i')\)/cm</span></p></td>
+            </tr>
+            <tr style="height:19.95pt">
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">增重 s</span><span
+                            style="font-family:宋体; font-size:7pt; vertical-align:sub">i</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">减重s</span><span
+                            style="font-family:宋体; font-size:7pt; vertical-align:sub">1</span><span
+                            style="font-family:宋体; font-size:7pt; vertical-align:super">,</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">0</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:5.25pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">0</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7.00</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">8.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">8.00</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:115.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">8.00</span></p></td>
+            </tr>
+            <tr style="height:18.95pt">
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">平均值</span></p></td>
+                <td colspan="4"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:236.25pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        \(\overline {\Delta S}=(\overline {\Delta S_0}+\overline {\Delta S_1}+\overline {\Delta S_2}+\overline {\Delta S_3})=\)
+                        <input id="blank_1" type="text">
+                    </p></td>
+            </tr>
+            <tr style="height:0pt">
+                <td style="width:50.4pt; border:none"></td>
+                <td style="width:27pt; border:none"></td>
+                <td style="width:49pt; border:none"></td>
+                <td style="width:45pt; border:none"></td>
+                <td style="width:126.05pt; border:none"></td>
+            </tr>
+        </table>
+        <p><span style="font-size: 20px;">A、\(\Delta S\)为1cm，F=7mg     B、\(\Delta S\)为1cm，F=3.5mg</span></p>
+        <p><span style="font-size: 20px;">C、\(\Delta S\)为7cm，F=7mg    D、\(\Delta S\)为4cm，F=4mg </span></p>
+        
+        <p><span style="font-size: 20px;">四、实验内容及数据处理(58分)</span></p>
+        <p><span style="font-size: 20px;">表1 钢丝的直径（单位：mm）（15分）</span></p>
+        <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin:0 auto; width:340.75pt">
+            <tr style="height:37pt">
+                <td colspan="3"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:159.35pt">
+                    <p style="font-size:14pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:楷体_GB2312; font-size:14pt">初始状态\(d_i'\)</span>
+                    </p></td>
+                <td colspan="3"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:159.05pt">
+                    <p style="font-size:14pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; text-indent:15.75pt; widows:0">
+                        <span style="font-family:楷体_GB2312; font-size:14pt">满负荷状态\(d_i'\)</span>
+                    </p></td>
+            </tr>
+            <tr style="height:27.9pt">
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:48.3pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:46.4pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:43.05pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:40.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:47.8pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:49.45pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3</span></p></td>
+            </tr>
+            <tr style="height:28.5pt">
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:48.3pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt"><input style="width: 60px" type="text" id="table_1_1"></span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:46.4pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt"><input style="width: 60px" type="text" id="table_1_2"></span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:43.05pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt"><input style="width: 60px" type="text" id="table_1_3"></span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:40.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt"><input style="width: 60px" type="text" id="table_1_4"></span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:47.8pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt"><input style="width: 60px" type="text" id="table_1_5"></span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:49.45pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt"><input style="width: 60px" type="text" id="table_1_6"></span></p></td>
+            </tr>
+            
+        </table>
+
+        <p><span style="font-size: 20px;">测定螺旋测微计的零点\(d_0\)=<input type="text" id="blank_2">mm</span>
+        <p><span style="font-size: 20px;">金属丝的直径\(\overline d\)=m</span>
+
+        <p><span style="font-size: 20px;">表2 标尺读数变化（单位：cm）（28分）</span></p>
+        <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin:0 auto; width:380.8pt">
+            <tr style="height:7.9pt">
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">次</span></p>
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">数</span></p></td>
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">负 </span></p>
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">荷</span></p></td>
+                <td colspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:83.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">标尺读数</span></p></td>
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        \(\overline S_i=\frac 1 2(S_i+S_i')\)
+                    </p></td>
+                <td rowspan="2"
+                    style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt 2.2pt; orphans:0; text-align:justify; widows:0">
+                        \(\overline {\Delta S_i}=(\overline S_{i+4}-\overline S_i)\)
+                    </p></td>
+            </tr>
+            <tr style="height:19.95pt">
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">增重 s</span><span
+                            style="font-family:宋体; font-size:7pt; vertical-align:sub">i</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">减重s</span><span
+                            style="font-family:宋体; font-size:7pt; vertical-align:sub">1</span><span
+                            style="font-family:宋体; font-size:7pt; vertical-align:super">,</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">0</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:5.25pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">0</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入s</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:sub">0</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入s</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:sub">0</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:super">,</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">(依据</span><img
+                            src="a6b51d19-035e-4ef3-a77d-9bb67db178da.018.png" width="127" height="27" alt=""
+                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+                            style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果)</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:31.5pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">/</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">1mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入s</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:sub">1</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入s</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:sub">1</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:super">,</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">(依据</span><img
+                            src="a6b51d19-035e-4ef3-a77d-9bb67db178da.019.png" width="122" height="27" alt=""
+                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+                            style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果)</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:31.5pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">/</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">2mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">      /</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">3mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">      /</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">4mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt; vertical-align:-3pt">(</span><img
+                            src="a6b51d19-035e-4ef3-a77d-9bb67db178da.020.png" width="49" height="23" alt=""
+                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+                            style="color:#ff0000; font-family:宋体; font-size:10.5pt">得到结果)</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">5mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt; vertical-align:-3pt">(</span><img
+                            src="a6b51d19-035e-4ef3-a77d-9bb67db178da.021.png" width="46" height="23" alt=""
+                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+                            style="color:#ff0000; font-family:宋体; font-size:10.5pt">得到结果)</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">6mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt; vertical-align:-3pt">(</span><img
+                            src="a6b51d19-035e-4ef3-a77d-9bb67db178da.022.png" width="49" height="23" alt=""
+                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+                            style="color:#ff0000; font-family:宋体; font-size:10.5pt">得到结果)</span></p></td>
+            </tr>
+            <tr>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:39.6pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; text-indent:12pt; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:16.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="font-family:宋体; font-size:10.5pt">7mg</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:38.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入s</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:sub">7</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:34.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">输入s</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:sub">7</span><span
+                            style="color:#ff0000; font-family:宋体; font-size:7pt; vertical-align:super">,</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:97.2pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt">计算得到结果</span></p></td>
+                <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:89.85pt">
+                    <p style="font-size:10.5pt; line-height:150%; margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">
+                        <span style="color:#ff0000; font-family:宋体; font-size:10.5pt; vertical-align:-3pt">(</span><img
+                            src="a6b51d19-035e-4ef3-a77d-9bb67db178da.023.png" width="47" height="23" alt=""
+                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+                            style="color:#ff0000; font-family:宋体; font-size:10.5pt">得到结果)</span></p></td>
+            </tr>
+            <tr style="height:0pt">
+                <td style="width:50.4pt; border:none"></td>
+                <td style="width:27pt; border:none"></td>
+                <td style="width:49pt; border:none"></td>
+                <td style="width:45pt; border:none"></td>
+                <td style="width:108pt; border:none"></td>
+                <td style="width:100.65pt; border:none"></td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>
