@@ -56,7 +56,7 @@ public class UserServiceImpl implements IUserService {
         User usernameUser = userMapper.checkByUsername(username);
         //若账号不存在 返回错误
         if(usernameUser == null){
-            return ServerResponse.createByErrorMessage("用户名不存在");
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_ERROR.getCode(), Const.ResponseCode.PASSWORD_ERROR.getDesc());
         }
         if(!usernameUser.getPassword().equals(DigestUtils.md5DigestAsHex(password.getBytes()))){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_ERROR.getCode(), Const.ResponseCode.PASSWORD_ERROR.getDesc());

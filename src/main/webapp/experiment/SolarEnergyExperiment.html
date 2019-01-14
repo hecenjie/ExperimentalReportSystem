@@ -367,7 +367,7 @@
         <p><span style="font-size: 20px;">画出\(P-R\)曲线图,求出\(P_{max}\)</span></p>
         <div style="width:70%"><canvas id="chart1"></canvas></div>
         <button onclick="generateChart1()">生成曲线</button>
-        <p><span style="font-size: 20px;">\(P_{max}\)=</span> <input id="table1_p"></p>
+        <p><span style="font-size: 20px;">\(P_{max}\)=</span> <input id="table1_p" readonly="readonly"></p>
 
         <p><span style="font-size: 17px;">2.不同输出电压时太阳能电池的负载电阻,计算输出电流,\(I=U/R\)结果填入表2</span></p>
         <p><span style="font-size: 17px;">表2.不同输出电压时太阳能电池的输出电流与负载电阻(\(X=30cm\)).</span></p>
@@ -688,9 +688,9 @@
         <p><span style="font-size: 17px;">画出曲线图\(I-U\),求出\(I_{SC}\),\(U_{OC}\)</span></p>
         <div style="width:70%"><canvas id="chart2"></canvas></div>
         <button onclick="generateChart2()">生成曲线</button>
-        <p><span style="font-size: 20px;">\(I_{SC}\)  =</span> <input id="table2_i"></p>
-        <p><span style="font-size: 20px;">\(U_{OC}\)=</span> <input id="table2_u"></p>
-        <p><span style="font-size: 20px;">填充因子: \(FF=\frac {P_{max}}{I_{SC}U_{OC}}\)</span> <input id="table2_ff"></p>
+        <p><span style="font-size: 20px;">\(I_{SC}\)  =</span> <input id="table2_i" readonly="readonly"></p>
+        <p><span style="font-size: 20px;">\(U_{OC}\)=</span> <input id="table2_u" readonly="readonly"></p>
+        <p><span style="font-size: 20px;">填充因子: \(FF=\frac {P_{max}}{I_{SC}U_{OC}}\)</span> <input id="table2_ff" readonly="readonly"></p>
         
         <p><span style="font-size: 20px;">3.不同负载电阻时太阳能电池的输出电压，计算功率\(P=\frac {U^2}{R}\) ，结果填入表3.</span></p>
         <p><span style="font-size: 20px;">表3.不同负载时太阳能电池的输出电压和功率(\(X=30cm\)).</span></p>
@@ -944,7 +944,7 @@
         <p><span style="font-size: 20px;">画出\(P-R\)曲线图,求出\(P_{max}\)</span></p>
         <div style="width:70%"><canvas id="chart3"></canvas></div>
         <button onclick="generateChart3()">生成曲线</button>
-        <p><span style="font-size: 20px;">\(P_{max}\)=</span> <input id="table3_p"></p>
+        <p><span style="font-size: 20px;">\(P_{max}\)=</span> <input id="table3_p" readonly="readonly"></p>
 
         <p><span style="font-size: 17px;">4.不同输出电压时太阳能电池的负载电阻，计算输出电流\(I=U/R\)结果填入表4</span></p>
         <p><span style="font-size: 17px;">表4.不同输出电压时太阳能电池的输出电流与负载电阻(\(X=30cm\)).</span></p>
@@ -1264,11 +1264,11 @@
         <p><span style="font-size: 17px;">画出曲线图\(U-R\),求出\(I_{SC}\),\(U_{OC}\)</span></p>
         <div style="width:70%"><canvas id="chart4"></canvas></div>
         <button onclick="generateChart4()">生成曲线</button>
-        <p><span style="font-size: 20px;">\(I_{SC}\)  =</span> <input id="table4_i"></p>
-        <p><span style="font-size: 20px;">\(U_{OC}\)=</span> <input id="table4_u"></p>
-        <p><span style="font-size: 20px;">填充因子: \(FF=\frac {P_{max}}{I_{SC}U_{OC}}\)</span> <input id="table4_ff"></p>
+        <p><span style="font-size: 20px;">\(I_{SC}\)  =</span> <input id="table4_i" readonly="readonly"></p>
+        <p><span style="font-size: 20px;">\(U_{OC}\)=</span> <input id="table4_u" readonly="readonly"></p>
+        <p><span style="font-size: 20px;">填充因子: \(FF=\frac {P_{max}}{I_{SC}U_{OC}}\)</span> <input id="table4_ff" readonly="readonly"></p>
     </div>
-    <button onclick="submitAll()">提交</button>
+    <button onclick="submitAll()" style="width:100px; height: 50px;"><span style="font-size:1.5em">提交</span></button>
 </div>
 
 <script src="../assets/js/jquery-1.11.1.min.js"></script>
