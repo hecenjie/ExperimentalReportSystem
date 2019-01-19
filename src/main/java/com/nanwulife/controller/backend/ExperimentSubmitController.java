@@ -119,12 +119,15 @@ public class ExperimentSubmitController {
             else
                 params.put("blank_05_" + (i+1), table4[i]);
         }
-        
+
         if(System.getProperty("os.name").toLowerCase().contains("linux")){
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
-        } else {
+        } else if (System.getProperty("os.name").toLowerCase().contains("mac")){
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+        } else{
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
         }
+
         
         params.put("localPicture1", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/1-1.png"));
         params.put("localPicture2", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/1-2.png"));
@@ -188,7 +191,9 @@ public class ExperimentSubmitController {
 
         if(System.getProperty("os.name").toLowerCase().contains("linux")){
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
-        } else {
+        } else if (System.getProperty("os.name").toLowerCase().contains("mac")){
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+        } else{
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
         }
         
@@ -278,7 +283,9 @@ public class ExperimentSubmitController {
 
         if(System.getProperty("os.name").toLowerCase().contains("linux")){
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
-        } else {
+        } else if (System.getProperty("os.name").toLowerCase().contains("mac")){
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+        } else{
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
         }
 

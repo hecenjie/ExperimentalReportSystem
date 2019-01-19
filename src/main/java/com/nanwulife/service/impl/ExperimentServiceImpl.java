@@ -19,6 +19,7 @@ import java.io.*;
 import java.util.Base64;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * @Project: ExperimentalReportSystem
@@ -94,10 +95,11 @@ public class ExperimentServiceImpl implements IExperimentService {
         String basePath;
         String chartPath;
         String path;
-
         if(System.getProperty("os.name").toLowerCase().contains("linux")){
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
-        } else {
+        } else if (System.getProperty("os.name").toLowerCase().contains("mac")){
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+        } else{
             basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
         }
         chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
@@ -110,7 +112,7 @@ public class ExperimentServiceImpl implements IExperimentService {
             fileDir.mkdirs();
         }
 
-        if(System.getProperty("os.name").toLowerCase().contains("linux")){
+        if(System.getProperty("os.name").toLowerCase().contains("linux") || System.getProperty("os.name").toLowerCase().contains("mac")){
             try {
                 Runtime.getRuntime().exec("chmod 777 " + path);
             } catch(Exception ex){
@@ -167,4 +169,6 @@ public class ExperimentServiceImpl implements IExperimentService {
         List<Experiment> exps = experimentMapper.selectAllExps();
         return exps;
     }
+
+
 }
