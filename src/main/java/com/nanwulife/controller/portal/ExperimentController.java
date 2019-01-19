@@ -41,7 +41,7 @@ public class ExperimentController {
     IScoreService iScoreService;
 
     /**
-     * 获取实验开放状态
+     *  获取实验开放状态
      * @param expId
      * @param session
      * @return
