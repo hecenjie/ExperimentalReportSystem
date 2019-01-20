@@ -126,7 +126,7 @@ function submit() {
     answer[5] = $("#answer2_r4").text();
     answer[6] = $("#answer2_r4_1").text();
     answer[7] = $("#answer2_r5").text();
-    answer[8] = $("#answer2_r5_1").val();
+    answer[8] = $("#answer2_r5_1").text();
     answer[9] = $("#answer2_r6").text();
     answer[10] = $("#answer2_r6_1").text();
     answer[11] = $("#answer2_r7").text();
@@ -154,7 +154,7 @@ function submit() {
             }
         },
         error: function (result) {
-            alert("向服务器请求数据失败" + result);
+            alert("服务器请求失败，请确认数据填写正确且完整后重试" + result);
         }
     });
 

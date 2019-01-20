@@ -13,6 +13,7 @@ import com.nanwulife.service.IExperimentService;
 import com.nanwulife.service.IScoreService;
 import com.nanwulife.service.IUserService;
 import com.nanwulife.util.PropertiesUtil;
+import com.nanwulife.util.Sci2con;
 import com.nanwulife.util.WordToNewWordUtil;
 import net.sf.jsqlparser.schema.Server;
 import org.slf4j.Logger;
@@ -335,7 +336,7 @@ public class ExperimentSubmitController {
 
     @RequestMapping(value = "Exp_04.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "choice[]") String[] choice, @RequestParam(value = "blank[]") String[] blank, @RequestParam(value = "table1[]") String[] table1, @RequestParam(value = "table2[]") String[] table2, @RequestParam(value = "answer[]") String[] answer) {
+    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "choice[]",required=false) String[] choice, @RequestParam(value = "blank[]", required=false) String[] blank, @RequestParam(value = "table1[]", required=false) String[] table1, @RequestParam(value = "table2[]", required=false) String[] table2, @RequestParam(value = "answer[]", required=false) String[] answer) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
@@ -388,7 +389,7 @@ public class ExperimentSubmitController {
 
         rank = (new YoungmodulusExperiment(choice[0], choice[1], choice[2], choice[3], choice[4],
                 choice[5], choice[6], choice[7], choice[8], choice[9],
-                choice[10], choice[11], choice[12], choice[13], choice[14], choice[15], choice[16], Double.parseDouble(answer[0]), Double.parseDouble(table2[14]) - Double.parseDouble(table2[15]), Double.parseDouble(table2[8]) - Double.parseDouble(table2[6]), Double.parseDouble(blank[2]), 1)).getScore();
+                choice[10], choice[11], choice[12], choice[13], choice[14], choice[15], choice[16], Double.parseDouble(answer[0]), Double.parseDouble(table2[14]) - Double.parseDouble(table2[15]), Double.parseDouble(table2[8]) - Double.parseDouble(table2[6]), Double.parseDouble(blank[2]), Sci2con.sci2con(blank[6]))).getScore();
 
         params.put("name", user.getStuName());
         params.put("num", user.getStuNum());
