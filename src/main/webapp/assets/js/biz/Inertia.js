@@ -7,6 +7,17 @@ function autoGenera1(){
     $("#blank_3").val(js);
 }
 
+function autoGenera2(){
+    var Ro = $("#blank_4").val();
+    var Ri = $("#blank_5").val();
+    var M = $("#blank_6").val();
+    var js = $("#blank_3").val();
+    var jl = M * (Ro*Ro + Ri*Ri) / 2;
+    var E = (js - jl) * 100 / jl;
+    $("#blank_7").val(jl);
+    $("#blank_8").val(E);
+}
+
 function beltaJ(table){
     var lt2 = parseFloat($("#table_" + table + "_1").val());
     var lt3 = parseFloat($("#table_" + table + "_2").val());
@@ -77,3 +88,74 @@ function res4(t1, t2){
     return on / down;
 }
 
+
+var chart1;
+
+function generateChart1() {
+    var x1 = 45 * 45;
+    var x2 = 60 * 60;
+    var x3 = 75 * 75;
+    var x4 = 90 * 90;
+
+    var y1 = $("#table_3_19").val();
+    var y2 = $("#table_4_19").val();
+    var y3 = $("#table_5_19").val();
+    var y4 = $("#table_6_19").val();
+
+    var ctx = document.getElementById('chart1').getContext('2d');
+
+    chart1 = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [x1, x2, x3, x4],
+            datasets: [{
+                label: "拟合直线",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [
+                    {x: x1, y: y1}, {x: x4, y: y4}
+                ],
+                fill: false,
+            }, {
+                label: "原始数据",
+                backgroundColor: 'rgb(105,105,105)',
+                borderColor: 'rgba(255, 255, 255, 0)',
+                data: [
+                    y1, y2, y3, y4
+                ],
+                fill: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: '实验曲线图'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'd^2 mm'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: '转动惯量 J'
+                    }
+                }]
+            }
+        }
+    });
+}
