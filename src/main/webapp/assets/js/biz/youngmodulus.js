@@ -86,3 +86,76 @@ function num2e(num){
     var n = num * Math.pow(10, -p);
     return n.toFixed(3) + 'e' + p;
 }
+
+function submitAll() {
+    if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")){
+        submit();
+    }
+}
+
+
+function submit() {
+    var choice = new Array();
+    var blank = new Array();
+    var table1 = new Array();
+    var table2 = new Array();
+    var answer = new Array();
+
+    for (var i = 1; i <= 17; i++) {
+        choice[i-1] = $("#choice_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 7; i++) {
+        blank[i-1] = $("#blank_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 6; i++) {
+        table1[i-1] = $("#table1_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 16; i++){
+        table2[i-1] = $("#table2_" + i + "").val();
+    }
+
+    answer[0] = $("#answer1");
+    answer[1] = $("#answer2_r0");
+    answer[2] = $("#answer2_r1");
+    answer[3] = $("#answer2_r2");
+    answer[4] = $("#answer2_r3");
+    answer[5] = $("#answer2_r4");
+    answer[6] = $("#answer2_r4_1");
+    answer[7] = $("#answer2_r5");
+    answer[8] = $("#answer2_r5_1");
+    answer[9] = $("#answer2_r6");
+    answer[10] = $("#answer2_r6_1");
+    answer[11] = $("#answer2_r7");
+    answer[12] = $("#answer2_r7_1");
+    answer[13] = $("#answer2");
+
+
+    $.ajax({
+        type: "POST",
+        url: "/sub/Exp_04.do",
+        data: {
+            choice: choice,
+            blank: blank,
+            table1: table1,
+            table2: table2,
+            answer: answer
+        },
+        async: false,
+        dataType: "json",
+        success: function (result) {
+            if (result.status === 14)
+                alert("请勿多次提交试验");
+            else {
+                alert("提交成功");
+                location.href="../index.html"
+            }
+        },
+        error: function (result) {
+            alert("向服务器请求数据失败" + result);
+        }
+    });
+
+}
