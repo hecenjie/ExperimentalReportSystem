@@ -101,6 +101,7 @@ function submit() {
     var table2 = new Array();
     var answer = new Array();
 
+
     for (var i = 1; i <= 17; i++) {
         choice[i-1] = $("#choice_" + i + "").val();
     }
@@ -110,28 +111,27 @@ function submit() {
     }
 
     for (var i = 1; i <= 6; i++) {
-        table1[i-1] = $("#table1_" + i + "").val();
+        table1[i-1] = $("#table_1_" + i + "").val();
     }
 
     for (var i = 1; i <= 16; i++){
-        table2[i-1] = $("#table2_" + i + "").val();
+        table2[i-1] = $("#table_2_" + i + "").val();
     }
 
-    answer[0] = $("#answer1");
-    answer[1] = $("#answer2_r0");
-    answer[2] = $("#answer2_r1");
-    answer[3] = $("#answer2_r2");
-    answer[4] = $("#answer2_r3");
-    answer[5] = $("#answer2_r4");
-    answer[6] = $("#answer2_r4_1");
-    answer[7] = $("#answer2_r5");
-    answer[8] = $("#answer2_r5_1");
-    answer[9] = $("#answer2_r6");
-    answer[10] = $("#answer2_r6_1");
-    answer[11] = $("#answer2_r7");
-    answer[12] = $("#answer2_r7_1");
-    answer[13] = $("#answer2");
-
+    answer[0] = $("#answer1").text();
+    answer[1] = $("#answer2_r0").text();
+    answer[2] = $("#answer2_r1").text();
+    answer[3] = $("#answer2_r2").text();
+    answer[4] = $("#answer2_r3").text();
+    answer[5] = $("#answer2_r4").text();
+    answer[6] = $("#answer2_r4_1").text();
+    answer[7] = $("#answer2_r5").text();
+    answer[8] = $("#answer2_r5_1").val();
+    answer[9] = $("#answer2_r6").text();
+    answer[10] = $("#answer2_r6_1").text();
+    answer[11] = $("#answer2_r7").text();
+    answer[12] = $("#answer2_r7_1").text();
+    answer[13] = $("#answer2").text();
 
     $.ajax({
         type: "POST",

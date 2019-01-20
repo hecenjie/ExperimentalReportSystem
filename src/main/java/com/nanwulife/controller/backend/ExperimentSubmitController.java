@@ -6,6 +6,7 @@ import com.nanwulife.common.ServerResponse;
 import com.nanwulife.experimentRank.GratingdiffractionExperiment;
 import com.nanwulife.experimentRank.PhotoeletricExperiment;
 import com.nanwulife.experimentRank.SolarEnergyExperiment;
+import com.nanwulife.experimentRank.YoungmodulusExperiment;
 import com.nanwulife.pojo.Score;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
@@ -339,7 +340,7 @@ public class ExperimentSubmitController {
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
         }
-        int score = 0;
+        int rank = 0;
         int stu_class = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getStuClass();
         String major_name = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getMajorName();
         String wordPath = new PropertiesUtil("server.properties").readProperty("report.word.server.path");
@@ -366,26 +367,53 @@ public class ExperimentSubmitController {
         //=============================模板标记==============================
 
         for (int i = 0; i < 17; i++) {
-            params.put("choice_" + i+1 + "", choice[i]);
+            params.put("choice_" + (i+1) + "", choice[i]);
         }
 
         for (int i = 0; i < 7; i++) {
-            params.put("blank_" + i+1 + "", blank[i]);
+            params.put("blank_" + (i+1) + "", blank[i]);
         }
 
         for (int i = 0; i < 6; i++) {
-            params.put("table_1_" + i+1 + "", table1[i]);
+            params.put("table_1_" + (i+1) + "", table1[i]);
         }
 
         for (int i = 0; i < 16; i++) {
-            params.put("table_2_" + i+1 + "", table2[i]);
+            params.put("table_2_" + (i+1) + "", table2[i]);
         }
 
         for (int i = 0; i < 14; i++) {
-            params.put("answer_" + i+1 + "", answer[i])
+            params.put("answer" + (i+1) + "", answer[i]);
         }
 
-        
+        rank = (new YoungmodulusExperiment(choice[0], choice[1], choice[2], choice[3], choice[4],
+                choice[5], choice[6], choice[7], choice[8], choice[9],
+                choice[10], choice[11], choice[12], choice[13], choice[14], choice[15], choice[16], Double.parseDouble(answer[0]), Double.parseDouble(table2[14]) - Double.parseDouble(table2[15]), Double.parseDouble(table2[8]) - Double.parseDouble(table2[6]), Double.parseDouble(blank[2]), 1)).getScore();
+
+        params.put("name", user.getStuName());
+        params.put("num", user.getStuNum());
+        params.put("classno", major_name + user.getStuClass());
+        params.put("score", rank);
         //=============================模板标记==============================
+
+        path = basePath + wordPath + "杨氏模量" + "/" + major_name + stu_class + "/";
+        File filedir = new File(path);
+        if (!filedir.exists()) {
+            filedir.setWritable(true);
+            filedir.mkdirs();
+        }
+        try {
+            WordToNewWordUtil.templateWrite2(basePath + "杨氏模量实验模板.docx", params, path + user.getStuNum() + user.getStuName() + ".docx");
+        } catch (Exception e) {
+            System.out.println("写入模板异常");
+            e.printStackTrace();
+        }
+
+        Score score = new Score();
+        score.setStuId(user.getId());
+        score.setExpId(4);
+        score.setScore(rank);
+        user = null;
+        return iScoreService.submit(score);
     }
 }
