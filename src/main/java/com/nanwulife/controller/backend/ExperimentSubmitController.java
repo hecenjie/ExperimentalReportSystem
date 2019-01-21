@@ -3,10 +3,7 @@ package com.nanwulife.controller.backend;
 import com.deepoove.poi.data.PictureRenderData;
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
-import com.nanwulife.experimentRank.GratingdiffractionExperiment;
-import com.nanwulife.experimentRank.PhotoeletricExperiment;
-import com.nanwulife.experimentRank.SolarEnergyExperiment;
-import com.nanwulife.experimentRank.YoungmodulusExperiment;
+import com.nanwulife.experimentRank.*;
 import com.nanwulife.pojo.Score;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
@@ -79,12 +76,16 @@ public class ExperimentSubmitController {
         String path;
         Map<String, Object> params = new HashMap<String, Object>();
         ServerResponse serverResponse = iScoreService.isStuHaveScore(1, user.getId());
-        if (serverResponse.getStatus() == 14) {
+        if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
-        } else {
-            serverResponse = null;
         }
+        serverResponse = iExperimentService.getExpStatus(1);
+        if (serverResponse.getStatus() == 10){
+            //实验已关闭
+            return serverResponse;
+        }
+        serverResponse = null;
         //=============================模板标记==============================
         for (int i = 0; i < 11; i++) {
             if (i + 1 <= 9)
@@ -183,7 +184,7 @@ public class ExperimentSubmitController {
         String path;
         Map<String, Object> params = new HashMap<String, Object>();
         ServerResponse serverResponse = iScoreService.isStuHaveScore(2, user.getId());
-        if (serverResponse.getStatus() == 14) {
+        if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
         } else {
@@ -274,7 +275,7 @@ public class ExperimentSubmitController {
         String path;
         Map<String, Object> params = new HashMap<String, Object>();
         ServerResponse serverResponse = iScoreService.isStuHaveScore(3, user.getId());
-        if (serverResponse.getStatus() == 14) {
+        if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
         } else {
@@ -336,7 +337,7 @@ public class ExperimentSubmitController {
 
     @RequestMapping(value = "Exp_04.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "choice[]",required=false) String[] choice, @RequestParam(value = "blank[]", required=false) String[] blank, @RequestParam(value = "table1[]", required=false) String[] table1, @RequestParam(value = "table2[]", required=false) String[] table2, @RequestParam(value = "answer[]", required=false) String[] answer) {
+    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "choice[]", required = false) String[] choice, @RequestParam(value = "blank[]", required = false) String[] blank, @RequestParam(value = "table1[]", required = false) String[] table1, @RequestParam(value = "table2[]", required = false) String[] table2, @RequestParam(value = "answer[]", required = false) String[] answer) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
@@ -348,8 +349,8 @@ public class ExperimentSubmitController {
         String basePath;
         String path;
         Map<String, Object> params = new HashMap<String, Object>();
-        ServerResponse serverResponse = iScoreService.isStuHaveScore(3, user.getId());
-        if (serverResponse.getStatus() == 14) {
+        ServerResponse serverResponse = iScoreService.isStuHaveScore(4, user.getId());
+        if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
         } else {
@@ -368,23 +369,23 @@ public class ExperimentSubmitController {
         //=============================模板标记==============================
 
         for (int i = 0; i < 17; i++) {
-            params.put("choice_" + (i+1) + "", choice[i]);
+            params.put("choice_" + (i + 1) + "", choice[i]);
         }
 
         for (int i = 0; i < 7; i++) {
-            params.put("blank_" + (i+1) + "", blank[i]);
+            params.put("blank_" + (i + 1) + "", blank[i]);
         }
 
         for (int i = 0; i < 6; i++) {
-            params.put("table_1_" + (i+1) + "", table1[i]);
+            params.put("table_1_" + (i + 1) + "", table1[i]);
         }
 
         for (int i = 0; i < 16; i++) {
-            params.put("table_2_" + (i+1) + "", table2[i]);
+            params.put("table_2_" + (i + 1) + "", table2[i]);
         }
 
         for (int i = 0; i < 14; i++) {
-            params.put("answer" + (i+1) + "", answer[i]);
+            params.put("answer" + (i + 1) + "", answer[i]);
         }
 
         rank = (new YoungmodulusExperiment(choice[0], choice[1], choice[2], choice[3], choice[4],
@@ -413,6 +414,104 @@ public class ExperimentSubmitController {
         Score score = new Score();
         score.setStuId(user.getId());
         score.setExpId(4);
+        score.setScore(rank);
+        user = null;
+        return iScoreService.submit(score);
+    }
+
+    @RequestMapping(value = "Exp_05.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "choice[]", required = false) String[] choice, @RequestParam(value = "blank[]", required = false) String[] blank, @RequestParam(value = "table1[]", required = false) String[] table1, @RequestParam(value = "table2[]", required = false) String[] table2
+            , @RequestParam(value = "table3[]", required = false) String[] table3, @RequestParam(value = "table4[]", required = false) String[] table4, @RequestParam(value = "table5[]", required = false) String[] table5, @RequestParam(value = "table6[]", required = false) String[] table6) {
+
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        int rank = 0;
+        int stu_class = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getStuClass();
+        String major_name = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getMajorName();
+        String wordPath = new PropertiesUtil("server.properties").readProperty("report.word.server.path");
+        String chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
+        String basePath;
+        String path;
+        Map<String, Object> params = new HashMap<String, Object>();
+        ServerResponse serverResponse = iScoreService.isStuHaveScore(5, user.getId());
+        if (serverResponse.getStatus() == 15) {
+            //报告重复提交
+            return serverResponse;
+        } else {
+            serverResponse = null;
+        }
+
+        if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
+        } else if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+        } else {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
+        }
+
+        //=============================模板标记==============================
+
+        for (int i = 0; i < 11; i++) {
+            params.put("choice_" + (i + 1) + "", choice[i]);
+        }
+
+        for (int i = 0; i < 8; i++) {
+            params.put("blank_" + (i + 1) + "", blank[i]);
+        }
+
+        for (int i = 0; i < 19; i++) {
+            params.put("table_1_" + (i + 1) + "", table1[i]);
+        }
+
+        for (int i = 0; i < 19; i++) {
+            params.put("table_2_" + (i + 1) + "", table2[i]);
+        }
+
+        for (int i = 0; i < 19; i++) {
+            params.put("table_3_" + (i + 1) + "", table3[i]);
+        }
+
+        for (int i = 0; i < 19; i++) {
+            params.put("table_4_" + (i + 1) + "", table4[i]);
+        }
+
+        for (int i = 0; i < 19; i++) {
+            params.put("table_5_" + (i + 1) + "", table5[i]);
+        }
+
+        for (int i = 0; i < 19; i++) {
+            params.put("table_6_" + (i + 1) + "", table6[i]);
+        }
+
+        params.put("pic1", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/5-1.png"));
+
+        rank = (new InertiaExperiment(choice[0], choice[1], choice[2], choice[3], choice[4], choice[5], choice[6], choice[7], choice[8], choice[9], choice[10], Double.parseDouble(blank[8]), Double.parseDouble(table6[18]), Double.parseDouble(table5[18]), Double.parseDouble(table4[18]), Double.parseDouble(table3[18]))).getScore();
+
+        params.put("name", user.getStuName());
+        params.put("num", user.getStuNum());
+        params.put("classno", major_name + user.getStuClass());
+        params.put("score", rank);
+        //=============================模板标记==============================
+
+        path = basePath + wordPath + "转动惯量" + "/" + major_name + stu_class + "/";
+        File filedir = new File(path);
+        if (!filedir.exists()) {
+            filedir.setWritable(true);
+            filedir.mkdirs();
+        }
+        try {
+            WordToNewWordUtil.templateWrite2(basePath + "转动惯量实验模板.docx", params, path + user.getStuNum() + user.getStuName() + ".docx");
+        } catch (Exception e) {
+            System.out.println("写入模板异常");
+            e.printStackTrace();
+        }
+
+        Score score = new Score();
+        score.setStuId(user.getId());
+        score.setExpId(5);
         score.setScore(rank);
         user = null;
         return iScoreService.submit(score);

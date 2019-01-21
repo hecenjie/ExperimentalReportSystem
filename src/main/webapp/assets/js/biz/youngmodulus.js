@@ -146,7 +146,7 @@ function submit() {
         async: false,
         dataType: "json",
         success: function (result) {
-            if (result.status === 14)
+            if (result.status === 15)
                 alert("请勿多次提交试验");
             else {
                 alert("提交成功");

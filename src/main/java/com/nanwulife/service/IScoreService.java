@@ -6,7 +6,7 @@ import com.nanwulife.vo.StuBasicInfoVo;
 
 public interface IScoreService {
 
-    public ServerResponse isStuHaveScore(Integer expId, Integer userId);
+    ServerResponse isStuHaveScore(Integer expId, Integer userId);
 
     ServerResponse submit(Score record);
 

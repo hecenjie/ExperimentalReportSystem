@@ -187,5 +187,79 @@ function uploadChart(chart, index) {
 function submitAll(){
     if(confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")){
         uploadChart("chart1", 1);
+        submit();
     }
+}
+
+function submit() {
+    var choice = new Array();
+    var blank = new Array();
+    var table1 = new Array();
+    var table2 = new Array();
+    var table3 = new Array();
+    var table4 = new Array();
+    var table5 = new Array();
+    var table6 = new Array();
+
+
+    for (var i = 1; i <= 11; i++) {
+        choice[i-1] = $("#choice_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 8; i++) {
+        blank[i-1] = $("#blank_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 19; i++) {
+        table1[i-1] = $("#table1_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 19; i++) {
+        table2[i-1] = $("#table2_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 19; i++) {
+        table3[i-1] = $("#table3_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 19; i++) {
+        table4[i-1] = $("#table4_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 19; i++) {
+        table5[i-1] = $("#table5_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 19; i++) {
+        table6[i-1] = $("#table6_" + i + "").val();
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/sub/Exp_05.do",
+        data: {
+            choice: choice,
+            blank: blank,
+            table1: table1,
+            table2: table2,
+            table3: table3,
+            table4: table4,
+            table5: table5,
+            table6: table6
+        },
+        async: false,
+        dataType: "json",
+        success: function (result) {
+            if (result.status === 14)
+                alert("请勿多次提交试验");
+            else {
+                alert("提交成功");
+                location.href="../index.html"
+            }
+        },
+        error: function (result) {
+            alert("服务器请求失败，请确认数据填写正确且完整后重试" + result);
+        }
+    });
+
 }

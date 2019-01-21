@@ -381,8 +381,10 @@ function submit() {
         async: false,
         dataType: "json",
         success: function (result) {
-            if (result.status === 14)
+            if (result.status === 15)
                 alert("请勿多次提交试验");
+            else if (result.status === 10)
+                alert("实验已关闭,如有疑问请联系实验老师");
             else {
                 alert("提交成功");
                 location.href="../index.html"
@@ -394,31 +396,8 @@ function submit() {
     });
 }
 
-function checkAvaliable() {
-    $.ajax({
-        type: "GET",
-        url: "/exp/get_exp_status.do",
-        data: {
-            expId: 1
-        },
-        dataType: "json",
-        success: function (result) {
-            if (result.status === 10) {
-                alert("实验已关闭，请联系实验老师");
-                location.href = "../login.html";
-                return false;
-            }
-        },
-        error: function (result) {
-            alert("向服务器请求数据失败" + result);
-        }
-    });
-}
 
 function submitAll() {
-    if (checkAvaliable() == false)
-        return;
-
     if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
         uploadChart("chart1", 1);
         uploadChart("chart2", 2);
