@@ -189,3 +189,48 @@ function submitAll(){
         uploadChart("chart1", 1);
     }
 }
+
+$(function () {
+        $.ajax({
+            type: "GET",
+            url: "/exp/get_exp_status.do",
+            data: {
+                expId: 5
+            },
+            dataType: "json",
+            success: function (result) {
+                if (result.status === 10) {
+                    alert("实验已关闭，请联系实验老师");
+                    location.href = "../index.html";
+                }
+            },
+            error: function (result) {
+                alert("向服务器请求数据失败" + result);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/score/is_stu_have_score.do",
+            data: {
+                expId: 5
+            },
+            dataType: "json",
+            success: function (res) {
+                if(res.status === 0){
+                    //用户未提交过此实验
+                } else if (res.status === 2) {
+                    location.href = "../login.html";
+                } else if(res.status === 15){
+                    alert("您已提交过此实验，如有疑问请联系实验老师");
+                    location.href = "../index.html";
+                } else{
+                    alert("服务器发生错误");
+                }
+            },
+            error: function (res) {
+                alert("向服务器请求数据失败" + res);
+            }
+        });
+    }
+)
