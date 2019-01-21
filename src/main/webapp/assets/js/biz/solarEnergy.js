@@ -710,6 +710,8 @@ function submit() {
         success: function (result) {
             if (result.status === 15)
                 alert("请勿多次提交试验");
+            else if (result.status === 10)
+                alert("实验已关闭,如有疑问请联系实验老师");
             else {
                 alert("提交成功");
                 location.href="../index.html"

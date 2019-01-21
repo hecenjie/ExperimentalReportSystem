@@ -187,8 +187,11 @@ public class ExperimentSubmitController {
         if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
-        } else {
-            serverResponse = null;
+        }
+        serverResponse = iExperimentService.getExpStatus(2);
+        if (serverResponse.getStatus() == 10){
+            //实验已关闭
+            return serverResponse;
         }
 
         if (System.getProperty("os.name").toLowerCase().contains("linux")) {
@@ -278,8 +281,11 @@ public class ExperimentSubmitController {
         if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
-        } else {
-            serverResponse = null;
+        }
+        serverResponse = iExperimentService.getExpStatus(3);
+        if (serverResponse.getStatus() == 10){
+            //实验已关闭
+            return serverResponse;
         }
 
         if (System.getProperty("os.name").toLowerCase().contains("linux")) {
@@ -353,8 +359,11 @@ public class ExperimentSubmitController {
         if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
-        } else {
-            serverResponse = null;
+        }
+        serverResponse = iExperimentService.getExpStatus(4);
+        if (serverResponse.getStatus() == 10){
+            //实验已关闭
+            return serverResponse;
         }
 
         if (System.getProperty("os.name").toLowerCase().contains("linux")) {
@@ -440,8 +449,11 @@ public class ExperimentSubmitController {
         if (serverResponse.getStatus() == 15) {
             //报告重复提交
             return serverResponse;
-        } else {
-            serverResponse = null;
+        }
+        serverResponse = iExperimentService.getExpStatus(5);
+        if (serverResponse.getStatus() == 10){
+            //实验已关闭
+            return serverResponse;
         }
 
         if (System.getProperty("os.name").toLowerCase().contains("linux")) {
