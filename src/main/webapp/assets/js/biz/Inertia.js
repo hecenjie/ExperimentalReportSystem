@@ -159,3 +159,33 @@ function generateChart1() {
         }
     });
 }
+
+function uploadChart(chart, index) {
+    // 获取Canvas的编码。
+    var imgData = document.getElementById(chart).toDataURL("image/png");
+
+    // 上传到后台。
+    $.ajax({
+        type: "post",
+        url: "/exp/upload_chart.do",
+        data: {
+            image: imgData.substring(22),
+            expId: 5,
+            index: index
+        },
+        async: false,
+        success: function (res) {
+            // alert(res.status);
+        },
+        error: function (res) {
+            alert("向服务器请求数据失败" + res.msg)
+        }
+
+    })
+}
+
+function submitAll(){
+    if(confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")){
+        uploadChart("chart1", 1);
+    }
+}
