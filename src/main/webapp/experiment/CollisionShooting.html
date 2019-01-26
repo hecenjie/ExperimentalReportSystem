@@ -171,10 +171,12 @@
                 </td>
             </tr>
         </table>
+        <br>
+        <button onclick="autoGenera1()" style="width:100px; height: 50px;"><span style="font-size:1.5em">生成数据</span></button>
         <p><span style="font-size: 20px;">2、(10分)实验结果:</span></p>
         <p><span style="font-size: 20px;">能量损失:\(\Delta E=m*9.8*(h_{实际}-h_{理论})*10^{-5}=\)<input id="blank_1">\(（J）\)</span></p>
         <p><span style="font-size: 20px;">相对能量损失(%):\(\frac {\Delta E}E=\frac {h_{实际}-h_{理论}}{h_{理论}}*100\)=<input id="blank_2"></span></p>
-
+        <button onclick="autoGenera2()" style="width:100px; height: 50px;"><span style="font-size:1.5em">生成数据</span></button>
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt; width:428.55pt">
             <tr>
                 <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:76.8pt">
@@ -283,7 +285,13 @@
             </tr>
         </table>
         <p><span style="font-size: 20px;">4、生成靶纸</span></p>
+        <div style="width:70%"><canvas id="chart1"></canvas></div>
+        <button onclick="generateChart1()">生成曲线</button>
     </div>
 </div>
+
+<script src="../assets/js/jquery-1.11.1.min.js"></script>
+<script src="../assets/js/Chart.js" ></script>
+<script src="../assets/js/biz/collisionShooting.js" ></script>
 </body>
 </html>
