@@ -48,8 +48,8 @@ function beltaJ(table){
     console.log("table_" + table + " belta4: " + belta4);
 
 
-    var m = parseFloat($("#blank_1").val());
-    var r = parseFloat($("#blank_2").val());
+    var m = parseFloat($("#blank_1").val()) / 1000;
+    var r = parseFloat($("#blank_2").val()) / 1000;
     var g = 9.8;
     var on = m * r * (g - belta4 * r);
     var down = belta4 - belta3;
