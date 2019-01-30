@@ -8,6 +8,9 @@ function autoGenera(){
         Di(i, j);
     }
     Di5Di();
+    Di5DiAvg();
+    R();
+    O();
 }
 
 function Di(i, j){
@@ -42,3 +45,88 @@ function Di5Di(){
     $("#table_16").val(d13d8);
     $("#table_20").val(d14d9);
 }
+
+function Di5DiAvg(){
+    var d10d5 = parseFloat($("#table_4").val());
+    var d11d6 = parseFloat($("#table_8").val());
+    var d12d7 = parseFloat($("#table_12").val());
+    var d13d8 = parseFloat($("#table_16").val());
+    var d14d9 = parseFloat($("#table_20").val());
+
+    var up = d10d5 + d11d6 + d12d7 + d13d8 + d14d9;
+    var avg = up / 5;
+
+    // console.log(d10d5);
+    // console.log(d11d6);
+    // console.log(d12d7);
+    // console.log(d13d8);
+    // console.log(d14d9);
+    // console.log(up);
+    // console.log(avg);
+
+    $("#blank_1").val(avg);
+}
+
+function R() {
+    var avg = parseFloat($("#blank_1").val());
+    var r = avg / 11.786;
+    $("#blank_2").val(r.toFixed(2));
+}
+
+function O() {
+    var D = parseFloat($("#blank_1").val());
+    var D5 = parseFloat($("#table_4").val());
+    var D6 = parseFloat($("#table_8").val());
+    var D7 = parseFloat($("#table_12").val());
+    var D8 = parseFloat($("#table_16").val());
+    var D9 = parseFloat($("#table_20").val());
+
+    var up = (D5 - D) * (D5 - D) + (D6 - D) * (D6 - D) + (D7 - D) * (D7 - D) + (D8 - D) * (D8 - D) + (D9 - D) * (D9 - D);
+    var res = Math.sqrt(up / 4);
+    $("#blank_3").val(res.toFixed(2));
+}
+
+$(function () {
+        $.ajax({
+            type: "GET",
+            url: "/exp/get_exp_status.do",
+            data: {
+                expId: 7
+            },
+            dataType: "json",
+            success: function (result) {
+                if (result.status === 10) {
+                    alert("实验已关闭，请联系实验老师");
+                    location.href = "../index.html";
+                }
+            },
+            error: function (result) {
+                alert("向服务器请求数据失败" + result);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/score/is_stu_have_score.do",
+            data: {
+                expId: 7
+            },
+            dataType: "json",
+            success: function (res) {
+                if(res.status === 0){
+                    //用户未提交过此实验
+                } else if (res.status === 2) {
+                    location.href = "../login.html";
+                } else if(res.status === 15){
+                    alert("您已提交过此实验，如有疑问请联系实验老师");
+                    location.href = "../index.html";
+                } else{
+                    alert("服务器发生错误");
+                }
+            },
+            error: function (res) {
+                alert("向服务器请求数据失败" + res);
+            }
+        });
+    }
+)
