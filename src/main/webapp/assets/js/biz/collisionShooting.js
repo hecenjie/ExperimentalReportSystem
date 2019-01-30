@@ -113,6 +113,62 @@ function autoGenera2(){
 //     });
 // }
 
+function submitAll() {
+    if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
+        submit();
+    }
+}
+
+function submit(){
+    var choice = new Array();
+    var table1 = new Array();
+    var table2 = new Array();
+    var blank = new Array();
+
+
+    for (var i = 1; i <= 10; i++) {
+        choice[i - 1] = $("#choice_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 6; i++) {
+        table1[i - 1] = $("#table_1_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 12; i++) {
+        table2[i - 1] = $("#table_2_" + i + "").val();
+    }
+
+    for (var i = 1; i <= 2; i++) {
+        blank[i - 1] = $("#blank_" + i + "").val();
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/sub/Exp_06.do",
+        data: {
+            choice: choice,
+            blank: blank,
+            table1: table1,
+            table2: table2
+        },
+        async: false,
+        dataType: "json",
+        success: function (result) {
+            if (result.status === 15)
+                alert("请勿多次提交试验");
+            else if (result.status === 10)
+                alert("实验已关闭,如有疑问请联系实验老师");
+            else {
+                alert("提交成功");
+                location.href="../index.html"
+            }
+        },
+        error: function (result) {
+            alert("向服务器请求数据失败" + result);
+        }
+    });
+}
+
 
 $(function () {
         $.ajax({

@@ -12,6 +12,7 @@ import com.nanwulife.service.IUserService;
 import com.nanwulife.util.PropertiesUtil;
 import com.nanwulife.util.Sci2con;
 import com.nanwulife.util.WordToNewWordUtil;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import net.sf.jsqlparser.schema.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -528,4 +529,90 @@ public class ExperimentSubmitController {
         user = null;
         return iScoreService.submit(score);
     }
+
+
+    @RequestMapping(value = "Exp_06.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse submitExp(HttpSession session, @RequestParam(value = "choice[]", required = false) String[] choice, @RequestParam(value = "blank[]", required = false) String[] blank, @RequestParam(value = "table1[]", required = false) String[] table1, @RequestParam(value = "table2[]", required = false) String[] table2) {
+
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        int rank = 0;
+        int stu_class = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getStuClass();
+        String major_name = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getMajorName();
+        String wordPath = new PropertiesUtil("server.properties").readProperty("report.word.server.path");
+        String chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
+        String basePath;
+        String path;
+        Map<String, Object> params = new HashMap<String, Object>();
+        ServerResponse serverResponse = iScoreService.isStuHaveScore(6, user.getId());
+        if (serverResponse.getStatus() == 15) {
+            //报告重复提交
+            return serverResponse;
+        }
+        serverResponse = iExperimentService.getExpStatus(6);
+        if (serverResponse.getStatus() == 10){
+            //实验已关闭
+            return serverResponse;
+        }
+
+        if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
+        } else if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+        } else {
+            basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
+        }
+
+        //=============================模板标记==============================
+
+        for (int i = 0; i < 10; i++) {
+            params.put("choice_" + (i + 1) + "", choice[i]);
+        }
+
+        for (int i = 0; i < 2; i++) {
+            params.put("blank_" + (i + 1) + "", blank[i]);
+        }
+
+        for (int i = 0; i < 6; i++) {
+            params.put("table_1_" + (i + 1) + "", table1[i]);
+        }
+
+        for (int i = 0; i < 12; i++) {
+            params.put("table_2_" + (i + 1) + "", table2[i]);
+        }
+
+        rank = (new CollisionShooting(choice[0], choice[0],choice[2],choice[3],choice[4],choice[5],choice[6],choice[7],choice[8],choice[9],
+                Double.parseDouble(blank[1]), Double.parseDouble(table2[0]),
+                Double.parseDouble(table2[1]),  Double.parseDouble(table2[2]),  Double.parseDouble(table2[3]),  Double.parseDouble(table2[4]),  Double.parseDouble(table2[5]), Double.parseDouble(table2[6]), Double.parseDouble(table2[7]), Double.parseDouble(table2[8]), Double.parseDouble(table2[9]), Double.parseDouble(table2[10]), Double.parseDouble(table2[11]))).getScore();
+
+        params.put("name", user.getStuName());
+        params.put("num", user.getStuNum());
+        params.put("classno", major_name + user.getStuClass());
+        params.put("score", rank);
+        //=============================模板标记==============================
+
+        path = basePath + wordPath + "碰撞打靶" + "/" + major_name + stu_class + "/";
+        File filedir = new File(path);
+        if (!filedir.exists()) {
+            filedir.setWritable(true);
+            filedir.mkdirs();
+        }
+        try {
+            WordToNewWordUtil.templateWrite2(basePath + "碰撞打靶实验模板.docx", params, path + user.getStuNum() + user.getStuName() + ".docx");
+        } catch (Exception e) {
+            System.out.println("写入模板异常");
+            e.printStackTrace();
+        }
+
+        Score score = new Score();
+        score.setStuId(user.getId());
+        score.setExpId(6);
+        score.setScore(rank);
+        user = null;
+        return iScoreService.submit(score);
+    }
+
 }
