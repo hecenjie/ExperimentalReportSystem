@@ -9,7 +9,7 @@ import com.nanwulife.pojo.Score;
  * @Date: Created in 2019/1/30
  */
 
-public class CollisionShooting {
+public class CollisionShootingExperiment {
     private String choice_1;
     private String choice_2;
     private String choice_3;
@@ -28,9 +28,9 @@ public class CollisionShooting {
 
     private int score = 0;
 
-    public CollisionShooting(String choice_1, String choice_2, String choice_3, String choice_4, String choice_5, String choice_6, String choice_7, String choice_8, String choice_9, String choice_10,
-                             double lose, double x1, double x2, double x3, double x4, double x5, double x6,
-                             double z1, double z2, double z3, double z4, double z5, double z6) {
+    public CollisionShootingExperiment(String choice_1, String choice_2, String choice_3, String choice_4, String choice_5, String choice_6, String choice_7, String choice_8, String choice_9, String choice_10,
+                                       double lose, double x1, double x2, double x3, double x4, double x5, double x6,
+                                       double z1, double z2, double z3, double z4, double z5, double z6) {
         this.choice_1 = choice_1;
         this.choice_2 = choice_2;
         this.choice_3 = choice_3;
@@ -63,21 +63,21 @@ public class CollisionShooting {
         if (choice_2.equals("A"))
             score += 3;
         if (choice_3.equals("B"))
-            score += 2;
+            score += 3;
         if (choice_4.equals("A"))
-            score += 2;
+            score += 3;
         if (choice_5.equals("B"))
-            score += 2;
+            score += 3;
         if (choice_6.equals("D"))
-            score += 2;
+            score += 3;
         if (choice_7.equals("A"))
-            score += 2;
+            score += 3;
         if (choice_8.equals("A"))
-            score += 2;
+            score += 3;
         if (choice_9.equals("C"))
-            score += 2;
+            score += 3;
         if (choice_10.equals("A"))
-            score += 2;
+            score += 3;
 
         if (lose > 10 && lose < 20)
             score += 10;
