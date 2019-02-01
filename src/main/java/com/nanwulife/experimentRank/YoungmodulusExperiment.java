@@ -83,7 +83,7 @@ public class YoungmodulusExperiment {
             score += 2;
         if (choice_10.equals("A"))
             score += 2;
-        if (choice_11.equals("D"))
+        if (choice_11.equals("B"))
             score += 2;
         if (choice_12.equals("E"))
             score += 2;
@@ -97,10 +97,10 @@ public class YoungmodulusExperiment {
             score += 2;
         if (choice_17.equals("D"))
             score += 6;
-        
+
         if (result_d >= 0.0003 && result_d <= 0.0007)
             score += 15;
-        else 
+        else
             score += 8;
         
         if (s7_s7 >= 0 && s7_s7 <= 0.5)

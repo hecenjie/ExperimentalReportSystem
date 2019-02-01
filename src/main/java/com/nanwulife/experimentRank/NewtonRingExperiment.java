@@ -66,7 +66,7 @@ public class NewtonRingExperiment {
             score += 3;
         if (choice_7.equals("B"))
             score += 1;
-        if (choice_8.equals("A"))
+        if (choice_8.equals("D"))
             score += 1;
         if (choice_9.equals("C"))
             score += 1;
@@ -98,6 +98,7 @@ public class NewtonRingExperiment {
         else if (R < 1.4 || R > 2.3)
             score += 32;
 
+
         if (sigema >= 0 && sigema <= 0.5)
             score += 10;
         else if (sigema > 0.5 && sigema <= 1)
@@ -106,7 +107,6 @@ public class NewtonRingExperiment {
             score += 6;
         else if (sigema > 1.5)
             score += 4;
-
         return score;
     }
 }

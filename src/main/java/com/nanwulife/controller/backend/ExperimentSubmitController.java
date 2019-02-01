@@ -582,9 +582,9 @@ public class ExperimentSubmitController {
             params.put("table_2_" + (i + 1) + "", table2[i]);
         }
 
-        rank = (new CollisionShootingExperiment(choice[0], choice[0],choice[2],choice[3],choice[4],choice[5],choice[6],choice[7],choice[8],choice[9],
+        rank = (new CollisionShootingExperiment(choice[0], choice[1],choice[2],choice[3],choice[4],choice[5],choice[6],choice[7],choice[8],choice[9],
                 Double.parseDouble(blank[1]), Double.parseDouble(table2[0]),
-                Double.parseDouble(table2[1]),  Double.parseDouble(table2[2]),  Double.parseDouble(table2[3]),  Double.parseDouble(table2[4]),  Double.parseDouble(table2[5]), Double.parseDouble(table2[6]), Double.parseDouble(table2[7]), Double.parseDouble(table2[8]), Double.parseDouble(table2[9]), Double.parseDouble(table2[10]), Double.parseDouble(table2[11]))).getScore();
+                Double.parseDouble(table2[1]),  Double.parseDouble(table2[2]),  Double.parseDouble(table2[3]),  Double.parseDouble(table2[4]),  Double.parseDouble(table2[5]), Double.parseDouble(table2[6]), Double.parseDouble(table2[7]), Double.parseDouble(table2[8]), Double.parseDouble(table2[9]), Double.parseDouble(table2[10]), Double.parseDouble(table2[11]), Double.parseDouble(table1[2]), Double.parseDouble(table1[5]))).getScore();
 
         params.put("name", user.getStuName());
         params.put("num", user.getStuNum());

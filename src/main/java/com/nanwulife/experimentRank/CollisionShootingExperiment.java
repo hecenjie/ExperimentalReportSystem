@@ -26,11 +26,14 @@ public class CollisionShootingExperiment {
     private double x1,x2,x3,x4,x5,x6;
     private double z1,z2,z3,z4,z5,z6;
 
+    private double hTheory;
+    private double hTruth;
+
     private int score = 0;
 
     public CollisionShootingExperiment(String choice_1, String choice_2, String choice_3, String choice_4, String choice_5, String choice_6, String choice_7, String choice_8, String choice_9, String choice_10,
                                        double lose, double x1, double x2, double x3, double x4, double x5, double x6,
-                                       double z1, double z2, double z3, double z4, double z5, double z6) {
+                                       double z1, double z2, double z3, double z4, double z5, double z6, double hTheory, double hTruth) {
         this.choice_1 = choice_1;
         this.choice_2 = choice_2;
         this.choice_3 = choice_3;
@@ -54,7 +57,8 @@ public class CollisionShootingExperiment {
         this.z4 = z4;
         this.z5 = z5;
         this.z6 = z6;
-
+        this.hTheory = hTheory;
+        this.hTruth = hTruth;
     }
 
     public int getScore(){
@@ -79,14 +83,22 @@ public class CollisionShootingExperiment {
         if (choice_10.equals("A"))
             score += 3;
 
+
+        if (hTruth - hTheory > 0.1 && hTruth - hTheory < 0.5)
+            score += 30;
+        else if (hTruth - hTheory < 0)
+            score += 10;
+        else
+            score += 25;
+
         if (lose > 10 && lose < 20)
             score += 10;
         else
             score += 7;
 
-        if ((Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6)) < 0.6 && (Math.abs(x1-20.4)+Math.abs(x2-20.4)+Math.abs(x3-20.4)+Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4)) < 0.3)
+        if ((Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6)) < 0.6 && (Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4)) < 0.3)
             score += 30;
-        else if ((Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6)) < 1.2 && (Math.abs(x1-20.4)+Math.abs(x2-20.4)+Math.abs(x3-20.4)+Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4)) < 0.6)
+        else if ((Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6)) < 1.2 && (Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4)) < 0.6)
             score += 25;
         else
             score += 20;
