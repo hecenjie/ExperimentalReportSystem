@@ -16,16 +16,19 @@ function addedH(){
 function autoGenera1(){
     var th = theoreticalH();
     var ah = addedH();
-    $("#table_1_3").val(th);
-    $("#table_1_5").val(ah);
+    $("#table_1_3").val(th.toFixed(2));
+    $("#table_1_5").val(ah.toFixed(2));
 }
 
 function autoGenera2(){
-    var th = $("#table_1_3").val();
-    var rh = $("#table_1_6").val();
-    var m = $("#table_1_1").val();
+    var th = parseFloat($("#table_1_3").val());
+    var rh = parseFloat($("#table_1_6").val());
+    var m = parseFloat($("#table_1_1").val());
     var deltaE = m * 9.8 * (rh - th) * 1E-5;
     var deltaE2 = (rh - th) * 100 / th;
+    // console.log(rh);
+    // console.log(th);
+    // console.log(rh - th);
     $("#blank_1").val(deltaE);
     $("#blank_2").val(deltaE2);
 }
