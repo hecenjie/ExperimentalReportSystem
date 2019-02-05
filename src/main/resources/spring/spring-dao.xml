@@ -19,11 +19,11 @@
         <property name="password" value="${db.password}" />
 
         <!-- c3p0连接池的私有属性 -->
-        <!--<property name="maxPoolSize" value="${db.maxPoolSize}" />-->
-        <!--<property name="minPoolSize" value="${db.minPoolSize}" />-->
-        <!--<property name="initialPoolSize" value="${db.initialPoolSize}"/>-->
-        <!--<property name="maxIdleTime" value="${db.maxIdleTime}"/>-->
-        <!-- 当获取连接失败重试次数 -->
+        <property name="maxPoolSize" value="${db.maxPoolSize}" />
+        <property name="minPoolSize" value="${db.minPoolSize}" />
+        <property name="initialPoolSize" value="${db.initialPoolSize}"/>
+        <property name="maxIdleTime" value="${db.maxIdleTime}"/>
+         <!--当获取连接失败重试次数 -->
         <property name="acquireRetryAttempts" value="2" />
     </bean>
 
