@@ -84,4 +84,17 @@ public class User {
     public void setStuName(String stuName) {
         this.stuName = stuName;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", stuNum=" + stuNum +
+                ", stuClass=" + stuClass +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", majorId=" + majorId +
+                ", stuName='" + stuName + '\'' +
+                '}';
+    }
 }

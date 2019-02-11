@@ -1,6 +1,5 @@
 package com.nanwulife.service.impl;
 
-import com.google.common.cache.CacheBuilderSpec;
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.dao.MajorMapper;
@@ -44,6 +43,7 @@ public class UserServiceImpl implements IUserService {
             user.setStuClass(stuClass);
             user.setStuName(stuName);
             int result = userMapper.insert(user);
+            
             if(result == 0){
                 return ServerResponse.createByErrorMessage("注册失败");
             }

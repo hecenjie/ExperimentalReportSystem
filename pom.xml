@@ -192,6 +192,13 @@
       <version>3.1</version>
     </dependency>
 
+    <!-- java.lang.ClassNotFoundException: javax.servlet.jsp.jstl.core.Config -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
     <!-- file upload -->
     <dependency>
       <groupId>commons-fileupload</groupId>
