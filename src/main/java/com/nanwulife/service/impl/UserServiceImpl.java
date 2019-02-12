@@ -99,14 +99,14 @@ public class UserServiceImpl implements IUserService {
     }
 
 		@Override
-		public ServerResponse<User> edit(Integer id, Long username, String password, Integer majorId, Integer stuClass, String stuName) {
+		public ServerResponse<User> edit(Integer role, Integer id, Long username, String password, Integer majorId, Integer stuClass, String stuName) {
 				//判断用户名是否存在
 //				int isRepeat = userMapper.selectByUsername(username);
 //				if(isRepeat == 0){
 
 						User user = new User();
 						user.setId(id);
-						user.setRole(Const.Role.ROLE_CUSTOMER);
+						user.setRole(role);
 						user.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
 						user.setStuNum(username);
 						user.setMajorId(majorId);

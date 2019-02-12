@@ -58,6 +58,7 @@ function edit() {
         dataType:"json",
         data: {
             "id": $("#form-id").val(),
+            "role": $("#form-role").val(),
             "username": $("#form-username").val(),
             "password": $("#form-password").val(),
             "passwordCheck": $("#form-passwordCheck").val(),

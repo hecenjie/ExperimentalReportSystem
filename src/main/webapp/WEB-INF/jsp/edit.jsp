@@ -55,7 +55,7 @@
                     <div class="form-top">
                         <div class="form-top-left">
                             <h3>用户修改</h3>
-                            <p>请输入您的学生信息进行注册，为防止遗忘，密码请与教务处保持相同：</p>
+                            <p>请输入您的学生信息进行修改，为防止遗忘，密码请与教务处保持相同：</p>
                         </div>
                         <div class="form-top-right">
                             <i class="fa fa-key"></i>
@@ -66,6 +66,7 @@
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Username</label>
                                 <input type="text" name="id"style="display:none" id="form-id"  value="${user.id}">
+                                <input type="text" name="role"style="display:none" id="form-role"  value="${user.role}">
                                 <input type="text" name="username" placeholder="学号" value="${user.stuNum}" class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
@@ -74,11 +75,11 @@
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Password</label>
-                                <input type="password" name="password" placeholder="密码" value="${user.password}"  class="form-password form-control" id="form-password">
+                                <input type="password" name="password" placeholder="密码"  class="form-password form-control" id="form-password">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-passwordCheck">Password</label>
-                                <input type="password" name="passwordCheck" placeholder="确认密码" value="${user.password}"  class="form-password form-control" id="form-passwordCheck">
+                                <input type="password" name="passwordCheck" placeholder="确认密码"   class="form-password form-control" id="form-passwordCheck">
                             </div>
                             <div class="form-group">
                                 <select class="form-control" id="major">
