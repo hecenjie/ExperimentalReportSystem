@@ -20,4 +20,5 @@ public interface IUserService {
 
     StuBasicInfoVo queryMajornameAndClassByNum(Long stu_num);
 
+		public ServerResponse<User> edit(Integer id, Long username, String password, Integer majorId, Integer stuClass, String stuName);
 }

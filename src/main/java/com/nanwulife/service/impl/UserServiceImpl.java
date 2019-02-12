@@ -31,6 +31,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private MajorMapper majorMapper;
 
+    @Override
     public ServerResponse<User> register(Long username, String password, Integer majorId, Integer stuClass, String stuName){
         //判断用户名是否存在
         int isRepeat = userMapper.selectByUsername(username);
@@ -51,7 +52,8 @@ public class UserServiceImpl implements IUserService {
         }
         return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.USERNAME_REPEAT.getCode(), Const.ResponseCode.USERNAME_REPEAT.getDesc());
     }
-    
+
+    @Override
     public ServerResponse<User> login(Long username, String password) {
         User usernameUser = userMapper.checkByUsername(username);
         //若账号不存在 返回错误
@@ -70,6 +72,7 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
+    @Override
     public ServerResponse<StuBasicInfoVo> getStuBasicInfo(User user){
         StuBasicInfoVo stuBasicInfoVo = assembleStuBasicInfoVo(user);
         if(stuBasicInfoVo == null)
@@ -86,13 +89,37 @@ public class UserServiceImpl implements IUserService {
         //如果没有该专业，返回null
         Major major = majorMapper.selectByPrimaryKey(user.getMajorId());
         if(major != null)
-            stuBasicInfoVo.setMajorName(major.getName());
+        { stuBasicInfoVo.setMajorName(major.getName());}
         stuBasicInfoVo.setStuNum(user.getStuNum());
         return stuBasicInfoVo;
     }
-    
+    @Override
     public StuBasicInfoVo queryMajornameAndClassByNum(Long stu_num){
         return userMapper.queryMajornameAndClassByNum(stu_num);
     }
+
+		@Override
+		public ServerResponse<User> edit(Integer id, Long username, String password, Integer majorId, Integer stuClass, String stuName) {
+				//判断用户名是否存在
+//				int isRepeat = userMapper.selectByUsername(username);
+//				if(isRepeat == 0){
+
+						User user = new User();
+						user.setId(id);
+						user.setRole(Const.Role.ROLE_CUSTOMER);
+						user.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
+						user.setStuNum(username);
+						user.setMajorId(majorId);
+						user.setStuClass(stuClass);
+						user.setStuName(stuName);
+						int result = userMapper.updateByPrimaryKeySelective(user);
+
+						if(result == 0){
+								return ServerResponse.createByErrorMessage("修改失败");
+						}
+						return ServerResponse.createBySuccess(user);
+//				}
+//				return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.USERNAME_REPEAT.getCode(), Const.ResponseCode.USERNAME_REPEAT.getDesc());
+		}
 
 }

@@ -62,9 +62,10 @@
                         </div>
                     </div>
                     <div class="form-bottom">
-                        <form role="form" action="#" method="post" class="login-form" onsubmit="return false" id="register">
+                        <form role="form" action="#" method="post" class="login-form" onsubmit="return false" id="edit">
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Username</label>
+                                <input type="text" name="id"style="display:none" id="form-id"  value="${user.id}">
                                 <input type="text" name="username" placeholder="学号" value="${user.stuNum}" class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
@@ -85,10 +86,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-class">Class</label>
-                                <input type="text" name="password" placeholder="班级 (例如:174)" onkeyup="value=value.replace(/\D/g,'')" maxlength="5" class="form-class form-control" id="form-class">
+                                <input type="text" name="password" value="${user.stuClass}" placeholder="班级 (例如:174)" onkeyup="value=value.replace(/\D/g,'')" maxlength="5" class="form-class form-control" id="form-class">
                             </div>
                             <%--<p><a href="login.html">账号登陆</a></p>--%>
-                            <button type="submit" class="btn" onclick="register()">修改</button>
+                            <button type="submit" class="btn" onclick="edit()">修改</button>
 
                         </form>
                     </div>

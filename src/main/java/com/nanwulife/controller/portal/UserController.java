@@ -56,11 +56,35 @@ public class UserController {
 
     /**
      * 用户修改
+     * @param username
+     * @param password
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "edit.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<User> edit(Integer id, Long username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
+        if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null)
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        if(!StringUtils.equals(password,passwordCheck)){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
+        }
+        ServerResponse response =  iUserService.edit(id,username, password, majorId, stuClass, stuName);
+        if(response.isSuccess()){
+		        session.setAttribute(Const.CURRENT_USER, null);
+            session.setAttribute(Const.CURRENT_USER, response.getData());
+            session.setMaxInactiveInterval(60 * 60 * 24);   //会话时间为24小时
+        }
+        return response;
+    }
+
+    /**
+     * 跳转到用户修改界面
      * @return
      */
     @RequestMapping("/edit")
-    public String to_edit(Model model,HttpSession session){
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
+    public String to_edit(Model model,HttpSession session,User user){
+        user = (User) session.getAttribute(Const.CURRENT_USER);
         model.addAttribute("user",user);
         return "edit";
     }
