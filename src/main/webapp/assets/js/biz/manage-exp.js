@@ -62,6 +62,7 @@ function closeExp(expId){
 
 /**
  * 操作开放关闭状态
+ * @param obj
  * @param expId
  */
 function getExp(obj,expId){
