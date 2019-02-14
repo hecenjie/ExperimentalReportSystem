@@ -21,7 +21,6 @@ function openExp(expId){
             success: function (res) {
                 if (res.status === 0) {
                     alert("开放实验成功");
-                    // getExp(expId);
                 } else if (res.status === 2) {
                     location.href = "login.html";
                 } else {
@@ -47,7 +46,6 @@ function closeExp(expId){
             success: function (res) {
                 if (res.status === 0) {
                     alert("关闭实验成功");
-                    // getExp(expId);
                 } else if (res.status === 2) {
                     location.href = "login.html";
                 } else {
