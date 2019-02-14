@@ -3,11 +3,9 @@ package com.nanwulife.controller.portal;
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.controller.backend.ExperimentManageController;
-import com.nanwulife.experimentRank.PhotoeletricExperiment;
 import com.nanwulife.pojo.Experiment;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
-import com.nanwulife.util.WordToNewWordUtil;
 import com.nanwulife.service.IScoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,13 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Project: ExperimentalReportSystem
@@ -50,12 +45,14 @@ public class ExperimentController {
     @ResponseBody
     public ServerResponse getExpStatus(Integer expId, HttpSession session){
         if(session.getAttribute(Const.CURRENT_USER) == null){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
-        }
+				    return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+		    }
         if(expId == null){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
-        return iExperimentService.getExpStatus(expId);
+		    ServerResponse status = iExperimentService.getExpStatus(expId);
+        System.out.println(status.toString());
+		    return status;
     }
 
     /**

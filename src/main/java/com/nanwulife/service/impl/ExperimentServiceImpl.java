@@ -4,7 +4,6 @@ import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
 import com.nanwulife.dao.ExperimentMapper;
 import com.nanwulife.pojo.Experiment;
-import com.nanwulife.pojo.Major;
 import com.nanwulife.service.IExperimentService;
 import com.nanwulife.util.PropertiesUtil;
 import org.slf4j.Logger;
@@ -13,13 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sun.misc.BASE64Decoder;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.Base64;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 /**
  * @Project: ExperimentalReportSystem
@@ -40,13 +38,14 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @param expId
      * @return
      */
+    @Override
     public ServerResponse openExp(Integer expId){
         Experiment experiment = new Experiment();
         experiment.setId(expId);
         experiment.setOpen(Const.Exp.OPEN);
         int resultCount = experimentMapper.updateByPrimaryKeySelective(experiment);
         if(resultCount == 0)
-            return ServerResponse.createByError();
+        {return ServerResponse.createByError();}
         return ServerResponse.createBySuccess();
     }
 
@@ -55,21 +54,25 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @param expId
      * @return
      */
+    @Override
     public ServerResponse closeExp(Integer expId){
         Experiment experiment = new Experiment();
         experiment.setId(expId);
         experiment.setOpen(Const.Exp.CLOSE);
         int resultCount = experimentMapper.updateByPrimaryKeySelective(experiment);
         if(resultCount == 0)
-            return ServerResponse.createByError();
+        {return ServerResponse.createByError();}
         return ServerResponse.createBySuccess();
     }
 
-    /**
+
+
+		/**
      * 获取实验开放状态
      * @param expId
      * @return
      */
+    @Override
     public ServerResponse getExpStatus(Integer expId){
         Experiment experiment = experimentMapper.selectByPrimaryKey(expId);
         if(experiment == null){
@@ -91,6 +94,7 @@ public class ExperimentServiceImpl implements IExperimentService {
      * @param image
      * @return
      */
+    @Override
     public ServerResponse uploadChart(Integer expId, Long stuNum, String image, Integer index) {
         String basePath;
         String chartPath;
@@ -165,6 +169,7 @@ public class ExperimentServiceImpl implements IExperimentService {
      * 获取所有实验列表
      * @return
      */
+    @Override
     public List<Experiment> getAllExps(){
         List<Experiment> exps = experimentMapper.selectAllExps();
         return exps;

@@ -11,6 +11,7 @@ public interface IExperimentService {
 
     public ServerResponse closeExp(Integer expId);
 
+
     public ServerResponse getExpStatus(Integer expId);
 
     public ServerResponse uploadChart(Integer expId, Long stuNum, String image, Integer index);

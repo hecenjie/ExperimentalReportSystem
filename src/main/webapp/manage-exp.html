@@ -16,6 +16,7 @@
     <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 </head>
 <body>
+
 <div id="wrapper">
     <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
@@ -88,8 +89,7 @@
                                 <th>ID</th>
                                 <th>实验名</th>
                                 <th>上传日期</th>
-                                <th>开放实验</th>
-                                <th>关闭实验</th>
+                                <th>试验状态</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -97,16 +97,13 @@
                                 <td>1</td>
                                 <td>光电效应实验</td>
                                 <td>2018/9/19 </td>
-                                <td><a href="javascript:void(0);" onclick="openExp(1)" class="btn btn-info ">开放</a></td>
-                                <td><a href="javascript:void(0);" onclick="closeExp(1)" class="btn btn-warning ">关闭</a></td>
-                                <!--<td><a href="#" class="btn btn-danger ">关闭实验</a></td>-->
+                                <td><a href="javascript:void(0);" onclick="getExp(this,1)"  class="btn btn-info aOpenExp">试验状态</a></td>
                             </tr>
                             <tr class="list-group-item-danger">
                                 <td>2</td>
                                 <td>太阳能实验</td>
                                 <td>2018/10/5 </td>
-                                <td><a href="javascript:void(0);" onclick="openExp(2)" class="btn btn-info ">开放</a></td>
-                                <td><a href="javascript:void(0);" onclick="closeExp(2)" class="btn btn-warning ">关闭</a></td>
+                                <td><a href="javascript:void(0);" onclick="getExp(this,2)"  class="btn btn-info aOpenExp">试验状态</a></td>
                             </tr>
                             <!--<tr class="list-group-item-info">-->
                                 <!--<td>3</td>-->

@@ -2,9 +2,6 @@ package com.nanwulife.controller.backend;
 
 import com.nanwulife.common.Const;
 import com.nanwulife.common.ServerResponse;
-import com.nanwulife.controller.portal.UserController;
-import com.nanwulife.dao.ExperimentMapper;
-import com.nanwulife.pojo.Experiment;
 import com.nanwulife.pojo.User;
 import com.nanwulife.service.IExperimentService;
 import org.slf4j.Logger;
@@ -76,6 +73,29 @@ public class ExperimentManageController {
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.INSUFFICIENT_PERMISSION.getCode(), Const.ResponseCode.INSUFFICIENT_PERMISSION.getDesc());
         }
         return iExperimentService.closeExp(expId);
+    }
+
+    /**
+     * 获取试验状态
+     * @param expId
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "get_exp.do", method = RequestMethod.POST)
+    @ResponseBody
+    //todo: 待测试
+    public ServerResponse getExp(Integer expId, HttpSession session){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+        }
+        if(expId == null){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        }
+        if(user.getRole() == Const.Role.ROLE_CUSTOMER){
+            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.INSUFFICIENT_PERMISSION.getCode(), Const.ResponseCode.INSUFFICIENT_PERMISSION.getDesc());
+        }
+        return iExperimentService.getExpStatus(expId);
     }
 
 }
