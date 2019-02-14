@@ -18,7 +18,7 @@ function Di(i, j){
     var xr = $("#table_"+j).val();
     var di = Math.abs(xl - xr);
     var index = j + 1;
-    $("#table_"+ index).val(di);
+    $("#table_"+ index).val(di.toFixed(3));
 }
 
 function Di5Di(){
@@ -39,11 +39,11 @@ function Di5Di(){
     var d13d8 = d13 * d13 - d8 * d8;
     var d14d9 = d14 * d14 - d9 * d9;
 
-    $("#table_4").val(d10d5);
-    $("#table_8").val(d11d6);
-    $("#table_12").val(d12d7);
-    $("#table_16").val(d13d8);
-    $("#table_20").val(d14d9);
+    $("#table_4").val(d10d5.toFixed(3));
+    $("#table_8").val(d11d6.toFixed(3));
+    $("#table_12").val(d12d7.toFixed(3));
+    $("#table_16").val(d13d8.toFixed(3));
+    $("#table_20").val(d14d9.toFixed(3));
 }
 
 function Di5DiAvg(){
@@ -64,7 +64,7 @@ function Di5DiAvg(){
     // console.log(up);
     // console.log(avg);
 
-    $("#blank_1").val(avg);
+    $("#blank_1").val(avg.toFixed(3));
 }
 
 function R() {
