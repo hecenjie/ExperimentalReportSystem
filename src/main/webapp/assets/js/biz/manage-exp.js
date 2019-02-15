@@ -85,37 +85,6 @@ function getExp(obj,expId){
     })
 }
 
-
-
-
-// /**
-//  * 查看开放状态并初始化链表状态
-//  * @param expId
-//  */
-// function getState(expId){
-//     $.ajax({
-//         type: "post",
-//         url: "/manage/exp/get_exp.do",
-//         dataType: "json",
-//         data: {
-//             expId: expId
-//         },
-//         success: function (res) {
-//             var aOpenExp = document.getElementsByClassName("aOpenExp");
-//             for (var i=0;i<aOpenExp.length;i++){
-//                 if (res.status === 9){
-//                     aOpenExp[i].innerText="关闭";
-//                 }else if (res.status === 10) {
-//                     aOpenExp[i].innerText="开放";
-//                 }
-//             }
-//
-//         }, error: function () {
-//             alert("向服务器请求数据失败")
-//         }
-//     })
-// }
-
 /**
  * 查看开放状态并初始化链表状态
  * @param expId
