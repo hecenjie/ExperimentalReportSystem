@@ -1,14 +1,10 @@
 /**页面加载时就执行*/
 $(function(){
-    /**
-     * 初始化链表状态
-     */
-    getState(1);
-    getState(2);
+    getState("a1",1);
+    getState("a2",2);
 })
 
-
-function openExp(expId){
+function openExp(obj,expId){
 
     if(confirm("确认要开启该实验吗？")) {
         $.ajax({
@@ -21,6 +17,7 @@ function openExp(expId){
             success: function (res) {
                 if (res.status === 0) {
                     alert("开放实验成功");
+                    window.location.reload();
                 } else if (res.status === 2) {
                     location.href = "login.html";
                 } else {
@@ -34,7 +31,7 @@ function openExp(expId){
     }
 }
 
-function closeExp(expId){
+function closeExp(obj,expId){
     if(confirm("确认要关闭该实验吗？")) {
         $.ajax({
             type: "post",
@@ -46,6 +43,7 @@ function closeExp(expId){
             success: function (res) {
                 if (res.status === 0) {
                     alert("关闭实验成功");
+                    window.location.reload();
                 } else if (res.status === 2) {
                     location.href = "login.html";
                 } else {
@@ -75,11 +73,11 @@ function getExp(obj,expId){
         },
         success: function (res) {
                 if (res.status === 9){
-                    closeExp(expId);
-                    obj.innerText="关闭";
+                    closeExp(obj,expId);
+
                 }else if (res.status === 10) {
-                    openExp(expId);
-                    obj.innerText="开放";
+                    openExp(obj,expId);
+
                 }
         }, error: function () {
             alert("向服务器请求数据失败")
@@ -90,11 +88,39 @@ function getExp(obj,expId){
 
 
 
+// /**
+//  * 查看开放状态并初始化链表状态
+//  * @param expId
+//  */
+// function getState(expId){
+//     $.ajax({
+//         type: "post",
+//         url: "/manage/exp/get_exp.do",
+//         dataType: "json",
+//         data: {
+//             expId: expId
+//         },
+//         success: function (res) {
+//             var aOpenExp = document.getElementsByClassName("aOpenExp");
+//             for (var i=0;i<aOpenExp.length;i++){
+//                 if (res.status === 9){
+//                     aOpenExp[i].innerText="关闭";
+//                 }else if (res.status === 10) {
+//                     aOpenExp[i].innerText="开放";
+//                 }
+//             }
+//
+//         }, error: function () {
+//             alert("向服务器请求数据失败")
+//         }
+//     })
+// }
+
 /**
  * 查看开放状态并初始化链表状态
  * @param expId
  */
-function getState(expId){
+function getState(id,expId){
     $.ajax({
         type: "post",
         url: "/manage/exp/get_exp.do",
@@ -103,14 +129,13 @@ function getState(expId){
             expId: expId
         },
         success: function (res) {
-            var aOpenExp = document.getElementsByClassName("aOpenExp");
-            for (var i=0;i<aOpenExp.length;i++){
+            var aOpenExp = document.getElementById(id);
                 if (res.status === 9){
-                    aOpenExp[i].innerText="关闭";
+                    aOpenExp.innerText="关闭";
                 }else if (res.status === 10) {
-                    aOpenExp[i].innerText="开放";
+                    aOpenExp.innerText="开放";
                 }
-            }
+
         }, error: function () {
             alert("向服务器请求数据失败")
         }
