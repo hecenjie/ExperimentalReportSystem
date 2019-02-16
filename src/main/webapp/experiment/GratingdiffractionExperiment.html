@@ -124,8 +124,8 @@
         </p>
         <img src="assets/images/3_2.png">
         <p><span style="font-size: 20px;">A、\(\Psi_k=\frac 12(|\theta_2-\theta_1|+|\theta_2'-\theta_1'|) \)</span></p>
-        <p><span style="font-size: 20px;">B、\(\Psi_k=\frac 12(|\theta_1-\theta_1|+|\theta_2'-\theta_2'|) \)</span></p>
-        <p><span style="font-size: 20px;">C、\(\Psi_k=\frac 12(|\theta_1-\theta_2|+|\theta_2'-\theta_1'|) \)</span></p>
+        <p><span style="font-size: 20px;">B、\(\Psi_k=\frac 12(|\theta_1-\theta_1'|+|\theta_2-\theta_2'|) \)</span></p>
+        <p><span style="font-size: 20px;">C、\(\Psi_k=\frac 12(|\theta_1-\theta_2'|+|\theta_2-\theta_1'|) \)</span></p>
 
         <p><span style="font-size: 20px;">4、(3分)\(330°02'-229°43'=\)（
         <select id="choice_10"  style="width: 60px;height: 25px">
@@ -157,7 +157,7 @@
         </p>
         <p><span style="font-size: 20px;">A、500nm   B、1000nm  C、2000nm</span></p>
 
-        <p><span style="font-size: 20px;">7、(3分) 用一个光栅常数为3000nm的光栅测量光波波长，实验中测得某条光线的一级谱线的衍射角为10°（sin10°），则此光波的波长为（
+        <p><span style="font-size: 20px;">7、(3分) 用一个光栅常数为3000nm的光栅测量光波波长，实验中测得某条光线的一级谱线的衍射角为10°（sin10°≈0.17），则此光波的波长为（
         <select id="choice_13"  style="width: 60px;height: 25px">
             <option value="A">A</option>
             <option value="B">B</option>
@@ -351,15 +351,15 @@
         <button onclick="autoGenera1()">生成数据</button>
         <p><span style="font-size: 20px;">3.计算光栅常数d</span></p>
         <p><span style="font-size: 20px;">已知绿光波长\(\lambda_绿=\)546.1nm </span></p>
-        <p><span style="font-size: 20px;">\(d_{绿1}=\frac {1×\lambda_绿}{sin\Psi绿_1}=\)<input value="0" readonly="readonly" id="blank_5" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
-        <p><span style="font-size: 20px;">\(d_{绿2}=\frac {2×\lambda_绿}{sin\Psi绿_2}=\)<input value="0" readonly="readonly" id="blank_6" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
-        <p><span style="font-size: 20px;">\(d=\frac {d_{绿1}+d_{绿2}}2=\)<input value="0" id="blank_7" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
+        <p><span style="font-size: 20px;">\(d_{绿1}=\frac {1×\lambda_绿}{sin\Psi绿_1}=\)<input value="0" readonly="readonly" id="blank_5" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px">nm</span></p>
+        <p><span style="font-size: 20px;">\(d_{绿2}=\frac {2×\lambda_绿}{sin\Psi绿_2}=\)<input value="0" readonly="readonly" id="blank_6" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px">nm</span></p>
+        <p><span style="font-size: 20px;">\(d=\frac {d_{绿1}+d_{绿2}}2=\)<input value="0" id="blank_7" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px">nm</span></p>
         <p><span style="font-size: 20px;">相对误差（%） \(E=\frac {|d-3300|}{3300}×100=\)<input value="0" readonly="readonly" id="blank_8" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
 
         <p><span style="font-size: 20px;">4.计算黄光波长\(\lambda_{黄1}\), \(\lambda_{黄'1}\)</span></p>
-        <p><span style="font-size: 20px;">\(\lambda_{黄1}=\frac {dsin\Psi_k}{k}=\frac {dsin\Psi_{黄1}}{1}=\)<input value="0" id="blank_9" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
+        <p><span style="font-size: 20px;">\(\lambda_{黄1}=\frac {dsin\Psi_k}{k}=\frac {dsin\Psi_{黄1}}{1}=\)<input value="0" id="blank_9" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px">nm</span></p>
         <p><span style="font-size: 20px;">相对误差（%）\(E=\frac {|\lambda_{黄1}-577|}{577}×100=\)<input value="0" id="blank_10" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
-        <p><span style="font-size: 20px;">\(\lambda_{黄'1}=\frac {dsin\Psi_k}{k}=\frac {dsin\Psi_{黄'1}}{1}=\)<input value="0" id="blank_11" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
+        <p><span style="font-size: 20px;">\(\lambda_{黄'1}=\frac {dsin\Psi_k}{k}=\frac {dsin\Psi_{黄'1}}{1}=\)<input value="0" id="blank_11" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px">nm</span></p>
         <p><span style="font-size: 20px;">相对误差（%）\(E=\frac {|\lambda_{黄1}-579.1|}{579.1}×100=\)<input value="0" id="blank_12" readonly="readonly" type="text" style="border:0px;background:none;text-align:center;width: 50px;height: 30px"></span></p>
     </div>
     <button onclick="autoGenera2()">生成数据</button><br><br>

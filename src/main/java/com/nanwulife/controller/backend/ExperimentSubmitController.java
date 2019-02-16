@@ -139,8 +139,10 @@ public class ExperimentSubmitController {
                 selectval[6], selectval[7], selectval[8], selectval[9], selectval[10], Double.parseDouble(result[2]), Double.parseDouble(table2[21]), Double.parseDouble(table3[21]), Double.parseDouble(table4[21])).getRank();
 
 
-        params.put("stunum", user.getStuNum());
-        params.put("score", String.valueOf(rank));
+        params.put("name", user.getStuName());
+        params.put("num", user.getStuNum());
+        params.put("classno", major_name + user.getStuClass());
+        params.put("score", rank);
         //=====================================================================
 
         path = basePath + wordPath + "光电效应实验" + "/" + major_name + stu_class + "/";

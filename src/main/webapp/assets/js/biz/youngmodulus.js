@@ -30,19 +30,19 @@ function autoGenera1(){
     var a3 = $("#answer2_r6_1").text();
     var a4 = $("#answer2_r7_1").text();
     var ans2 = (parseFloat(a1) + parseFloat(a2) + parseFloat(a3) + parseFloat(a4)) / 400;
-    $("#answer2").text(ans2);
+    $("#answer2").text(ans2.toFixed(7));
 }
 
 function autoGenera1Helper(a, b, row){
     if(a == null || a === undefined || a === "") a = 0;
     if(b == null || b === undefined || b === "") b = 0;
     var ans1 = (parseFloat(a) + parseFloat(b)) / 2;
-    $("#answer2_r" + row).text(ans1);
+    $("#answer2_r" + row).text(ans1.toFixed(3));
     // alert(ans1);
     if(row >= 4){
         var fr = row -4;
         var ans2 = $("#answer2_r" + row).text() - $("#answer2_r" + fr).text();
-        $("#answer2_r" + row + "_1").text(ans2);
+        $("#answer2_r" + row + "_1").text(ans2.toFixed(3));
     }
 
 }
