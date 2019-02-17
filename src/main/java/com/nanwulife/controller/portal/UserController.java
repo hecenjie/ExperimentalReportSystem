@@ -64,12 +64,15 @@ public class UserController {
     @RequestMapping(value = "edit.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> edit(Integer role,Integer id, Long username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
-        if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null)
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+
+        if((username == null ||! username.equals(((User) session.getAttribute(Const.CURRENT_USER)).getStuNum())) || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null){
+		        return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        }
+
         if(!StringUtils.equals(password,passwordCheck)){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
         }
-        ServerResponse response =  iUserService.edit(role,id,username, password, majorId, stuClass, stuName);
+        ServerResponse response =  iUserService.edit(role,id,((User) session.getAttribute(Const.CURRENT_USER)).getStuNum(), password, majorId, stuClass, stuName);
         if(response.isSuccess()){
 		        session.setAttribute(Const.CURRENT_USER, null);
             session.setAttribute(Const.CURRENT_USER, response.getData());
@@ -82,8 +85,11 @@ public class UserController {
      * 跳转到用户修改界面
      * @return
      */
-    @RequestMapping("/edit")
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public String to_edit(Model model,HttpSession session,User user){
+		    if(session.getAttribute(Const.CURRENT_USER) == null){
+				    return "redirect:/login.html";
+		    }
         user = (User) session.getAttribute(Const.CURRENT_USER);
         model.addAttribute("user",user);
         return "edit";

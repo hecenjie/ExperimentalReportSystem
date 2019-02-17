@@ -67,7 +67,7 @@
                                 <label class="sr-only" for="form-username">Username</label>
                                 <input type="text" name="id"style="display:none" id="form-id"  value="${user.id}">
                                 <input type="text" name="role"style="display:none" id="form-role"  value="${user.role}">
-                                <input type="text" name="username" placeholder="学号" value="${user.stuNum}" class="form-username form-control" id="form-username">
+                                <input type="text" name="username" disabled="disabled" placeholder="学号" value="${user.stuNum}" class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-name">Name</label>
