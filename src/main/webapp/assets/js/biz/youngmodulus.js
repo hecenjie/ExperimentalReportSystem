@@ -41,7 +41,7 @@ function autoGenera1Helper(a, b, row){
     // alert(ans1);
     if(row >= 4){
         var fr = row -4;
-        var ans2 = $("#answer2_r" + row).text() - $("#answer2_r" + fr).text();
+        var ans2 = Math.abs($("#answer2_r" + row).text() - $("#answer2_r" + fr).text());
         $("#answer2_r" + row + "_1").text(ans2.toFixed(3));
     }
 
