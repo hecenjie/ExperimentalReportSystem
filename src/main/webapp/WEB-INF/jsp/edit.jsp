@@ -104,7 +104,7 @@
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery.backstretch.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/scripts.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/edit.js"></script>
 <!--登陆状态校验-->
 <script src="${pageContext.request.contextPath}/assets/js/biz/loginCheck.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/biz/register.js"></script>
