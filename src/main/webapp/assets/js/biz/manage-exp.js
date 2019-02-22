@@ -106,8 +106,11 @@ function getState(id,expId){
             var aOpenExp = document.getElementById(id);
                 if (res.status === 9){
                     aOpenExp.innerText="关闭";
+
+                    aOpenExp.style.background="red";
                 }else if (res.status === 10) {
                     aOpenExp.innerText="开放";
+                    aOpenExp.style.background="green";
                 }
 
         }, error: function () {
