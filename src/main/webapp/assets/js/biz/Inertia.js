@@ -14,7 +14,7 @@ function autoGenera2(){
     var js = $("#blank_3").val();
     var jl = M * (Ro*Ro + Ri*Ri) / 2;
     var E = (js - jl) * 100 / jl;
-    $("#blank_7").val(jl);
+    $("#blank_7").val(jl / 1E9);
     $("#blank_8").val(E);
 }
 
