@@ -60,6 +60,7 @@ function edit() {
             "id": $("#form-id").val(),
             "role": $("#form-role").val(),
             "username": $("#form-username").val(),
+            "username1": $("#form-username1").val(),
             "password": $("#form-password").val(),
             "passwordCheck": $("#form-passwordCheck").val(),
             "majorId": $("#major").find("option:selected").val(),
