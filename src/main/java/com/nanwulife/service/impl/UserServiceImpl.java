@@ -128,14 +128,9 @@ public class UserServiceImpl implements IUserService {
 		public ServerResponse<User> teacherEdit(Integer role,  Long username,Long username1) {
 
 				/**
-				 * 用学号查询用户id
+				 * 用学号查询用户
 				 */
-				int selectId = userMapper.selectIDByUsername(username);
-				/**
-				 * 用id查询用户
-				 */
-				User user = userMapper.selectByPrimaryKey(selectId);
-
+				User user  = userMapper.checkByUsername(username);
 				user.setStuNum(username1);
 				user.setRole(role);
 				int result = userMapper.updateByPrimaryKeySelective(user);
