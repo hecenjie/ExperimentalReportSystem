@@ -77,28 +77,28 @@ public class GratingdiffractionExperiment {
         if (choice_12.equals("C"))
             rank += 3;
         if (choice_13.equals("A"))
-            rank += 5;
-        
+            rank += 3;
+
         if (blank_1 >= 9.00 && blank_1 <= 9.85)
             rank += 20;
         else
             rank += 10;
-        
+
         if (blank_2 >= 19.00 && blank_2 <= 19.85)
             rank += 20;
         else 
             rank += 10;
-        
+
         if (blank_3 >= 9.80 && blank_3 <= 10.2)
             rank += 13;
         else 
             rank += 6;
-        
+
         if (blank_4 >= 9.80 && blank_4 <= 10.2)
             rank += 12;
         else 
             rank += 6;
-        
+
         return rank;
     }
     

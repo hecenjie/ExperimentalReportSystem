@@ -311,7 +311,7 @@ public class ExperimentSubmitController {
         }
 
 
-        rank = (new GratingdiffractionExperiment(selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0], selectval[0],
+        rank = (new GratingdiffractionExperiment(selectval[0], selectval[1], selectval[2], selectval[3], selectval[4], selectval[5], selectval[6], selectval[7], selectval[8], selectval[9], selectval[10], selectval[11], selectval[12],
                 Double.parseDouble(blank[0]), Double.parseDouble(blank[1]), Double.parseDouble(blank[2]), Double.parseDouble(blank[3]))).getRank();
 
         params.put("name", user.getStuName());
@@ -499,9 +499,10 @@ public class ExperimentSubmitController {
             params.put("table_6_" + (i + 1) + "", table6[i]);
         }
 
-        params.put("pic1", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/5-1.png"));
 
-        rank = (new InertiaExperiment(choice[0], choice[1], choice[2], choice[3], choice[4], choice[5], choice[6], choice[7], choice[8], choice[9], choice[10], Double.parseDouble(blank[8]), Double.parseDouble(table6[18]), Double.parseDouble(table5[18]), Double.parseDouble(table4[18]), Double.parseDouble(table3[18]))).getScore();
+        params.put("pic1", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/5-1.png"));
+        rank = (new InertiaExperiment(choice[0], choice[1], choice[2], choice[3], choice[4], choice[5], choice[6], choice[7], choice[8], choice[9], choice[10], Double.parseDouble(blank[7]), Double.parseDouble(table6[18]), Double.parseDouble(table5[18]), Double.parseDouble(table4[18]), Double.parseDouble(table3[18]))).getScore();
+
 
         params.put("name", user.getStuName());
         params.put("num", user.getStuNum());

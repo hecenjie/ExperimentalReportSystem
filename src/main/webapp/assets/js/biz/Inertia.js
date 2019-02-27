@@ -211,28 +211,29 @@ function submit() {
     }
 
     for (var i = 1; i <= 19; i++) {
-        table1[i-1] = $("#table1_" + i + "").val();
+        table1[i-1] = $("#table_1_" + i + "").val();
     }
 
     for (var i = 1; i <= 19; i++) {
-        table2[i-1] = $("#table2_" + i + "").val();
+        table2[i-1] = $("#table_2_" + i + "").val();
     }
 
     for (var i = 1; i <= 19; i++) {
-        table3[i-1] = $("#table3_" + i + "").val();
+        table3[i-1] = $("#table_3_" + i + "").val();
     }
 
     for (var i = 1; i <= 19; i++) {
-        table4[i-1] = $("#table4_" + i + "").val();
+        table4[i-1] = $("#table_4_" + i + "").val();
     }
 
     for (var i = 1; i <= 19; i++) {
-        table5[i-1] = $("#table5_" + i + "").val();
+        table5[i-1] = $("#table_5_" + i + "").val();
     }
 
     for (var i = 1; i <= 19; i++) {
-        table6[i-1] = $("#table6_" + i + "").val();
+        table6[i-1] = $("#table_6_" + i + "").val();
     }
+
 
     $.ajax({
         type: "POST",
@@ -250,7 +251,7 @@ function submit() {
         async: false,
         dataType: "json",
         success: function (result) {
-            if (result.status === 14)
+            if (result.status === 15)
                 alert("请勿多次提交试验");
             else if (result.status === 10)
                 alert("实验已关闭,如有疑问请联系实验老师");
