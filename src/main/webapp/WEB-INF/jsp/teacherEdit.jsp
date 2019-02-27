@@ -75,8 +75,7 @@
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">role</label>
                                 <select class="form-control" name="role" id="form-role">
-                                    <option>------请为用户选择管理权限------</option>
-                                    <option value="0">普通权限</option>
+                                    <option value="0" selected="selected">普通权限</option>
                                     <option value="1">管理员</option>
                                 </select>
                             </div>
