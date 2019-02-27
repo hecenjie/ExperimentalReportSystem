@@ -29,8 +29,8 @@ function autoGenera2(){
     // console.log(rh);
     // console.log(th);
     // console.log(rh - th);
-    $("#blank_1").val(deltaE);
-    $("#blank_2").val(deltaE2);
+    $("#blank_1").val(deltaE.toFixed(5));
+    $("#blank_2").val(deltaE2.toFixed(2));
 }
 
 // 沟通中，暂时取消

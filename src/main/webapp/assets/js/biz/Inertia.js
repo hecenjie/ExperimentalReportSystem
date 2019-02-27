@@ -4,18 +4,28 @@ function autoGenera1(){
     var j0 = $("#table_1_19").val();
     var j = $("#table_2_19").val();
     var js = j - j0;
-    $("#blank_3").val(js);
+    $("#blank_3").val(js.toFixed(8));
 }
 
 function autoGenera2(){
-    var Ro = $("#blank_4").val();
-    var Ri = $("#blank_5").val();
-    var M = $("#blank_6").val();
-    var js = $("#blank_3").val();
-    var jl = M * (Ro*Ro + Ri*Ri) / 2;
+    var Ro = parseFloat($("#blank_4").val());
+    var Ri = parseFloat($("#blank_5").val());
+    var M = parseFloat($("#blank_6").val());
+    var js = parseFloat($("#blank_3").val());
+    console.log("Ro: " + Ro);
+    console.log("Ri: " + Ri);
+    console.log("M: " + M);
+    console.log("js: " + js);
+    var left = (M * Ro * Ro) / 2;
+    var right = (M * Ri * Ri) / 2;
+    console.log("left: " + left);
+    console.log("right: " + right);
+    var jl = (left + right) / 1E9;
+    console.log("js - jl : " + (js - jl));
+    console.log("jl : " + jl);
     var E = (js - jl) * 100 / jl;
-    $("#blank_7").val(jl / 1E9);
-    $("#blank_8").val(E);
+    $("#blank_7").val(jl.toFixed(8));
+    $("#blank_8").val(E.toFixed(2));
 }
 
 function beltaJ(table){
@@ -42,8 +52,8 @@ function beltaJ(table){
     // console.log("table2 res1 : " + res1(rt2, rt6));
     var belta3 = (res1(lt2, lt6) + res2(lt3, lt7) + res3(lt4, lt8) + res4(lt5, lt9)) / 4;
     var belta4 = (res1(rt2, rt6) + res2(rt3, rt7) + res3(rt4, rt8) + res4(rt5, rt9)) / 4;
-    $("#table_" + table + "_9").val(belta3);
-    $("#table_" + table + "_18").val(belta4);
+    $("#table_" + table + "_9").val(belta3.toFixed(5));
+    $("#table_" + table + "_18").val(belta4.toFixed(5));
     console.log("table_" + table + " belta3: " + belta3);
     console.log("table_" + table + " belta4: " + belta4);
 
@@ -58,7 +68,7 @@ function beltaJ(table){
     console.log(down);
 
     var j = on / down;
-    $("#table_" + table + "_19").val(j);
+    $("#table_" + table + "_19").val(j.toFixed(5));
 }
 
 function res1(t1, t2){
