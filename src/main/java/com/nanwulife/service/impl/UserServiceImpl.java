@@ -122,4 +122,22 @@ public class UserServiceImpl implements IUserService {
 //				return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.USERNAME_REPEAT.getCode(), Const.ResponseCode.USERNAME_REPEAT.getDesc());
 		}
 
+
+
+		@Override
+		public ServerResponse<User> teacherEdit(Integer role,  Long username,Long username1) {
+
+				/**
+				 * 用学号查询用户
+				 */
+				User user  = userMapper.checkByUsername(username);
+				user.setStuNum(username1);
+				user.setRole(role);
+				int result = userMapper.updateByPrimaryKeySelective(user);
+				if(result == 0){
+						return ServerResponse.createByErrorMessage("修改失败");
+				}
+				return ServerResponse.createBySuccess(user);
+		}
+
 }

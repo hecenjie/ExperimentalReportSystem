@@ -2,6 +2,11 @@
 $(function(){
     getState("a1",1);
     getState("a2",2);
+    getState("a3",3);
+    getState("a4",4);
+    getState("a5",5);
+    getState("a6",6);
+    getState("a7",7);
 })
 
 function openExp(obj,expId){
@@ -101,8 +106,11 @@ function getState(id,expId){
             var aOpenExp = document.getElementById(id);
                 if (res.status === 9){
                     aOpenExp.innerText="关闭";
+
+                    aOpenExp.style.background="red";
                 }else if (res.status === 10) {
                     aOpenExp.innerText="开放";
+                    aOpenExp.style.background="green";
                 }
 
         }, error: function () {

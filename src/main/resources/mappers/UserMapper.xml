@@ -124,6 +124,14 @@
     where stu_num = #{username,jdbcType=BIGINT}
   </select>
 
+
+ <select id="selectIDByUsername" parameterType="java.lang.Long" resultType="int">
+    select
+    id
+    from user
+    where stu_num = #{username,jdbcType=BIGINT}
+  </select>
+
   <select id="checkByUsername" parameterType="java.lang.Long" resultType="com.nanwulife.pojo.User">
     select
     *

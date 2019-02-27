@@ -42,7 +42,7 @@ public class UserController {
     @ResponseBody
     public ServerResponse<User> register(Long username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
         if(username == null || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null)
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        {return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());}
         if(!StringUtils.equals(password,passwordCheck)){
             return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
         }
@@ -63,17 +63,42 @@ public class UserController {
      */
     @RequestMapping(value = "edit.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> edit(Integer role,Integer id, Long username, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
+    public ServerResponse<User> edit(Integer role,Integer id, Long username,Long username1, String password, String passwordCheck, Integer majorId, Integer stuClass, String stuName, HttpSession session){
 
-        if((username == null ||! username.equals(((User) session.getAttribute(Const.CURRENT_USER)).getStuNum())) || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null){
+		    /**
+		     * 判断用户是否是管理员和是否登录
+		     */
+		    if(((User) session.getAttribute(Const.CURRENT_USER)).getRole() == 1){
+				    if(username == null || username1 == null || role ==null){
+						    return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+				    }
+		    }else if((username == null ||! username.equals(((User) session.getAttribute(Const.CURRENT_USER)).getStuNum())) || StringUtils.isBlank(password) || StringUtils.isBlank(passwordCheck) || majorId == null || stuClass == null || stuName == null){
 		        return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.ILLEGAL_ARGUMENT.getCode(), Const.ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
 
-        if(!StringUtils.equals(password,passwordCheck)){
-            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
+				/**
+				 *校验密码
+		    */
+		    if(((User) session.getAttribute(Const.CURRENT_USER)).getRole() != 1){
+				    if(!StringUtils.equals(password,passwordCheck)){
+		            return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.PASSWORD_CHECK_FAIL.getCode(), Const.ResponseCode.PASSWORD_CHECK_FAIL.getDesc());
+		        }
+		    }
+		    /**
+		     * 判断是否为管理员(如果是，则前端传过来的参数学号可用，否则不能用)
+		     */
+
+		    ServerResponse response = null;
+
+        if (((User) session.getAttribute(Const.CURRENT_USER)).getRole() == 1){
+		         response =  iUserService.teacherEdit(role, username,username1);
+        }else{
+		         response =  iUserService.edit(role,id,((User) session.getAttribute(Const.CURRENT_USER)).getStuNum(), password, majorId, stuClass, stuName);
         }
-        ServerResponse response =  iUserService.edit(role,id,((User) session.getAttribute(Const.CURRENT_USER)).getStuNum(), password, majorId, stuClass, stuName);
-        if(response.isSuccess()){
+		    /**
+		     * 判断是否为管理员，如果不是，则将修改后的信息重新添加到session中
+		     */
+		    if(response.isSuccess() && ((User) session.getAttribute(Const.CURRENT_USER)).getRole() != 1 ){
 		        session.setAttribute(Const.CURRENT_USER, null);
             session.setAttribute(Const.CURRENT_USER, response.getData());
             session.setMaxInactiveInterval(60 * 60 * 24);   //会话时间为24小时
@@ -92,7 +117,10 @@ public class UserController {
 		    }
         user = (User) session.getAttribute(Const.CURRENT_USER);
         model.addAttribute("user",user);
-        return "edit";
+        if(user.getRole() == 1){
+		        return "teacherEdit";
+        }
+		    return "edit";
     }
 
 
