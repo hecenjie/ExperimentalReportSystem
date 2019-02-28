@@ -29,6 +29,9 @@ public class CollisionShootingExperiment {
     private double hTheory;
     private double hTruth;
 
+    private double z;
+    private double x;
+
     private int score = 0;
 
     public CollisionShootingExperiment(String choice_1, String choice_2, String choice_3, String choice_4, String choice_5, String choice_6, String choice_7, String choice_8, String choice_9, String choice_10,
@@ -59,6 +62,8 @@ public class CollisionShootingExperiment {
         this.z6 = z6;
         this.hTheory = hTheory;
         this.hTruth = hTruth;
+        this.z = Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6);
+        this.x = Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4);
     }
 
     public int getScore(){
@@ -83,22 +88,21 @@ public class CollisionShootingExperiment {
         if (choice_10.equals("A"))
             score += 3;
 
-
-        if (hTruth - hTheory > 0.1 && hTruth - hTheory < 0.5)
+        if (hTruth - hTheory > 0.1 && hTruth - hTheory < 1.5)
             score += 30;
         else if (hTruth - hTheory < 0)
             score += 10;
         else
             score += 25;
 
-        if (lose > 10 && lose < 20)
+        if (lose > 1 && lose < 25)
             score += 10;
         else
             score += 7;
 
-        if ((Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6)) < 0.6 && (Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4)) < 0.3)
+        if (z <= 0.6 && x <= 0.3)
             score += 30;
-        else if ((Math.abs(z1)+Math.abs(z2)+Math.abs(z3)+Math.abs(z4)+Math.abs(z5)+Math.abs(z6)) < 1.2 && (Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4)) < 0.6)
+        else if (z < 1.2 && z > 0.6 && x < 0.6 && x > 0.3)
             score += 25;
         else
             score += 20;
