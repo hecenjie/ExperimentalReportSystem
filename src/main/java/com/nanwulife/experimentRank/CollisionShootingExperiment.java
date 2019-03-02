@@ -95,10 +95,12 @@ public class CollisionShootingExperiment {
         else
             score += 25;
 
-        if (lose > 1 && lose < 25)
+        if (lose > 5 && lose < 15)
             score += 10;
-        else
+        else if (lose > 1 && lose < 5 || lose > 15 && lose < 20)
             score += 7;
+        else
+            score += 4;
 
         if (z <= 0.6 && x <= 0.3)
             score += 30;
