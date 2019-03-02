@@ -88,17 +88,19 @@ public class CollisionShootingExperiment {
         if (choice_10.equals("A"))
             score += 3;
 
-        if (hTruth - hTheory > 0.1 && hTruth - hTheory < 1.5)
+        if (hTruth - hTheory > 0.4 && hTruth - hTheory < 1.0)
             score += 30;
         else if (hTruth - hTheory < 0)
             score += 10;
         else
             score += 25;
 
-        if (lose > 1 && lose < 25)
+        if (lose > 5 && lose < 15)
             score += 10;
-        else
+        else if (lose > 1 && lose < 5 || lose > 15 && lose < 20)
             score += 7;
+        else
+            score += 4;
 
         if (z <= 0.6 && x <= 0.3)
             score += 30;
