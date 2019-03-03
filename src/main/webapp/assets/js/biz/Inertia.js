@@ -25,7 +25,7 @@ function autoGenera2(){
     console.log("jl : " + jl);
     var E = (js - jl) * 100 / jl;
     $("#blank_7").val(jl.toFixed(8));
-    $("#blank_8").val(E.toFixed(2));
+    $("#blank_8").val(Math.abs(E.toFixed(2)));
 }
 
 function beltaJ(table){
