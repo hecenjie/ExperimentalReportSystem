@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>霍尔效应法测定螺线管磁场分布</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="../assets/js/biz/myChats/echarts.js"></script>
+</head>
+<body class="animated fadeInRightBig container">
+
+
+<div>
+    <div style="text-align:center">
+        <span style="font-size:20pt"><h1>霍尔效应法测定螺线管磁场分布</h1></span>
+    </div>
+
+    <div>
+        <div>
+            <div>
+                <h2>
+                    一、实验仪器(12分)
+                </h2>
+                <div>
+                    <p>
+                        1、(3分) 螺线管磁场测定仪的主要组成是：（
+                        <select id="choice_1">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        A、螺线管、霍尔片移动探测杆、电压表、电流表、电流源和换向开关<br />
+                        B、螺线管、霍尔片移动探测杆、光阑、光电管和测试仪<br />
+                        C、螺线管、霍尔片移动探测杆、滤光片、电压表、电流表<br />
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        2、(3分)关于本实验电流电压窗口示数，下列说法正确的是：（
+                        <select id="choice_2">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                            <option value="D">
+                                D
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、电压窗口示数02.58表示电压值为2.58v&nbsp;</p>
+                        <p>B、霍尔电流窗口示数3.00表示霍尔电流值为3A</p>
+                        <p>C、励磁电流窗口示数&nbsp;.300表示励磁电流值为0.3A&nbsp;</p>
+                        <p>D、励磁电流窗口示数&nbsp;.030表示励磁电流值为0.3A&nbsp;</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        3、(3分)关于实验时霍尔元件的放置位置（
+                        <select id="choice_3">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、研究霍尔电压 \( U_H\) 与工作电流 \( I_S\)及励磁电流\( I_M\) 之间关系时，霍尔元件需置于螺线管内部左边缘处。</p>
+                        <p>B、研究霍尔电压 \( U_H\) 与工作电流 \( I_S\)及励磁电流\( I_M\) 之间关系时，霍尔元件需置于螺线管内部中心处。</p>
+                        <p>C、研究霍尔电压 \( U_H\) 与工作电流 \( I_S\)及励磁电流\( I_M\) 之间关系时，霍尔元件需置于螺线管内部右边缘处。</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        4、(3分)该实验开关机的注意事项是：（
+                        <select id="choice_4">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、开机或关机前，应该将测试仪的“ \( I_S\) 调节”和“ \( I_M\) 调节”旋钮逆时针旋到底。</p>
+                        <p>B、开机或关机前，应该将测试仪的“ \( I_S\) 调节”和“ \( I_M\) 调节”旋钮顺时针旋到底。</p>
+                        <p>C、开机或关机后，应该将测试仪的“ \( I_S\) 调节”和“ \( I_M\) 调节”旋钮顺时针旋到底。</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div>
+                <h2>
+                    二、实验目的(6分)
+                </h2>
+                <div>
+                    <p>
+                        1、(3分)以下哪个不是霍尔效应的实验目的（
+                        <select id="choice_5">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                            <option value="D">
+                                D
+                            </option>
+
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        A、了解霍尔电压 \( U_H\)与霍尔元件工作电流 \( I_S\)及励磁电流 \( I_M\)之间的关系<br />
+                        B、用霍尔效应测量长直通电螺线管轴向磁场分布<br />
+                        C、学习用“对称交换测量法”消除负效应产生的系统误差<br />
+                        D、测绘霍尔元件的工作电流分布及螺线管内部的磁场分布<br />
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        2、(3分)霍尔效应实验要通过测量霍尔电压来测定（
+                        <select id="choice_6">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、螺线管内部的磁场分布</p>
+                        <p>B、螺线管内部的电场分布</p>
+                        <p>C、霍尔元件中的电流分布</p>
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+            <div>
+                <h2>
+                    三、原理简述(27分)
+                </h2>
+                <div>
+                    <p>
+                        1、(3分)霍尔效应从本质上讲是运动的带电粒子在磁场中受(B )作用而引起的偏转。（
+                        <select id="choice_7">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        A、电场力&nbsp;&nbsp;  B、洛伦兹力&nbsp;&nbsp;   C、安培力&nbsp;&nbsp;
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        2、(3分)哪种材料的霍尔效应更显著（
+                        <select id="choice_8">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        A、导体&nbsp;&nbsp; B、绝缘体&nbsp;&nbsp;C、半导体
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        3、(3分)霍尔效应实验中，工作电流 \(I_S\)是指（
+                        <select id="choice_9">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        ）
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、霍尔电压的大小和方向;</p>
+                        <p>B、霍尔片上通过的电流的大小和方向；</p>
+                        <p>C、磁感应强度的大小和方向；</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        4、(3分)霍尔效应实验中，通常情况下励磁电流比工作电流(
+
+                        <select id="choice_10">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+
+                        )。因此，不能把工作电流与励磁电流接反，否则容易烧毁。
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、小&nbsp;&nbsp;  B、大&nbsp;&nbsp;  C、小或大都可以&nbsp;&nbsp;</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        5、(3分)在霍尔效应实验中，为了消除或减少附加电势的影响，可采用
+                        (
+                        <select id="choice_11">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        )
+                        测量。
+
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、比较测量法&nbsp;&nbsp; B、转换测量法&nbsp;&nbsp;  C、对称测量法</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        6、(3分)在霍尔效应实验中, 可采用将
+                        (
+                        <select id="choice_12">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                        </select>
+                        )
+                        逐一换向方法来消除或减少附加电势的影响。
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、霍尔电压和磁场&nbsp;&nbsp; B、霍尔电流和励磁电流</p>
+                        <p>C、励磁电流和磁场</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        7、(3分)在霍尔效应实验中, 测得U1= 3.76mv, U2= -3.78mv,
+
+                        U3= 3.81mv,U4= -3.72mv,则\(U_H\)等于
+                        (
+                        <select id="choice_13">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                            <option value="D">
+                                D
+                            </option>
+                        </select>
+                        ) 。
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、0.07mv&nbsp;&nbsp; B、3.77mv&nbsp;&nbsp;  C、15.07mv&nbsp;&nbsp; D、0.02mv&nbsp;&nbsp;</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        8、(3分)关于霍尔片的灵敏度KH的描述正确的是：
+                        (
+                        <select id="choice_14">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                            <option value="D">
+                                D
+                            </option>
+                        </select>
+                        ) 。
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、只有（1）（4）正确&nbsp;&nbsp; B、（1）（2）（4）正确 </p>
+                        <p> C、只有（2）（4）正确 &nbsp;&nbsp; D、（1）（3）（4）正确</p>
+                        <p>（1）由霍尔片的KH值,可以求出半导体材料的霍尔系数；</p>
+                        <p>（2）金属材料的自由电子浓度很高,故常用来制作霍尔元件；</p>
+                        <p>（3）自由电子浓度n越高,霍尔片的厚度d越小,测得的霍尔效应越显著；</p>
+                        <p>（4）KH是反映霍尔材料的霍尔效应强弱的重要参数；</p>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <p>
+                        9、(3分)关于霍尔电压的描述正确的是：
+                        (
+                        <select id="choice_15">
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                            <option value="C">
+                                C
+                            </option>
+                            <option value="D">
+                                D
+                            </option>
+                        </select>
+                        ) 。
+                    </p>
+                    <br>
+                    <div>
+                        <p>A、只有（1）（3）正确&nbsp;&nbsp;B、（1）（2）（3）正确</p>
+                        <p>C、只有（2）（3）正确&nbsp;&nbsp;D、全部正确</p>
+                        <p>（1）霍尔电压与通过的励磁电流成正比,与通过的工作电流成正比,利用测得的霍尔电压的正负,可以判断半导体材料的类型；</p>
+                        <p>（2）霍尔电压的大小与霍尔材料的厚度成反比，因此，薄型的霍尔器件输出电压较片状要高得多；</p>
+                        <p>（3）利用测得的霍尔电压，可以求出霍尔片所对应位置的磁感应强度大小；</p>
+                        <p>（4）利用测得的霍尔电压，可以求出霍尔灵敏度KH；</p>
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+            <div>
+                <h2>
+                    四、实验内容及数据处理(55分)
+                </h2>
+                <div>
+                    <p>1、(15分)测绘 \(U_H - I_S\) 曲线\(I_M ={0.3}A\),\(X=0cm\)</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tr>
+                                <td rowspan="2">\( I_S (mA) \)</td>
+                                <td>\( U_1 (mv) \)</td>
+                                <td>\( U_2 (mv) \)</td>
+                                <td>\( U_3 (mv) \)</td>
+                                <td>\( U_4 (mv) \)</td>
+                                <td rowspan="2"><img src="./assets/images/11_1.png" style="width: 206px;height: 64px" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>+ \(I_S\),+B</td>
+                                <td>+ \(I_S\),-B</td>
+                                <td>- \(I_S\),-B</td>
+                                <td>- \(I_S\),+B</td>
+                            </tr>
+                            <tr>
+                                <td>1.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>2.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>3.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>4.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>5.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>6.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>7.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>8.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>\(U_H - I_S\)曲线:
+                        <div id="main1" class="body" style="width: 100%;height: 400px;">
+
+                        </div>
+                    </div>
+                    <p>拟合的线性方程：aghgfjdhgk</p>
+                    <p>决定系数\(R^2 =\) ：aghgfjdhgk</p>
+                </div>
+                <br>
+                <div>
+                    <p>2、(15分)测绘 \(U_H - I_S\) 曲线\(I_M ={3}A\),\(X=0cm\)</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tr>
+                                <td rowspan="2">\( I_S (mA) \)</td>
+                                <td>\( U_1 (mv) \)</td>
+                                <td>\( U_2 (mv) \)</td>
+                                <td>\( U_3 (mv) \)</td>
+                                <td>\( U_4 (mv) \)</td>
+                                <td rowspan="2"><img src="./assets/images/11_1.png" style="width: 206px;height: 64px" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>+ \(I_S\),+B</td>
+                                <td>+ \(I_S\),-B</td>
+                                <td>- \(I_S\),-B</td>
+                                <td>- \(I_S\),+B</td>
+                            </tr>
+                            <tr>
+                                <td>1.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>2.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>3.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>4.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>5.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>6.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>7.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>8.00</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>\(U_H - I_S\)曲线:
+                        <div id="main2" class="body" style="width: 100%;height: 400px;">
+
+                        </div>
+                    </div>
+                    <p>拟合的线性方程：aghgfjdhgk</p>
+                    <p>决定系数\(R^2 =\) ：aghgfjdhgk</p>
+                </div>
+                <br>
+                <div>
+                    <p>3、(25分)测绘螺线管轴线上磁感应强度的分布</p>
+                    <p>\(K_H=\) <input type="text">mv/(mA.T) ，\(I_M=0.3A\)，\(I_S=3mA\)</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tr>
+                                <td rowspan="2">x(cm)</td>
+                                <td>U1</td>
+                                <td>U2</td>
+                                <td>U3</td>
+                                <td>U4</td>
+                                <td rowspan="2"><img src="./assets/images/11_2.png" style="height: 48px;width: 154px" alt=""></td>
+                                <td rowspan="2">磁感应强度<img src="./assets/images/11_3.png" style="height: 46px;width: 46px" alt="">(T)</td>
+                            </tr>
+                            <tr>
+                                <td>+ \(I_S\),+B</td>
+                                <td>+ \(I_S\),-B</td>
+                                <td>- \(I_S\),-B</td>
+                                <td>- \(I_S\),+B</td>
+                            </tr>
+                            <tr>
+                                <td>-13</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>-12</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>-11</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>-10</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>-9</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>-8</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr>
+                            <tr>
+                                <td>-7</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>aghgfjdhgk</td>
+                                <td>aghgfjdhgk</td>
+                            </tr><tr>
+                            <td>-6</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>-5</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>-4</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>-3</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>-2</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>-1</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>0</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>1</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>2</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>3</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>4</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>5</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>6</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>7</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>8</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>9</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>10</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>11</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>12</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr><tr>
+                            <td>13</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>aghgfjdhgk</td>
+                            <td>aghgfjdhgk</td>
+                        </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>B(T)-x(cm)关系曲线:
+                        <div id="main3" class="body" style="width: 100%;height: 400px;">
+
+                        </div>
+                        <p>(x:-13~13cm)</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button class="btn btn-primary btn-lg btn-block" onclick="submitAll()">提交</span></button>
+    <br>
+    <br>
+</div>
+</div>
+<style>
+    input {
+        width: 80px;
+        height: 30px;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+    }
+    select {
+        width: 60px;
+        height: 25px;
+    }
+    * {
+        font-size: 20px;
+    }
+    td{
+        text-align: center
+    }
+</style>
+
+<script src="../assets/js/biz/myChats/myEcharts1.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

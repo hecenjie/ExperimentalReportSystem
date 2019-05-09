@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>数字示波器的使用</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body class="animated fadeInRightBig">
+<div class="container" role="alert" style="font-size:20pt">
+    <div style="text-align:center">
+        <span style="font-size:20pt">数字示波器的使用</span>
+    </div>
+    <div>
+        <p>一、实验仪器：</p>
+        <p>1、(3分)以下不属于示波器的主要功能的是（
+            <span>
+                <select id="choice_1">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </span>）
+        </p>
+        <p>A、显示信号随时间的变化<br/>B、测量信号强度 <br/></p>
+        <p>C、测量信号周期<br/>D、校正信号 <br/></p>
+        <p>2、(3分)示波器是常见的电学测量仪器之一，凡是能转化成（
+            <span>
+        <select id="choice_2">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+    </span>）信号的电学量和非电学量都可以用示波器来观察.
+        </p>
+        <p>A、正弦<br/>B、余弦 <br/></p>
+        <p>C、电压 <br/>D、以上全部 <br/></p>
+    </div>
+    <div>
+
+        <p>二、实验目的：</p>
+        <div>
+            <p>1、(3分) 以下哪项不属于本实验的实验目的（
+                <span>
+        <select id="choice_3">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="D">E</option>
+        </select>
+    </span>）
+
+                <br/> A、了解示波器的结构和工作原理，学会正确使用示波器 <br/> B、掌握用示波器观察波形、测量电压和频率 <br/>
+                C、了解用示波器测量两列波的相位差 <br/> D、掌握观察李萨如图形的方法 <br/>
+            </p>
+            <p>E、观察示波器两通道信号的同步关系 <br/></p>
+        </div>
+    </div>
+    <div>
+        <p>三、实验原理：</p>
+        <div>
+            <p>1、(3分)为了显示Y方向的信号随时间的变化过程，必须给X轴偏转板加（
+                <span>
+        <select id="choice_4">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+    </span>
+                ）
+                <br/> A、电压 <br/>B、正弦波 <br/> C、方波<br/>D、锯齿波 <br/>
+        </div>
+        <div>
+            <p>2、(3分)李萨如图形的\(f_{x}=1000hz\)，\(N_x : N_y ={3:2}\),则\(f_y =\)(
+                <span>
+                <select id="choice_5">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </span>
+                )
+            </p>
+            A、2000 Hz <br/>B、1500 Hz <br/></p>
+            <p>C、500 Hz <br/>D、666 Hz <br/>
+        </div>
+        <div>3、(3分)如果示波器的y通道输入的信号是三角波，x通道输入的是锯齿波，那么示波器的屏幕上出现的是（
+            <span>
+                <select id="choice_6">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </span>）
+            </p>
+            <p>A、正弦波<br/>B、三角波 <br/> C、锯齿波 <br/>D、方波 <br/>
+        </div>
+        <div>
+            <p>4、(4分）示波器显示的李萨如图如下所示，请问从图中可以看出x通道和y通道信号的频率比为
+                \(f_x : f_y =\)
+                <span>
+                    <input id="blank_1" type="text"> &nbsp;:&nbsp;
+                    <input id="blank_2" type="text">;
+               </span>
+            </p>
+            <br/>
+            <p><span>
+                <img class="img-responsive img-thumbnail"   src="./assets/images/9_1.jpeg" alt="img">
+            </span></p>
+            </p>
+        </div>
+        <div>
+            <p>5、(6分）下图中通道1信号的电压峰峰值是
+
+                <span>
+                    <input id="blank_3" type="text">
+               </span>
+                伏，通道1和2两个信号相加之后的合成信号电压峰峰值是
+
+                <span>
+                    <input id="blank_4" type="text">
+                    </span>
+                伏。</p>
+            <p><span>
+                <img class="img-responsive img-thumbnail"   src="./assets/images/9_2.jpeg" alt="img">
+            </span></p>
+        </div>
+        <div>
+            <p>6、（6分）下图中如果通道1的相位为0，则通道2的相位为
+                <span>
+                    <input id="blank_5" type="text">
+                </span>(填写数字) 合成信号的相位为
+                <span>
+                    <input id="blank_6" type="text">
+                </span> (填写数字)。
+            </p>
+            <p><span>
+                <img class="img-responsive img-thumbnail"   src="./assets/images/9_3.jpeg" alt="img">
+            </span></p>
+        </div>
+
+        <div>
+            <p>7、（4分）下图中合成信号的周期是
+                <span>
+                    <input id="blank_7" type="text">
+                </span>
+                (填写数字)</p>
+            <p><span>
+                <img class="img-responsive img-thumbnail"   src="./assets/images/9_4.jpeg" alt="img">
+            </span></p>
+        </div>
+    </div>
+
+
+    <div>
+        <p>四、实验内容及数据处理</p>
+        <ol>
+            <li><h3>（12分）测量正弦波形的电压、周期和频率。 </h3></li>
+        </ol>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-condensed">
+                <tr>
+                    <th rowspan="2">
+                        信号源
+                    </th>
+                    <th colspan="4">峰峰值\(V_p-_p\)</th>
+                    <th colspan="4">周期T</th>
+                    <th colspan="2">频率F</th>
+                </tr>
+                <tr>
+                    <td>垂直偏转灵敏度V/div</td>
+                    <td>垂直方向所占格数div</td>
+                    <td>电压峰峰值V/div*div</td>
+                    <td>示波器示数V</td>
+                    <td>水平扫描速度us/div</td>
+                    <td>水平方向所占格数div</td>
+                    <td>周期us/div*div</td>
+                    <td>示波器示数us</td>
+                    <td>计算值（1/T）Hz</td>
+                    <td>示波器示数Hz</td>
+                </tr>
+                <tr>
+                    <td>15v 500 Hz</td>
+                    <td><input id="table_1"  type="text"></td>
+                    <td><input id="table_2"  type="text"></td>
+                    <td><input id="table_3"  type="text"></td>
+                    <td><input id="table_4"  type="text"></td>
+                    <td><input id="table_5"  type="text"></td>
+                    <td><input id="table_6"  type="text"></td>
+                    <td><input id="table_7"  type="text"></td>
+                    <td><input id="table_8"  type="text"></td>
+                    <td><input id="table_9"  type="text"></td>
+                    <td><input id="table_10"  type="text"></td>
+                </tr>
+                <tr>
+                    <td>10v 1k Hz</td>
+                    <td><input id="table_11"  type="text"></td>
+                    <td><input id="table_12"  type="text"></td>
+                    <td><input id="table_13"  type="text"></td>
+                    <td><input id="table_14"  type="text"></td>
+                    <td><input id="table_15"  type="text"></td>
+                    <td><input id="table_16"  type="text"></td>
+                    <td><input id="table_17"  type="text"></td>
+                    <td><input id="table_18"  type="text"></td>
+                    <td><input id="table_19"  type="text"></td>
+                    <td><input id="table_20"  type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <p>(根据结果评分：每空1分，共12分)</p>
+    </div>
+    <br>
+    <div>
+        <h3>2.（10分）观察不同频率比的李萨如图形(将李萨如图对应的字母填入相应的空格）</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-condensed">
+                <tr>
+                    <th colspan="2">频  率  比</th>
+                    <th>1:1</th>
+                    <th>2:1</th>
+                    <th>3:2</th>
+                    <th>1:2</th>
+                </tr>
+                <tr>
+                    <td rowspan="2">频  率</td>
+                    <td>CH1</td>
+                    <td>1000 Hz</td>
+                    <td>2000 Hz</td>
+                    <td>1500 Hz</td>
+                    <td>500 Hz</td>
+                </tr>
+                <tr>
+                    <td>CH2</td>
+                    <td>1000 Hz</td>
+                    <td>1000 Hz</td>
+                    <td>1000 Hz</td>
+                    <td>1000 Hz</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">相位差 \(\Delta \varphi \)</td>
+                    <td>0</td>
+                    <td><input id="table_21"  type="text"></td>
+                    <td><input id="table_22"  type="text"></td>
+                    <td><input id="table_23"  type="text"></td>
+                    <td><input id="table_24"  type="text"></td>
+                </tr>
+                <tr>
+
+                    <td>45</td>
+                    <td><input id="table_25"  type="text"></td>
+                    <td><input id="table_26"  type="text"></td>
+                    <td><input id="table_27"  type="text"></td>
+                    <td><input id="table_28"  type="text"></td>
+                </tr>
+                <tr>
+
+                    <td>90</td>
+                    <td><input id="table_29"  type="text"></td>
+                    <td><input id="table_30"  type="text"></td>
+                    <td><input id="table_31"  type="text"></td>
+                    <td><input id="table_32"  type="text"></td>
+                </tr>
+                <tr>
+
+                    <td>180</td>
+                    <td><input id="table_33"  type="text"></td>
+                    <td><input id="table_34"  type="text"></td>
+                    <td><input id="table_35"  type="text"></td>
+                    <td><input id="table_36"  type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">切点数比 \(n_x/n_y\)</td>
+                    <td><input id="table_37"  type="text"></td>
+                    <td><input id="table_38"  type="text"></td>
+                    <td><input id="table_39"  type="text"></td>
+                    <td><input id="table_40"  type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="6">频率比和切点数之比的关系为：
+                        （
+                        <span>
+                            <select id="choice_7">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="A">E</option>
+                    <option value="B">F</option>
+                    <option value="C">G</option>
+                    <option value="D">H</option>
+                    <option value="A">I</option>
+                    <option value="B">J</option>
+                    <option value="C">K</option>
+                    <option value="D">L</option>
+                    <option value="A">M</option>
+                    <option value="B">N</option>
+                    <option value="C">O</option>
+                    <option value="D">P</option>
+                </select>
+                        </span>
+                        ）
+                        A相同 B反比C相反数</td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <div>
+            <img class="img-responsive img-thumbnail"   src="./assets/images/9_5.png" alt="img">
+        </div>
+        <p>（每个空2分，共10分）</p>
+    </div>
+</div>
+
+
+<div>
+
+    <div>
+        <h3>3.40分）信号合成波形</h3>
+        <br>
+        <h3>同相（\(\Delta \varphi =0\)）:</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-condensed">
+                <tr>
+                    <th></th>
+                    <th>相 位\(\varphi\)</th>
+                    <th>频 率HZ</th>
+                    <th>电压V</th>
+                    <th>波 形 图</th>
+                </tr>
+                <tr>
+                    <td>CH1</td>
+                    <td>0</td>
+                    <td>1000</td>
+                    <td>5</td>
+                    <td rowspan="3">请选择下图中哪<br>个选项
+                        符合示波<br>器上显示的波形<br>
+                        <span>
+                            <select id="choice_8">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CH2</td>
+                    <td>0</td>
+                    <td>1000</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>合 成</td>
+                    <td><input id="table_41"  type="text"></td>
+                    <td><input id="table_42"  type="text"></td>
+                    <td><input id="table_43"  type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            （每个空5分，共20分）<br>
+            <div style="align-content: center">
+                <img class="img-responsive img-thumbnail"   src="./assets/images/9_6.png" alt="img">
+            </div>
+        </div>
+
+        <br>
+
+        <h3>相反（\(\Delta \varphi =\pi\)）:</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-condensed">
+                <tr>
+                    <th></th>
+                    <th>相 位\(\varphi\)</th>
+                    <th>频 率HZ</th>
+                    <th>电压V</th>
+                    <th>波 形 图</th>
+                </tr>
+                <tr>
+                    <td>CH1</td>
+                    <td>\(\pi\)</td>
+                    <td>1000</td>
+                    <td>5</td>
+                    <td rowspan="3">请选择下图中哪<br>个选项
+                        符合示波<br>器上显示的波形<br>
+                        <span>
+                            <select id="choice_9">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CH2</td>
+                    <td>0</td>
+                    <td>1000</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>合 成</td>
+                    <td><input id="table_44"  type="text"></td>
+                    <td><input id="table_45"  type="text"></td>
+                    <td><input id="table_46"  type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            （每个空5分，共20分）<br>
+            <div style="align-content: center">
+                <img class="img-responsive img-thumbnail"   src="./assets/images/9_7.png" alt="img">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+        <button class="btn btn-primary btn-lg btn-block" onclick="submitAll()">提交</span></button>
+    </div>
+
+    <br><br>
+</div>
+
+<style>
+    input {
+        width: 80px;
+        height: 30px;
+    }
+    img{
+        height: 100%;width: 100%
+    }
+    select {
+        width: 60px;
+        height: 25px
+    }
+    *{
+        font-size: 20px;
+    }
+    td{
+        text-align: center
+    }
+</style>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>-->
+<script src="../assets/js/jquery-1.11.1.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../assets/js/biz/shuZiShuBoQi.js"></script>
+</body>
+</html>

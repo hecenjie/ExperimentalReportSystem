@@ -86,6 +86,9 @@ function O() {
     $("#blank_3").val(res.toFixed(2));
 }
 
+
+
+
 $(function () {
         $.ajax({
             type: "GET",

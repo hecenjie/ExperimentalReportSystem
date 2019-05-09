@@ -1,10 +1,10 @@
 package com.nanwulife.util;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import com.deepoove.poi.XWPFTemplate;
+import org.apache.poi.POIXMLProperties.CoreProperties;
+import org.apache.poi.xwpf.usermodel.*;
+
+import java.io.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -12,18 +12,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.deepoove.poi.data.PictureRenderData;
-import com.deepoove.poi.util.BytePictureUtils;
-import org.apache.poi.POIXMLProperties.CoreProperties;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.poi.xwpf.usermodel.XWPFTable;
-import org.apache.poi.xwpf.usermodel.XWPFTableCell;
-import org.apache.poi.xwpf.usermodel.XWPFTableRow;
-
-import com.deepoove.poi.XWPFTemplate;
 
 /**
  * @Project ExperimentalReportSystem
@@ -229,8 +217,8 @@ public class WordToNewWordUtil {
         out.close();
         return "";
     }
-    
-    
+
+
     public static void main(String[] args) throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("choice_1", "A");
@@ -267,20 +255,20 @@ public class WordToNewWordUtil {
         params.put("choice_09", "A");//
         params.put("choice_10", "B");//
         params.put("choice_11", "B");//
-        
-        
+
+
         params.put("blank_01_01", "5");//
         params.put("blank_01_02", "4");//
         params.put("blank_01_03", "3");//
         params.put("blank_01_04", "2");//
         params.put("blank_01_05", "1");//
-        
-        
+
+
         params.put("blank_02_01", "1.326");//
         params.put("blank_02_02", "2.534");//
         params.put("blank_02_03", "2524");//
-        
-        
+
+
         params.put("blank_03_01", "1.326");//
         params.put("blank_03_02", "2.534");//
         params.put("blank_03_03", "2524");//
@@ -303,7 +291,7 @@ public class WordToNewWordUtil {
         params.put("blank_03_20", "2545");//
         params.put("blank_03_21", "252");//
         params.put("blank_03_22", "2545");//
-        
+
         params.put("blank_04_01", "1.326");//
         params.put("blank_04_02", "2.534");//
         params.put("blank_04_03", "2524");//
@@ -349,14 +337,14 @@ public class WordToNewWordUtil {
         params.put("blank_05_20", "2545");//
         params.put("blank_05_21", "252");//
         params.put("blank_05_22", "2545");//
-        
-        
+
+
         params.put("localPicture1", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
         params.put("localPicture2", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
         params.put("localPicture3", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));
         params.put("localPicture4", new PictureRenderData(566, 299, "/home/creams/桌面/A.png"));*/
 
-        
+
         templateWrite2("/home/creams/桌面/太阳能实验模板.docx", params, "/home/creams/桌面/test1.docx");
     }
 }

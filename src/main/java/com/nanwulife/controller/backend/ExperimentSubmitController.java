@@ -12,7 +12,6 @@ import com.nanwulife.service.IUserService;
 import com.nanwulife.util.PropertiesUtil;
 import com.nanwulife.util.Sci2con;
 import com.nanwulife.util.WordToNewWordUtil;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -694,5 +693,91 @@ public class ExperimentSubmitController {
         return iScoreService.submit(score);
     }
 
+	/**
+	 * 第九个实验判分
+	 * @param session
+	 * @param choice
+	 * @param blank
+	 * @param table
+	 * @return
+	 */
+	@RequestMapping(value = "Exp_09.do", method = RequestMethod.POST)
+	@ResponseBody
+	public ServerResponse submitExp_9(HttpSession session, @RequestParam(value = "choice[]", required = false) String[] choice, @RequestParam(value = "blank[]", required = false) String[] blank, @RequestParam(value = "table[]", required = false) String[] table) {
 
+		User user = (User) session.getAttribute(Const.CURRENT_USER);
+		if (user == null) {
+			return ServerResponse.createByErrorCodeMessage(Const.ResponseCode.NEED_LOGIN.getCode(), Const.ResponseCode.NEED_LOGIN.getDesc());
+		}
+		int rank = 0;
+		int stu_class = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getStuClass();
+		String major_name = iUserService.queryMajornameAndClassByNum(user.getStuNum()).getMajorName();
+		String wordPath = new PropertiesUtil("server.properties").readProperty("report.word.server.path");
+		String chartPath = new PropertiesUtil("server.properties").readProperty("report.chart.server.path");
+		String basePath;
+		String path;
+		Map<String, Object> params = new HashMap<String, Object>();
+		ServerResponse serverResponse = iScoreService.isStuHaveScore(9, user.getId());
+		if (serverResponse.getStatus() == 15) {
+			//报告重复提交
+			return serverResponse;
+		}
+		serverResponse = iExperimentService.getExpStatus(9);
+		if (serverResponse.getStatus() == 10){
+			//实验已关闭
+			return serverResponse;
+		}
+
+		if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+			basePath = new PropertiesUtil("server.properties").readProperty("report.server.linux.basePath");
+		} else if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+			basePath = new PropertiesUtil("server.properties").readProperty("report.server.macos.basePath");
+		} else {
+			basePath = new PropertiesUtil("server.properties").readProperty("report.server.win.basePath");
+		}
+
+		//=============================模板标记==============================
+
+		for (int i = 0; i < 9; i++) {
+			params.put("choice_" + (i + 1) + "", choice[i]);
+		}
+
+		for (int i = 0; i < 7; i++) {
+			params.put("blank_" + (i + 1) + "", blank[i]);
+		}
+
+		for (int i = 0; i < 46; i++) {
+			params.put("table_" + (i + 1) + "", table[i]);
+		}
+
+		rank = (new ShuZiShiBoQi(choice,blank,table)).getScore();
+
+		params.put("name", user.getStuName());
+		params.put("num", user.getStuNum());
+		params.put("classno", major_name + user.getStuClass());
+		params.put("score", rank);
+		//=============================模板标记==============================
+
+		path = basePath + wordPath + "数字示波器的使用" + "/" + major_name + stu_class + "/";
+		File filedir = new File(path);
+		if (!filedir.exists()) {
+			filedir.setWritable(true);
+			filedir.mkdirs();
+		}
+		try {
+			WordToNewWordUtil.templateWrite2(
+					basePath + "数字示波器的使用实验模板.docx",
+					params, path + user.getStuNum() + user.getStuName() + ".docx");
+		} catch (Exception e) {
+			System.out.println("写入模板异常");
+			e.printStackTrace();
+		}
+
+		Score score = new Score();
+		score.setStuId(user.getId());
+		score.setExpId(9);
+		score.setScore(rank);
+		user = null;
+		return iScoreService.submit(score);
+	}
 }
