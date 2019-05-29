@@ -1,5 +1,5 @@
 // 基于准备好的dom，初始化echarts实例
-var myChart = echarts.init(document.getElementById('main1'));
+// var myChart = echarts.init(document.getElementById('main1'));
 var myChart2 = echarts.init(document.getElementById('main2'));
 var myChart3 = echarts.init(document.getElementById('main3'));
 option = {
@@ -82,11 +82,11 @@ option = {
     ]
 };
 
-myChart.setOption(option, true);
+/*myChart.setOption(option, true);*/
 myChart2.setOption(option, true);
 myChart3.setOption(option, true);
 window.addEventListener("resize", function () {
-    myChart.resize();
+    /*myChart.resize();*/
     myChart2.resize();
     myChart3.resize();
 });
