@@ -3,11 +3,12 @@
  */
 ///////////////////////////////////////
 // 基于准备好的dom，初始化echarts实例
-function becomeEcharts(outdataUhs,myRegression) {
-    var myChart = echarts.init(document.getElementById('main1'));
+function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
+    var myChart = echarts.init(document.getElementById(mainId));
 
 
-    option = {
+    option = {};
+    var option1 = {
 
         title: {
             text: "U——I关系曲线",
@@ -86,6 +87,54 @@ function becomeEcharts(outdataUhs,myRegression) {
         ]
     };
 
+    var option3 = {
+        title: {
+            text: "B——x关系曲线",
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'axis',
+                axisPointer: {
+                type: 'cross'
+            }
+        },
+        toolbox: {
+            show: true,
+                feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis:  {
+            type: 'category',
+                boundaryGap: false,
+                data: ['-13cm', '-12cm', '-11cm', '-10cm', '-9cm', '-8cm', '-7cm', '-6cm', '-5cm', '-4cm', '-3cm', '-2cm', '-1cm', '0cm', '1cm', '2cm', '3cm', '4cm', '5cm', '6cm','7cm','8cm','9cm','10cm','11cm','12cm','13cm']
+        },
+        yAxis: {
+            type: 'value',
+                axisLabel: {
+                formatter: '{value} T'
+            },
+            axisPointer: {
+                snap: true
+            }
+        },
+        series: [
+            {
+                name:'B——x关系曲线',
+                type:'line',
+                smooth: true,
+                data: outdataUhs
+            }
+        ]
+    };
+
+    if (optionNum === 1) {
+        option = option1;
+    } else if (optionNum === 2) {
+        option = option1;
+    } else if (optionNum === 3) {
+        option = option3;
+    }
 
     window.addEventListener("resize", function () {
         myChart.resize();
@@ -95,9 +144,17 @@ function becomeEcharts(outdataUhs,myRegression) {
 
 }
 
-function getChart(outdataUhs,myRegression) {
-
-    var myChart = becomeEcharts(outdataUhs,myRegression);
+function getChart(optionNum, outdataUhs, myRegression) {
+    var mainId = "main" + optionNum + "";
+    if (optionNum === 3) {
+        myRegression = {
+            points: []
+        };
+    }
+    var myChart = becomeEcharts(optionNum, mainId, outdataUhs, myRegression);
     myChart.setOption(option, true);
+    //给canvas添加id
+    $("#" + mainId + " canvas:first-child").attr('id', "chart" + optionNum);
+
 
 }

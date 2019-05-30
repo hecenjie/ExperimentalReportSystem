@@ -46,16 +46,11 @@ $(function () {
 
 function submitAll() {
 
-    $("canvas").each(function () {
-        $(this).attr('id', "chart" + $(this).index());
-    });
-
     if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
-        uploadChart("chart0", 1);
+        uploadChart("chart1", 1);
         submit();
     }
 }
-
 
 
 function submit() {
@@ -87,10 +82,7 @@ function submit() {
      */
     for (var i = 1; i <= $("canvas").length; i++) {
         chart1[i - 1] = $("#chart" + i + "").val();
-        alert(chart1[i-1]);//---------------------------------------------------------------测试
     }
-
-    alert(chart1);//---------------------------------------------------------------测试
 
     $.ajax({
         type: "POST",
@@ -99,7 +91,7 @@ function submit() {
             choice: choice,
             blank: blank,
             table: table,
-            table_out:table_out,
+            table_out: table_out,
             chart1: chart1,
         },
         async: false,
@@ -120,15 +112,6 @@ function submit() {
     });
 }
 
-function productDataAndPicture1() {
-    productDataAndPicture();
-}
-
-
-function productDataAndPicture2() {
-
-}
-
 /**
  * 生成数据和图像
  */
@@ -136,7 +119,7 @@ function productDataAndPicture2() {
 var outdataUhs = new Array();
 var myRegression;
 
-function productDataAndPicture() {
+function productDataAndPicture1() {
 
     var table = new Array();
     var table_out = new Array();
@@ -152,12 +135,12 @@ function productDataAndPicture() {
      * 将表单数据放入输出变量中
      */
     var tableOutData = 0;
-    var j=0;
+    var j = 0;
     for (var i = 0; i < table.length; i++) {
         tableOutData += Math.abs(table[i]);
         if (((i + 1) % 4 === 0)) {
-            table_out[j++] = tableOutData/4;
-            tableOutData =0;
+            table_out[j++] = tableOutData / 4;
+            tableOutData = 0;
         }
 
     }
@@ -167,7 +150,7 @@ function productDataAndPicture() {
      */
     for (var i = 1; i <= table_out.length; i++) {
         var tableOutId = "#table_out_" + i;
-        $(tableOutId).attr("value",table_out[i-1]);
+        $(tableOutId).attr("value", table_out[i - 1]);
     }
 
     /**
@@ -176,13 +159,11 @@ function productDataAndPicture() {
 
     for (var i = 1; i <= table_out.length; i++) {
         var tableOutId = "#table_out_" + i;
-        var data1  = new Array();
+        var data1 = new Array();
         data1[0] = i;
         data1[1] = parseFloat($(tableOutId).val());
-        outdataUhs[i-1] = data1;
+        outdataUhs[i - 1] = data1;
     }
-
-
 
 
     /**
@@ -199,18 +180,156 @@ function productDataAndPicture() {
     /**
      * 图像自动生成
      */
-    getChart(outdataUhs,myRegression);
+    getChart(1, outdataUhs, myRegression);
     /**给图像添加id*/
     // $("canvas").attr("id", "chart1");
 
     /**
      * 赋值表达式和参数
      */
-    $("#blank_1").attr("value",myRegression.expression );
-    $("#blank_2").attr("value",R2.toFixed(2) );
+    $("#blank_1").attr("value", myRegression.expression);
+    $("#blank_2").attr("value", R2.toFixed(2));
 }
 
-function getR2(outdataUhs,myRegression) {
+
+function productDataAndPicture2() {
+    var table = new Array();
+    var table_out = new Array();
+
+    /**
+     * 获取表单数据
+     */
+    for (var i = 33; i <= 64; i++) {
+        table[i - 33] = $("#table_" + i + "").val();
+    }
+
+    /**
+     * 将表单数据放入输出变量中
+     */
+    var tableOutData = 0;
+    var j = 0;
+    for (var i = 0; i < table.length; i++) {
+        tableOutData += Math.abs(table[i]);
+        if (((i + 1) % 4 === 0)) {
+            table_out[j++] = tableOutData / 4;
+            tableOutData = 0;
+        }
+
+    }
+    /**
+     * 输出表单变量值
+     */
+    for (var i = 1; i <= table_out.length; i++) {
+        var tableOutId = "#table_out_" + (i + 8) + "";
+        $(tableOutId).attr("value", table_out[i - 1]);
+    }
+
+    /**
+     * 点数据
+     */
+
+    for (var i = 1; i <= table_out.length; i++) {
+        var tableOutId = "#table_out_" + (i + 8) + "";
+        var data1 = new Array();
+        data1[0] = i;
+        data1[1] = parseFloat($(tableOutId).val());
+        outdataUhs[i - 1] = data1;
+    }
+
+
+    /**
+     * 调用函数生成回归曲线
+     */
+    myRegression = ecStat.regression('linear', outdataUhs);
+
+    /**
+     *计算残差平方和
+     */
+    var R2 = getR2(outdataUhs, myRegression);
+
+
+    /**
+     * 图像自动生成
+     */
+    getChart(2, outdataUhs, myRegression);
+    /**给图像添加id*/
+    // $("canvas").attr("id", "chart1");
+
+    /**
+     * 赋值表达式和参数
+     */
+    $("#blank_3").attr("value", myRegression.expression);
+    $("#blank_4").attr("value", R2.toFixed(2));
+}
+
+function productDataAndPicture3() {
+    var table = new Array();
+    var table_out = new Array();
+    var table_outB = new Array();
+
+    /**
+     * 获取表单数据
+     */
+    for (var i = 65, j = 0; i <= 172; i++) {
+        table[j++] = $("#table_" + i + "").val();
+    }
+
+    /**
+     * 将表单数据放入输出变量中
+     */
+    var tableOutData = 0;
+    var j = 0;
+
+    var K = $("#blank_5").val();
+    if (isNaN(K) || K === '') {
+        K = -1;
+    }
+    for (var i = 0; i < table.length; i++) {
+        tableOutData += Math.abs(table[i]);
+        if (((i + 1) % 4 === 0)) {
+            table_out[j++] = tableOutData / 4;
+            /**
+             * 计算B
+             */
+            table_out[j++] = (tableOutData / 4) / (K * 3);
+            tableOutData = 0;
+        }
+
+    }
+    /**
+     * 输出表单变量值
+     */
+    for (var i = 1; i <= table_out.length; i++) {
+        var tableOutId = "#table_out_" + (i + 16) + "";
+        $(tableOutId).attr("value", Math.round(table_out[i - 1] * 100) / 100);
+    }
+    /**
+     * 点数据
+     */
+
+    for (var i = 1, j = 0; i <= 54; i++) {
+        if (i % 2 === 0) {
+            var tableOutId = "#table_out_" + (i + 16) + "";
+            outdataUhs[j++] = parseFloat($(tableOutId).val());
+            if (isNaN(outdataUhs[j])) {
+                outdataUhs[j] = 0;
+            }
+            outdataUhs[j] = Math.round(outdataUhs[j] * 100) / 100;
+        }
+    }
+
+    getChart(3, outdataUhs);
+
+}
+
+/**
+ * 计算R2的值
+ * @param outdataUhs
+ * @param myRegression
+ * @returns {number}
+ */
+function getR2(outdataUhs, myRegression) {
+
     var CanChaPingFangHe = 0.0;
     var ZongPingFangHe = 0.0;
     var r2 = 0.0;
@@ -228,6 +347,9 @@ function getR2(outdataUhs,myRegression) {
         CanChaPingFangHe += (y - Y) * (y - Y);
         ZongPingFangHe += y * y;
         r2 = (ZongPingFangHe - CanChaPingFangHe) / ZongPingFangHe;
+        if (isNaN(r2)) {
+            r2 = -1;
+        }
     }
     return r2;
 }
@@ -239,7 +361,8 @@ function getR2(outdataUhs,myRegression) {
  */
 function uploadChart(chart, index) {
     // 获取Canvas的编码。
-    var imgData = document.getElementById(chart).toDataURL("image/png");  /** 这里-报错×******/
+    var imgData = document.getElementById(chart).toDataURL("image/png");
+    /** 这里-报错×******/
 
     // 上传到后台。
     $.ajax({
@@ -252,7 +375,6 @@ function uploadChart(chart, index) {
         },
         async: false,
         success: function (res) {
-            // alert(res.status);
         },
         error: function (res) {
             alert("向服务器请求数据失败" + res.msg)
