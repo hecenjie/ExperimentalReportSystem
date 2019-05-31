@@ -71,7 +71,6 @@ function closeExp(obj,expId){
  * @param expId
  */
 function getExp(obj,expId){
-    alert(expId);
     $.ajax({
         type: "post",
         url: "/manage/exp/get_exp.do",
