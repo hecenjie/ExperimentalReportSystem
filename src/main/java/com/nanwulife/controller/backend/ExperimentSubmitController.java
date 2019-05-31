@@ -792,7 +792,9 @@ public class ExperimentSubmitController {
 	 */
 	@RequestMapping(value = "Exp_11.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ServerResponse submitExp_11(HttpSession session, @RequestParam(value = "choice[]", required = false) String[] choice, @RequestParam(value = "blank[]", required = false) String[] blank, @RequestParam(value = "table[]", required = false) String[] table,@RequestParam(value = "table_out[]", required = false) String[] table_out) {
+	public ServerResponse submitExp_11(HttpSession session, @RequestParam(value = "choice[]", required = false) String[] choice, @RequestParam(value = "blank[]", required = false) String[] blank, @RequestParam(value = "table[]",
+			required = false) String[] table,@RequestParam(value = "table_out[]", required = false) String[] table_out) {
+
 
 		User user = (User) session.getAttribute(Const.CURRENT_USER);
 		if (user == null) {
@@ -827,21 +829,25 @@ public class ExperimentSubmitController {
 
 		//=============================模板标记==============================
 
-		for (int i = 0; i < 15; i++) {
+		for (int i = 0; i < choice.length; i++) {
 			params.put("choice_" + (i + 1) + "", choice[i]);
 		}
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < blank.length; i++) {
 			params.put("blank_" + (i + 1) + "", blank[i]);
 		}
 
-		for (int i = 0; i < 172; i++) {
+		for (int i = 0; i < table.length; i++) {
 			params.put("table_" + (i + 1) + "", table[i]);
 		}
 
-		for (int i = 0; i < 70; i++) {
+		for (int i = 0; i < table_out.length; i++) {
 			params.put("table_out_" + (i + 1) + "", table_out[i]);
 		}
+
+//		for (int i = 0; i < chart1.length; i++) {
+//			params.put("chart" + (i + 1) + "", chart1[i]);
+//		}
 
 		rank = (new LuoXianGuanCiChangFenBu(choice,blank,table)).getScore();
 
@@ -849,6 +855,10 @@ public class ExperimentSubmitController {
 		params.put("num", user.getStuNum());
 		params.put("classno", major_name + user.getStuClass());
 		params.put("score", rank);
+
+		params.put("pic1", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/11-1.png"));
+		params.put("pic2", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/11-2.png"));
+		params.put("pic3", new PictureRenderData(625, 326, basePath + chartPath + user.getStuNum() + "/11-3.png"));
 		//=============================模板标记==============================
 
 		path = basePath + wordPath + "霍尔效应法测定螺线管磁场分布" + "/" + major_name + stu_class + "/";

@@ -343,6 +343,8 @@ function submit() {
         chart1[i - 1] = $("#chart1_index" + i).val();
     }
 
+
+
     for (var i = 1; i <= 22; i++) {
         if (i <= 9)
             num = "0" + i + "";
@@ -366,6 +368,7 @@ function submit() {
             num = i;
         table4[i - 1] = $("#table4_" + num).val();
     }
+
 
     $.ajax({
         type: "POST",

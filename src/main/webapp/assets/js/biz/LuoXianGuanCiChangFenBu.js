@@ -48,6 +48,8 @@ function submitAll() {
 
     if (confirm("为避免数据丢失，提交前请先将实验数据截图，确认提交吗？")) {
         uploadChart("chart1", 1);
+        uploadChart("chart2", 2);
+        uploadChart("chart3", 3);
         submit();
     }
 }
@@ -58,7 +60,7 @@ function submit() {
     var blank = new Array();
     var table = new Array();
     var table_out = new Array();
-    var chart1 = new Array();
+    // var chart1 = new Array();
 
 
     for (var i = 1; i <= 15; i++) {
@@ -77,13 +79,12 @@ function submit() {
         table_out[i - 1] = $("#table_out_" + i + "").val();
     }
 
-    /**
-     * 获取canvas
-     */
-    for (var i = 1; i <= $("canvas").length; i++) {
-        chart1[i - 1] = $("#chart" + i + "").val();
-    }
-
+    // /**
+    //  * 获取canvas
+    //  */
+    // for (var i = 1; i <= $("canvas").length; i++) {
+    //     chart1[i - 1] = $("#chart" + i + "").val();//$("#chart1_index" + i).val();
+    // }
     $.ajax({
         type: "POST",
         url: "/sub/Exp_11.do",
@@ -91,8 +92,8 @@ function submit() {
             choice: choice,
             blank: blank,
             table: table,
-            table_out: table_out,
-            chart1: chart1,
+            table_out: table_out
+            // chart1: chart1,
         },
         async: false,
         dataType: "json",
