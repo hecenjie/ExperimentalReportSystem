@@ -8,7 +8,7 @@ $(function(){
     getState("a6",6);
     getState("a7",7);
     getState("a9",9);
-    getState("a9",11);
+    getState("a11",11);
 })
 
 function openExp(obj,expId){
@@ -71,6 +71,7 @@ function closeExp(obj,expId){
  * @param expId
  */
 function getExp(obj,expId){
+    alert(expId);
     $.ajax({
         type: "post",
         url: "/manage/exp/get_exp.do",
