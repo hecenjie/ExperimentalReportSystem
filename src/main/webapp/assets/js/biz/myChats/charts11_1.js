@@ -17,12 +17,12 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
         tooltip: {
             trigger: 'item'
         },
-        legend: {
+        /*legend: {
             data: ['拟合曲线', '观察点'],
             x: "left",
             y: '20',
             orient: 'vertical',
-        },
+        },*/
         toolbox: {
             show: true,
             orient: 'vertical',      // 布局方式，默认为水平布局，可选为：
@@ -49,9 +49,9 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
                 // min: -0.5,
                 // max: 5.5
                 axisLabel: {
-                    formatter: '{value} mV'
-                }
-
+                    formatter: '{value} '
+                },
+                name: "U/mV",
             }
         ],
         xAxis: [
@@ -60,8 +60,9 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
                 max: 8,
                 interval: 1,
                 axisLabel: {
-                    formatter: '{value} A'
-                }
+                    formatter: '{value} '
+                },
+                name: "I/A",
 
             }
         ],
@@ -94,34 +95,36 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
         },
         tooltip: {
             trigger: 'axis',
-                axisPointer: {
+            axisPointer: {
                 type: 'cross'
             }
         },
         toolbox: {
             show: true,
-                feature: {
+            feature: {
                 saveAsImage: {}
             }
         },
-        xAxis:  {
+        xAxis: {
             type: 'category',
-                boundaryGap: false,
-                data: ['-13cm', '-12cm', '-11cm', '-10cm', '-9cm', '-8cm', '-7cm', '-6cm', '-5cm', '-4cm', '-3cm', '-2cm', '-1cm', '0cm', '1cm', '2cm', '3cm', '4cm', '5cm', '6cm','7cm','8cm','9cm','10cm','11cm','12cm','13cm']
+            boundaryGap: false,
+            data: ['-13', '-12', '-11', '-10', '-9', '-8', '-7', '-6', '-5', '-4', '-3', '-2', '-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'],
+            name: 'X/cm'
         },
         yAxis: {
             type: 'value',
-                axisLabel: {
-                formatter: '{value} T'
+            axisLabel: {
+                formatter: '{value} '
             },
             axisPointer: {
                 snap: true
-            }
+            },
+            name: 'B/T'
         },
         series: [
             {
-                name:'B——x关系曲线',
-                type:'line',
+                name: 'B——x关系曲线',
+                type: 'line',
                 smooth: true,
                 data: outdataUhs
             }
