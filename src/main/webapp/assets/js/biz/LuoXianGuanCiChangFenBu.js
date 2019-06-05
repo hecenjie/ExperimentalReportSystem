@@ -302,7 +302,7 @@ function productDataAndPicture3() {
      */
     for (var i = 1; i <= table_out.length; i++) {
         var tableOutId = "#table_out_" + (i + 16) + "";
-        $(tableOutId).attr("value", Math.round(table_out[i - 1] * 100) / 100);
+        $(tableOutId).attr("value", 1000*Math.round(table_out[i - 1] * 100) / 100);
     }
     /**
      * 点数据

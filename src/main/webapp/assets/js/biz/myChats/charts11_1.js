@@ -11,7 +11,6 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
     var option1 = {
 
         title: {
-            text: "U——I关系曲线",
             x: 'center'
         },
         tooltip: {
@@ -90,7 +89,6 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
     var option2 = {
 
         title: {
-            text: "U——I关系曲线",
             x: 'center'
         },
         tooltip: {
@@ -169,7 +167,6 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
 
     var option3 = {
         title: {
-            text: "B——x关系曲线",
             x: 'center'
         },
         tooltip: {
@@ -198,11 +195,10 @@ function becomeEcharts(optionNum, mainId, outdataUhs, myRegression) {
             axisPointer: {
                 snap: true
             },
-            name: 'B/T'
+            name: 'B/mT'
         },
         series: [
             {
-                name: 'B——x关系曲线',
                 type: 'line',
                 smooth: true,
                 data: outdataUhs
