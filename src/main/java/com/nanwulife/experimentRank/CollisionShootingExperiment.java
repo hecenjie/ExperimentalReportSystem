@@ -1,7 +1,5 @@
 package com.nanwulife.experimentRank;
 
-import com.nanwulife.pojo.Score;
-
 /**
  * @Project: ExperimentalReportSystem
  * @Description: 碰撞打靶实验评分模块
@@ -108,8 +106,6 @@ public class CollisionShootingExperiment {
             score += 25;
         else
             score += 20;
-
-
         return score;
     }
 }
