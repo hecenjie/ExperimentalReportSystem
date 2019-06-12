@@ -64,6 +64,8 @@ public class CollisionShootingExperiment {
         this.x = Math.abs(x4-20.4)+Math.abs(x5-20.4)+Math.abs(x6-20.4);
     }
 
+
+
     public int getScore(){
         if (choice_1.equals("C"))
             score += 3;
