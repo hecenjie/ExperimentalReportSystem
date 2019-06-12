@@ -381,7 +381,7 @@ public class ExperimentSubmitController {
             params.put("choice_" + (i + 1) + "", choice[i]);
         }
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 2; i < 7; i++) {
             params.put("blank_" + (i + 1) + "", blank[i]);
         }
 
