@@ -8,6 +8,7 @@ $(function(){
     getState("a6",6);
     getState("a7",7);
     getState("a9",9);
+    getState("a8",8);
     getState("a11",11);
 })
 
