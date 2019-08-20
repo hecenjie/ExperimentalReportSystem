@@ -81,15 +81,15 @@ function submit() {
     /**
      * 测试blank
      * */
-    alert("blank=============");//---------------------------------------------------
+    // alert("blank=============");//---------------------------------------------------
     for (var i = 1; i <= 4; i++) {
         blank[i - 1] = $("#blank_" + i + "").val();
     }
 
 
-    for (var i = 0; i < blank.length; i++) {
-        alert("blank_______==="+blank[i]);
-    }
+    // for (var i = 0; i < blank.length; i++) {
+    //     alert("blank_______==="+blank[i]);
+    // }
 
     $.ajax({
         type: "POST",
